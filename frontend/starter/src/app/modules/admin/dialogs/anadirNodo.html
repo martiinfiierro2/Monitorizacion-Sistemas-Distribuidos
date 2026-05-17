@@ -1,0 +1,100 @@
+<div class="dialog">
+    <div class="header-dialog">
+        <h1 mat-dialog-title style="font-size: xx-large"><strong>Añadir Nodo</strong></h1>
+        <span class="spacer"></span>
+        <button mat-mini-fab (click)="cerrarDialog()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <mat-dialog-content>
+            <div class="grid-container">
+                <div>     
+                    <mat-form-field class="largo">
+                        <mat-label>Tipo de nodo</mat-label>
+                        <mat-select [(ngModel)]="tipoNodo">
+                            <mat-option value="Balanceador Main">
+                                <div style="display: flex; align-items: center;">
+                                    Balanceador Main <img src="assets/map/png/bMainAct.png" style="width: 20px; height: 20px; margin-right: 8px;">
+                                </div>
+                            </mat-option>
+                            <mat-option value="Balanceador Subs">
+                                <div style="display: flex; align-items: center;">
+                                    Balanceador Subs <img src="assets/map/png/bSubsAct.png" style="width: 20px; height: 20px; margin-right: 8px;">
+                                </div>
+                            </mat-option>
+                            <mat-option value="Controlador Main">
+                                <div style="display: flex; align-items: center;">
+                                    Controlador Main <img src="assets/map/png/cMainAct.png" style="width: 20px; height: 20px; margin-right: 8px;">
+                                </div>
+                            </mat-option>
+                            <mat-option value="Controlador Subs">
+                                <div style="display: flex; align-items: center;">
+                                    Controlador Subs <img src="assets/map/png/cSubsAct.png" style="width: 20px; height: 20px; margin-right: 8px;">
+                                </div>
+                            </mat-option>
+                            <mat-option value="Procesador">
+                                <div style="display: flex; align-items: center;">
+                                    Procesador <img src="assets/map/png/procesadorAct.png" style="width: 20px; height: 20px; margin-right: 8px;">
+                                </div>
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <p style="color:red" *ngIf="errorPeticion && !tipoNodo">El tipo de nodo es necesario</p>
+                </div>
+                <div>     
+                    <mat-form-field class="largo">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" [(ngModel)]="nombre"/>
+                    </mat-form-field>
+                    <p style="color:red" *ngIf="errorPeticion && !nombre">El nombre es necesario</p>
+                </div>
+                <div>     
+                    <mat-form-field class="largo">
+                        <mat-label>URL</mat-label>
+                        <input matInput type="text" [(ngModel)]="url"/>
+                    </mat-form-field>
+                    <p style="color:red" *ngIf="errorPeticion && !url">La URL es necesaria</p>
+                    <p style="color:red" *ngIf="errorPeticion2">{{errorPeticion2}}</p>
+                </div>
+                <div>
+                    <mat-form-field class="cortoPuerto">
+                        <mat-label>Puerto</mat-label>
+                        <input matInput type="number" [(ngModel)]="puerto"/>
+                    </mat-form-field>
+                    <mat-form-field class="corto">
+                        <mat-label>Orden</mat-label>
+                        <input matInput type="number" [(ngModel)]="orden"/>
+                    </mat-form-field>
+                    <p style="color:red" *ngIf="errorPeticion && !puerto">El puerto es necesario</p>
+                </div>
+                <div style="display: flex;">
+                    <div>
+                        <mat-form-field floatLabel="always" class="corto2">
+                            <mat-label>Geolocalización</mat-label>
+                            <input matInput type="number" placeholder="Latitud" [(ngModel)]="latitud"/>
+                        </mat-form-field>
+                          
+                        <mat-form-field floatLabel="always" class="corto2">
+                            <input matInput type="number" placeholder="Longitud" [(ngModel)]="longitud"/>
+                        </mat-form-field>
+                        <p style="color:red" *ngIf="errorPeticion && latitud == null && longitud != null">La latitud es necesaria</p>
+                        <p style="color:red" *ngIf="errorPeticion && latitud != null && longitud == null">La longitud es necesaria</p>
+                        <p style="color:red" *ngIf="errorPeticion && latitud == null && longitud == null">La latitud y longitud son necesarias</p>
+                    </div>                     
+                </div>
+                <div>     
+                    <mat-form-field class="corto">
+                        <mat-label>Visiblidad</mat-label>
+                        <mat-select [(ngModel)]="visible">
+                            <mat-option [value]="true">Activada</mat-option>
+                            <mat-option [value]="false">Desactivada</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            
+        <div id="botonAN">     
+            <button (click)="anadirNodo()" class="anadir" >Añadir</button>
+        </div>
+    </mat-dialog-content>
+</div>

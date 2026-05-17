@@ -1,0 +1,27 @@
+{
+    "controller": {
+        "pngMain": "cMainAct.png",
+        "pngSubs": "cSubsAct.png",
+        "pngMainDes": "cMainDes.png",
+        "pngSubsDes": "cSubsDes.png"
+    },
+    "balancer": {
+        "pngMain": "bMainAct.png",
+        "pngSubs": "bSubsAct.png",
+        "pngMainDes": "bMainDes.png",
+        "pngSubsDes": "bSubsDes.png"
+    },
+    "processor": {
+        "png": "procesadorAct.png",
+        "pngDes": "procesadorDes.png"
+    },
+    "espera": {
+        "valor": 5000
+    },
+    "map": {
+        "latitud": 0,
+        "longitud": 0,
+        "zoom": 2,
+        "iconSize": 60
+    }
+}

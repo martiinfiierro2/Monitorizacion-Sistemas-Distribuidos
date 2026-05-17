@@ -1,0 +1,23 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="sidenav-content-wrapper">
+      <mat-nav-list class="icon-nav-list">
+        <a mat-list-item routerLink="/grafo" routerLinkActive="active">
+          <mat-icon>bubble_chart</mat-icon>
+        </a>
+        <a mat-list-item routerLink="/lista" routerLinkActive="active">
+          <mat-icon>list</mat-icon>
+        </a>
+        <a mat-list-item routerLink="/mapa" routerLinkActive="active">
+          <mat-icon>map</mat-icon>
+        </a>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

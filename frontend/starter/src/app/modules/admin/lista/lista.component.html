@@ -1,0 +1,81 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="cabecera2">
+      <span class="spacer2"></span>
+      <div class="boton-contenedor">
+        <button mat-fab extended class="example-icon favorite-icon" (click)="anadirNodo()" style="background-color: white; color: grey; margin-right: 5px; height: 30%;">
+          <mat-icon>library_add</mat-icon>Añadir Nodo
+        </button>
+      </div>
+      <div class="boton-contenedor">
+        <button (click)="descargar()" mat-fab extended class="example-icon" style="background-color: white; color: grey; margin-right: 10px; height: 30%;">
+          <mat-icon class="primero">download</mat-icon>Descargar
+        </button>
+      </div>
+      <div>
+        <input class="buscador" (input)="buscarNodos($event.target.value)" type="search" placeholder="Buscar...">
+      </div>
+    </div>
+
+    <div class="tabla-contenedor">
+      <table mat-table [dataSource]="dataSource" mat-elevation-z8>
+        <ng-container matColumnDef="tipo_nodo">
+          <th mat-header-cell *matHeaderCellDef> Tipo Nodo </th>
+          <td mat-cell *matCellDef="let element">{{element.tipo_nodo}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element">{{element.nombre}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="url">
+          <th mat-header-cell *matHeaderCellDef> URL </th>
+          <td mat-cell *matCellDef="let element">{{element.url}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="puerto">
+          <th mat-header-cell *matHeaderCellDef> Puerto </th>
+          <td mat-cell *matCellDef="let element">{{element.puerto}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="geolocalizacion">
+          <th mat-header-cell *matHeaderCellDef> Geolocalización </th>
+          <td mat-cell *matCellDef="let element">
+            Lat: {{element.latitud}} <br> Lon: {{element.longitud}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+            <button matTooltip="Ver información" [style.background-color]="'#1E90FF'" [style.margin]="'5px'" mat-mini-fab (click)="dialogo(element.tipo_nodo, element.id, element.url, element.puerto)" aria-label="Boton para visualizar">
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+            <button matTooltip="Visualizar" *ngIf="!element.visible" [style.background-color]="'grey'" [style.margin]="'5px'" mat-mini-fab (click)="visible(element)" aria-label="Boton para visualizar">
+              <mat-icon>visibility_off</mat-icon>
+            </button>
+            <button matTooltip="Ocultar" *ngIf="element.visible" [style.background-color]="'grey'" [style.margin]="'5px'" mat-mini-fab (click)="noVisible(element)" aria-label="Boton para visualizar">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button matTooltip="Editar" [style.background-color]="'orange'" [style.margin]="'5px'" (click)="actualizarNodo(element)" mat-mini-fab aria-label="Boton para editar">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <!-- Paginador -->
+      <div class="paginas" style="text-align: center;">
+        <mat-paginator [length]="dataSource.data.length"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Seleccionar página">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

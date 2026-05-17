@@ -1,0 +1,152 @@
+<!-- Tres secciones
+
+Balanceadores
+
+Controladores
+
+Routers
+
+-->
+
+
+<div class="container-fluid">
+
+  <!-- Mostrar balanceadores -->
+  <div class="m-1">
+    <h4>Balancers</h4>
+  </div>
+
+  <div class="row m-1">
+    <div class="col">
+      <div class="row">
+        <div class="col-6 ">
+
+          <div class="card">
+            <div class="card-header"
+              [ngClass]="{'text-bg-success': componentsStatus.mainBalancer, 'text-bg-danger': !componentsStatus.mainBalancer}">
+              Main Balancer
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                Type:{{mainBalancerState.Data.internalConfig.type}} - Port:{{mainBalancerState.Data.internalConfig.port}}<br>
+                urlMain:{{mainBalancerState.Data.internalConfig.urlMain}}<br>
+                balancerSubsActive:{{mainBalancerState.Data.balancerSubsActive}} - receivedMessages:{{mainBalancerState.Data.receivedMessages}} - balancerMainMaxAYA:{{mainBalancerState.Data.balancerMainMaxAYA}}<br>
+                balancerList:{{show(mainBalancerState.Data.balancerList)}}<br>
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="col-6 ">
+
+          <div class="card">
+            <div class="card-header"
+              [ngClass]="{'text-bg-success': componentsStatus.subsBalancer, 'text-bg-danger': !componentsStatus.subsBalancer}">
+              Subs Balancer
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                Type:{{subsBalancerState.Data.internalConfig.type}} - Port:{{subsBalancerState.Data.internalConfig.port}}<br>
+                urlMain:{{subsBalancerState.Data.internalConfig.urlMain}}<br>
+                balancerSubsActive:{{subsBalancerState.Data.balancerSubsActive}} - receivedMessages:{{subsBalancerState.Data.receivedMessages}} - balancerMainMaxAYA:{{subsBalancerState.Data.balancerMainMaxAYA}}<br>
+                balancerList:{{show(subsBalancerState.Data.balancerList)}}<br>
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Mostrar coordinadores -->
+  <div class="m-1">
+    <div class="m-1">
+      <h4>Coordinators</h4>
+    </div>
+    <div class="row m-1">
+      <div class="col-6 ">
+
+
+        <div class="card">
+          <div class="card-header"
+            [ngClass]="{'text-bg-success': componentsStatus.mainCoordinator, 'text-bg-danger': !componentsStatus.mainCoordinator}">
+            Main Coordinator
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Type:{{mainCoordinatorState.Data.internalConfig.type}} -  Port:{{mainCoordinatorState.Data.internalConfig.port}}<br>
+              urlCoordinatorlMain:{{mainCoordinatorState.Data.internalConfig.urlCoordinatorlMain}}<br>
+              urlBalancerMain:{{mainCoordinatorState.Data.internalConfig.urlBalancerMain}} - urlBalancerSubs:{{mainCoordinatorState.Data.internalConfig.urlBalancerSubs}}<br>
+              coordinatorSubsActive:{{mainCoordinatorState.Data.coordinatorSubsActive}} - coordinatorMainMaxAYA:{{mainCoordinatorState.Data.coordinatorMainMaxAYA}} - receivedMessages:{{mainCoordinatorState.Data.receivedMessages}}<br>
+              balancerList:{{show(mainCoordinatorState.Data.balancerList)}}<br>
+              processorsLiss:{{show(mainCoordinatorState.Data.processorsList)}}<br>
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-6 ">
+
+
+        <div class="card">
+          <div class="card-header"
+            [ngClass]="{'text-bg-success': componentsStatus.subsCoordinator, 'text-bg-danger': !componentsStatus.subsCoordinator}">
+            Subs Coordinator
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Type:{{subsCoordinatorState.Data.internalConfig.type}} - Port:{{subsCoordinatorState.Data.internalConfig.port}}<br>
+              urlCoordinatorlMain:{{subsCoordinatorState.Data.internalConfig.urlCoordinatorlMain}}<br>
+              urlBalancerMain:{{subsCoordinatorState.Data.internalConfig.urlBalancerMain}} - urlBalancerSubs:{{subsCoordinatorState.Data.internalConfig.urlBalancerSubs}}<br>
+              coordinatorSubsActive:{{subsCoordinatorState.Data.coordinatorSubsActive}} - coordinatorMainMaxAYA:{{subsCoordinatorState.Data.coordinatorMainMaxAYA}} - receivedMessages:{{subsCoordinatorState.Data.receivedMessages}}<br>
+              balancerList:{{show(subsCoordinatorState.Data.balancerList)}}<br>
+              processorsLiss:{{show(subsCoordinatorState.Data.processorsList)}}<br>
+
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="m-1">
+    <div class="m-1">
+      <h4>Processors</h4>
+    </div>
+
+    <div class="row">
+
+      <div class="col-3" *ngFor="let item of processorsState; index as i">
+
+        <div class="card">
+          <div class="card-header"
+            [ngClass]="{'text-bg-success': componentsStatus.processors[i], 'text-bg-danger': !componentsStatus.processors[i]}">
+            Preccesor element {{i+1}} of {{numProcessors}}
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              name:{{processorsState[i].Data.internalConfig.name}} - port:{{processorsState[i].Data.internalConfig.port}}<br>
+              capacity:{{processorsState[i].Data.internalConfig.capacity}} - preference:{{processorsState[i].Data.internalConfig.preference}}<br>
+              urlCoordinatorMain:{{processorsState[i].Data.internalConfig.urlCoordinatorMain}}<br>
+              urlCoordinatorSubs:{{processorsState[i].Data.internalConfig.urlCoordinatorSubs}}<br>
+
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>

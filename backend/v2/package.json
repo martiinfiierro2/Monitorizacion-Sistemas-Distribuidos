@@ -1,0 +1,26 @@
+{
+  "name": "balancer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "balancer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "balancer_main": "nodemon ./balancer/balancer 3100 main",
+    "balancer_subs": "nodemon ./balancer/balancer 3101 subs http://127.0.0.1:3100",
+    "coordinator_main": "nodemon ./coordinator/coordinator 3000 http://127.0.0.1:3100 http://127.0.0.1:3101 main",
+    "coordinator_subs": "nodemon ./coordinator/coordinator 3001 http://127.0.0.1:3100 http://127.0.0.1:3101 subs http://127.0.0.1:3000"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-validator": "^7.1.0",
+    "mqtt": "^5.9.0",
+    "nodemon": "^3.1.7",
+    "uid": "^2.0.2"
+  }
+}

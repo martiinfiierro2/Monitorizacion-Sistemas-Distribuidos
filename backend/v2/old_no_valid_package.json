@@ -1,0 +1,59 @@
+{
+  "name": "fog-escalable-v1",
+  "version": "1.0.0",
+  "description": "Ejemplo arquitectura FOG",
+  "main": "balancer.js",
+  "scripts": {
+    "balanceador": "nodemon balancer.js 3000 princial",
+    "balanceadorSuplente": "nodemon balancer.js 3100 suplente http://127.0.0.1:3000/",
+    "control": "nodemon control.js 3001 http://127.0.0.1:3000/ http://127.0.0.1:3100/ principal",
+    "controlSuplente": "nodemon control.js 3101 http://127.0.0.1:3000/ http://127.0.0.1:3100/ suplente http://127.0.0.1:3001/",
+    "process1": "nodemon processor.js node1 3010 http://127.0.0.1:3001/ http://127.0.0.1:3101/ ",
+    "process2": "nodemon processor.js node2 3020 http://127.0.0.1:3001/ http://127.0.0.1:3101/ ",
+    "process3": "nodemon processor.js node3 3030 http://127.0.0.1:3001/ http://127.0.0.1:3101/ "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3",
+    "mqtt": "^5.3.6"
+  }
+}
+
+/*
+MAS ADELANTE
+Podemos decir que el procesador contesta a mensaje de estoy vivo del coordinador con su potencia actual y podría ser variable
+
+
+El coordinador distribuye la lista de configuración a todos los balanceadores 
+
+¿Qué pasa si cae el proceso coordinador?
+- Quién se da cuenta, cómo?
+  - El coordindor suplente tiene mensajes de estoy vivo hacia el principal y la respuesta es la configuración de carga, se da cuenta y asume su rol
+  - Mantiene mensajes de estoy vivo hacia el balanceador principal/suplente (al que esté activo) y envia configuración hacia los balanceadores principal y suplente (si están activos)
+  - Le dice a los procesadores de la lista que ahora es él le nuevo coordiandr del sistema
+
+¿Qué pasa si caae el proceso balanceador?
+- Quién se da cuenta, cómo?
+  - Se entera el coordinador y el balancedor suplente  porque tienen mensajes de estoy vivo
+- El balanceador suplente se pone como principal, se conecta al broker y reenvia mensajes a procesadores según la lista de distribución de carga
+
+¿Qué pasa si cae un proceso procesador?
+- Quién se da cuenta, cómo?
+  - El coordinador activo tiene mensajes de estoy vivo hacia los procesadores, si no recibe mensaje el coordinador considera un unregister y redistribuye
+  la carga entre los demas, y comunica a los balanceadores
+
+  Procesador: cuando se ejecuta el proceso se el pasa la lista de nodos donde registrarse, se registra en el primer nodo que puede, tiene una lista
+  e intenta registrarse y le que le responda que se ha registrad pues ese es
+
+  El nodo coordinador solo permite que se registren procesadores si es nodo principal en ese momento, si a un nodo coordinador suplente se le intenta
+  registrar un nodo procesador el coordinador suplente responde que no es nodo prinicpal, rechaza el registro
+
+
+¿Qué pasa cuando los principales se activen de nuevo, coordinador o balanceador?
+Los mensajes de estoy vivo siguen intentándose enviar, y cuando tengan respuesta, el suplente deja de trabajar y vuelve a ser suplente y el
+principal retoma funciones
+*/
+

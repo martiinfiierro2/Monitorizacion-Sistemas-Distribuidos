@@ -1,0 +1,99 @@
+<div class="dialog" *ngIf="nodo">
+    <div class="header-dialog">
+        <h1 mat-dialog-title style="font-size: xx-large"><strong>{{nodo.tipo_nodo}}: {{nodo.nombre}}</strong></h1>
+        <span class="spacer"></span>
+        <button class="close" mat-mini-fab (click)="cerrarDialog()"><mat-icon>close</mat-icon></button>
+    </div>
+    <mat-dialog-content>
+      <div class="datos-contenedor">
+        <!-- Contenedor Izquierdo -->
+        <div class="datosNodo">
+          <h1>Estado Interno</h1>
+          <div>
+            <h2 class="espacio"><strong>Puerto: </strong><p class="linea">{{nodo.puerto}}</p></h2>
+            <h2 class="espacio"><strong>URL: </strong><p class="linea">{{nodo.url}}</p></h2>
+            <h2 class="espacio"><strong>Última consulta: </strong><p class="linea" *ngIf="nodo.tiempo !== null">{{nodo.tiempo}}</p></h2>
+            <h2 class="espacio"><strong>Geolocalización: </strong><p>Latitud-> {{nodo.latitud}}, Longitud-> {{nodo.longitud}}</p></h2>
+            <h2 class="espacio"><strong>Orden: </strong><p class="linea">{{nodo.orden}}</p></h2>
+          </div>
+      
+          <div *ngIf="tipo.startsWith('Balanceador') && estado_interno">
+            <h2 class="espacio"><strong>Estado del sustituto: </strong> <p class="linea">{{estado_interno.Data.balancerSubsActive}}</p></h2>
+            <h2 class="espacio"><strong>Balanceador Main AYA: </strong> <p class="linea">{{estado_interno.Data.balancerMainMaxAYA}}</p></h2>
+            <h2 class="espacio"><strong>Mensajes recibidos: </strong> <p class="linea">{{estado_interno.Data.receivedMessages}}</p></h2>
+            <h2 *ngIf="estado_interno.Data.internalConfig.urlMain" class="espacio"><strong>URL Main: </strong> <p class="linea">{{estado_interno.Data.internalConfig.urlMain}}</p></h2>
+          </div>
+      
+          <div *ngIf="tipo.startsWith('Controlador') && estado_interno">
+            <h2 class="espacio"><strong>Estado del sustituto: </strong><p class="linea">{{estado_interno.Data.coordinatorSubsActive}}</p></h2>
+            <h2 class="espacio"><strong>Controlador Main AYA: </strong><p class="linea">{{estado_interno.Data.coordinatorMainMaxAYA}}</p></h2>
+            <h2 class="espacio"><strong>Mensajes recibidos: </strong><p class="linea">{{estado_interno.Data.receivedMessages}}</p></h2>
+            <h2 *ngIf="estado_interno.Data.internalConfig.urlCoordinatorlMain" class="espacio"><strong>URL Main: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlCoordinatorlMain}}</p></h2>
+            <h2 class="espacio"><strong>URL Balanceador Main: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlBalancerMain}}</p></h2>
+            <h2 class="espacio"><strong>URL Balanceador Subs: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlBalancerSubs}}</p></h2>
+          </div>
+          <div *ngIf="tipo === 'Procesador' && estado_interno">
+            <h2 class="espacio"><strong>Capacidad: </strong><p class="linea">{{estado_interno.Data.internalConfig.capacity}}</p></h2>
+            <h2 class="espacio"><strong>Preferencia: </strong><p class="linea">{{estado_interno.Data.internalConfig.preference}}</p></h2>
+            <h2 class="espacio"><strong>URL Coordinador Main: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlCoordinatorMain}}</p></h2>
+            <h2 class="espacio"><strong>URL Coordinador Subs: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlCoordinatorSubs}}</p></h2>
+          </div>
+        </div>
+      
+        <!-- Contenedor Derecho -->
+        <div class="estado_interno">
+          <div *ngIf="tipo.startsWith('Balanceador') && estado_interno" class="tabla-contenedor">
+            <h1>Lista de Procesadores</h1>
+            <table mat-table [dataSource]="dataSource" class="mat-table">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="load">
+                <th mat-header-cell *matHeaderCellDef> Carga </th>
+                <td mat-cell *matCellDef="let element"> {{ element.load }} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef> URL </th>
+                <td mat-cell *matCellDef="let element"> {{ element.url }} </td>
+              </ng-container>
+      
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+      
+          <div *ngIf="tipo.startsWith('Controlador') && estado_interno" class="tabla-contenedor">
+            <h1>Lista de Procesadores</h1>
+            <table mat-table [dataSource]="dataSource" class="mat-table">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="capacity">
+                <th mat-header-cell *matHeaderCellDef> Capacidad </th>
+                <td mat-cell *matCellDef="let element"> {{ element.capacity }} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef> URL </th>
+                <td mat-cell *matCellDef="let element"> {{ element.url }} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="load">
+                <th mat-header-cell *matHeaderCellDef> Carga </th>
+                <td mat-cell *matCellDef="let element"> {{ element.load }} </td>
+              </ng-container>
+      
+              <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns3;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+    </mat-dialog-content>
+</div>

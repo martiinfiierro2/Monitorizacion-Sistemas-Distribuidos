@@ -1,0 +1,10 @@
+<div class="contenedor-grafo">
+    <div class="cabecera">
+        <span class="spacer"></span>
+        <div class="checkbox">
+            <mat-checkbox (change)="conexiones($event)" id="conexiones">Desactivar conexiones</mat-checkbox>
+        </div>
+    </div>
+        
+    <div id="grafo" #cyContainer class="grafo-fondo"></div>
+</div>
