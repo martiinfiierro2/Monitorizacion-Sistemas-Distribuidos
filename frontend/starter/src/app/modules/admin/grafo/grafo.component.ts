@@ -62,18 +62,10 @@ export class GrafoComponent implements AfterViewInit, OnDestroy {
     ngAfterViewInit() {
         const configSub = this.config.getConfig().subscribe((res: any) => {
             this.configuracion = res;
-            this.init();
+            this.initChart();
             this.comprobar();
         });
         this.subscriptions.add(configSub);
-    }
-
-    init(){
-        if(this.activarMapa){
-            this.initMap();
-        } else {
-            this.initChart();
-        }
     }
 
     irALista(): void {
@@ -94,11 +86,26 @@ export class GrafoComponent implements AfterViewInit, OnDestroy {
     mapa(event: any) {
         this.activarMapa = event.checked;
         this.repintar = true;
-        if (this.activarMapa && !this.map) {
-            this.initMap(); 
-        } else {
-            this.comprobar();
-        }
+
+        // Le damos un respiro de 50ms a Angular para que alterne el [hidden] en el DOM
+        setTimeout(() => {
+            if (this.activarMapa) {
+                // Si el mapa no se ha creado nunca, lo inicializamos
+                if (!this.map) {
+                    this.initMap();
+                } else {
+                    // SI YA EXISTÍA: recalculamos tamaño para que no se quede gris/blanco
+                    this.map.invalidateSize();
+                    this.comprobar();
+                }
+            } else {
+                // Si volvemos al Grafo de ECharts, le pedimos que se readapte al contenedor
+                if (this.myChart) {
+                    this.myChart.resize();
+                }
+                this.comprobar();
+            }
+        }, 50);
     }
 
     initMap(){
@@ -124,6 +131,8 @@ export class GrafoComponent implements AfterViewInit, OnDestroy {
             );
             forkJoin(requests).subscribe((resultadoNodos: any) => {
                 const chartDom = document.getElementById('grafo');
+
+                
                 this.myChart = echarts.init(chartDom!);
                 
                 // Inicializamos la primera opción del grafo usando la función unificada
@@ -170,10 +179,7 @@ export class GrafoComponent implements AfterViewInit, OnDestroy {
                             cont++;
                         }
                     }
-                } else {
-                    // Si es la primera vez que se ejecuta, forzamos que pinte
-                    cont = 1;
-                }
+                } 
 
                 console.log("Cambios detectados en el temporizador: " + cont);
 
@@ -430,40 +436,149 @@ export class GrafoComponent implements AfterViewInit, OnDestroy {
         const links = res.reduce((acc: any[], item2: any) => {
           const { nodo, status, datos } = item2;
                             
-          if(this.activarConexiones && nodo.visible && status){
-              if (nodo.tipo_nodo === 'Balanceador Main') {
+          if(this.activarConexiones === true){
+            if (nodo.tipo_nodo === 'Balanceador Main' && status === true && nodo.visible) {
                 res.forEach((nodoTarget: any) => {
-                  datos.Data?.balancerList?.forEach((bal: any) => {
-                    if (bal.url === `${nodoTarget.nodo.url}:${nodoTarget.nodo.puerto}` && nodoTarget.status && nodoTarget.nodo.visible) {
-                      acc.push({ lat1: nodo.latitud, lon1: nodo.longitud, lat2: nodoTarget.nodo.latitud, lon2: nodoTarget.nodo.longitud });
+                    for(let i = 0; i < datos.Data.balancerList.length; i++){
+                        if (datos.Data.balancerList[i].url === `${nodoTarget.nodo.url}:${nodoTarget.nodo.puerto}` && nodoTarget.status === true && nodoTarget.nodo.visible) {
+                            acc.push({
+                                lat1: String(nodo.latitud),
+                                lon1: String(nodo.longitud),
+                                lat2: String(nodoTarget.nodo.latitud),
+                                lon2: String(nodoTarget.nodo.longitud),
+                                color: '#0c7909'
+                            });
+                        }
                     }
-                  });
                 });
-              }
-              else if(nodo.tipo_nodo === 'Balanceador Subs' && datos.Data?.balancerSubsActive){
-                const nodoMain = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data?.internalConfig?.urlMain && n.status);
+            }
+            else if(nodo.tipo_nodo === 'Balanceador Subs' && status === true && datos.Data.balancerSubsActive === true && nodo.visible){
+                const nodoMain = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data.internalConfig.urlMain && n.status === true);
                 if(!nodoMain){
-                  res.forEach((nodoTarget: any) => {
-                    datos.Data?.balancerList?.forEach((bal: any) => {
-                      if (bal.url === `${nodoTarget.nodo.url}:${nodoTarget.nodo.puerto}` && nodoTarget.status) {
-                        acc.push({ lat1: nodo.latitud, lon1: nodo.longitud, lat2: nodoTarget.nodo.latitud, lon2: nodoTarget.nodo.longitud });
-                      }
+                    res.forEach((nodoTarget: any) => {
+                        for(let i = 0; i < datos.Data.balancerList.length; i++){
+                            if (datos.Data.balancerList[i].url === `${nodoTarget.nodo.url}:${nodoTarget.nodo.puerto}` && nodoTarget.status === true) {
+                                acc.push({
+                                    lat1: String(nodo.latitud),
+                                    lon1: String(nodo.longitud),
+                                    lat2: String(nodoTarget.nodo.latitud),
+                                    lon2: String(nodoTarget.nodo.longitud),
+                                    color: '#0c7909'
+                                });
+                            }
+                        }
                     });
-                  });
                 }
-              }
-              if (nodo.tipo_nodo === 'Balanceador Subs') {
-                const nodoTarget = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data?.internalConfig?.urlMain);
-                if(nodoTarget && nodoTarget.nodo.visible) {
-                    acc.push({ lat1: nodo.latitud, lon1: nodo.longitud, lat2: nodoTarget.nodo.latitud, lon2: nodoTarget.nodo.longitud });
+            }
+                    
+            // Enlace de Balanceadores "subs" hacia "main"
+            if (nodo.tipo_nodo === 'Balanceador Subs' && status === true && nodo.visible) {
+                const nodoTarget = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data.internalConfig.urlMain && n.status === true && n.nodo.visible);
+                if (nodoTarget) {
+                    acc.push({
+                        lat1: String(nodo.latitud),
+                        lon1: String(nodo.longitud),
+                        lat2: String(nodoTarget.nodo.latitud),
+                        lon2: String(nodoTarget.nodo.longitud),
+                        color: '#8a8c8d'
+                    });
                 }
-              }
-          }
-          return acc;
+            }
+
+            // Enlace de Controladores "subs" hacia "main"
+            if (nodo.tipo_nodo === 'Controlador Subs' && status === true && nodo.visible) {
+            const nodoTarget = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data.internalConfig.urlCoordinatorlMain && n.status === true && n.nodo.visible);
+                if (nodoTarget) {
+                    acc.push({
+                        lat1: String(nodo.latitud),
+                        lon1: String(nodo.longitud),
+                        lat2: String(nodoTarget.nodo.latitud),
+                        lon2: String(nodoTarget.nodo.longitud),
+                        color: '#8a8c8d'
+                    });
+                }
+            }
+
+            //Controlador --> Balanceador
+            if(nodo.tipo_nodo === 'Controlador Main' && status === true && nodo.visible){
+            const nodoTarget = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data.internalConfig.urlBalancerMain && n.status === true && n.nodo.visible);
+                if(nodoTarget){
+                    acc.push({
+                        lat1: String(nodo.latitud),
+                        lon1: String(nodo.longitud),
+                        lat2: String(nodoTarget.nodo.latitud),
+                        lon2: String(nodoTarget.nodo.longitud),
+                        color: '#0c7909'
+                    });
+                }
+                else{
+                    const nodoTarget = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data.internalConfig.urlBalancerSubs && n.status === true && n.nodo.visible);
+                    if(nodoTarget){
+                    acc.push({
+                        lat1: String(nodo.latitud),
+                        lon1: String(nodo.longitud),
+                        lat2: String(nodoTarget.nodo.latitud),
+                        lon2: String(nodoTarget.nodo.longitud),
+                        color: '#0c7909'
+                    });
+                    }
+                }
+                }
+                else if(nodo.tipo_nodo === 'Controlador Subs' && status === true && nodo.visible){
+                const nodoMain = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data.internalConfig.urlCoordinatorlMain && n.status === false && datos.Data.coordinatorSubsActive === true && n.nodo.visible);
+                    if(nodoMain){
+                        const nodoTarget = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data.internalConfig.urlBalancerMain && n.status === true && n.nodo.visible);
+                        if(nodoTarget){
+                            acc.push({
+                                lat1: String(nodo.latitud),
+                                lon1: String(nodo.longitud),
+                                lat2: String(nodoTarget.nodo.latitud),
+                                lon2: String(nodoTarget.nodo.longitud),
+                                color: '#0c7909'
+                            });
+                        }
+                        else{
+                        const nodoTarget = res.find((n: any) => `${n.nodo.url}:${n.nodo.puerto}` === datos.Data.internalConfig.urlBalancerSubs && n.status === true && n.nodo.visible);
+                            if(nodoTarget){
+                                acc.push({
+                                    lat1: String(nodo.latitud),
+                                    lon1: String(nodo.longitud),
+                                    lat2: String(nodoTarget.nodo.latitud),
+                                    lon2: String(nodoTarget.nodo.longitud),
+                                    color: '#0c7909'
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            return acc;
         }, []);
 
         // Aquí puedes renderizar los 'links' en tu objeto Leaflet (ej: L.polyline) si fuese necesario.
+        this.updateLineas(links);
         this.datosDelSistema = res;
+    }
+
+    updateLineas(links: any){
+        let newLinks: any = [];
+        if(this.lineas){
+          for (const lineas of this.lineas) {
+            this.map.removeLayer(lineas)
+          }
+        }
+    
+        for (const link of links) {
+          const pointA = [link.lat1, link.lon1];
+          const pointB = [link.lat2, link.lon2];
+    
+          newLinks.push(L.polyline([pointA, pointB], {
+            color: link.color,
+            weight: 3,
+            opacity: 0.7,
+          }).addTo(this.map));
+        }
+        this.lineas = newLinks;
     }
 
     dialogo(tipoNodo: string, nodoId: string, url: string, puerto: string) {

@@ -16,7 +16,7 @@
         "pngDes": "procesadorDes.png"
     },
     "espera": {
-        "valor": 5000
+        "valor": 3500
     },
     "map": {
         "latitud": 0,
