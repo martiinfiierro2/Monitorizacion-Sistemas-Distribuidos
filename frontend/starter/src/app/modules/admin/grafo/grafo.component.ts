@@ -483,7 +483,7 @@ export class GrafoComponent {
     
     // Activar conexiones
     conexiones(event: any) {
-        this.activarConexiones = !event.checked;
+        this.activarConexiones = event.checked;
         if (!this.activarConexiones) {
             console.log('desactivar conexiones');
             this.myChart.setOption({

@@ -5,22 +5,15 @@
         <ul class="cabecera-lista">
             <li>
                 <div class="checkbox">
-                    <mat-checkbox (change)="conexiones($event)" id="conexiones">Desactivar conexiones</mat-checkbox>
+                    <mat-checkbox checked (change)="conexiones($event)" id="conexiones">
+                        {{ activarConexiones ? 'Conexiones activadas' : 'Conexiones desactivadas' }}
+                    </mat-checkbox>
                 </div>
             </li>
             <li>
                 <div class="checkbox">
                     <mat-checkbox (change)="conexiones($event)" id="conexiones">Activar Mapa</mat-checkbox>
                 </div>
-            </li>
-            <li>
-                <mat-form-field class="cabecera-select">
-                <mat-select class="cabecera-select2" (selectionChange)="conexiones($event.value)" value="todos">
-                    <mat-option value="todos">Todos</mat-option>
-                    <mat-option value="activos">Activos</mat-option>
-                    <mat-option value="desactivados">Desactivados</mat-option>
-                </mat-select>
-            </mat-form-field>
             </li>
         </ul>
     </div>

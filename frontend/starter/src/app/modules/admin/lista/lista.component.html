@@ -1,20 +1,21 @@
-<div class="flex flex-col flex-auto min-w-0">
-  <div class="flex-auto p-6 sm:p-10">
-    <div class="cabecera2">
-      <span class="spacer2"></span>
-      <div class="boton-contenedor">
-        <button mat-fab extended class="example-icon favorite-icon" (click)="anadirNodo()" style="background-color: white; color: grey; margin-right: 5px; height: 30%;">
-          <mat-icon>library_add</mat-icon>Añadir Nodo
-        </button>
-      </div>
-      <div class="boton-contenedor">
-        <button (click)="descargar()" mat-fab extended class="example-icon" style="background-color: white; color: grey; margin-right: 10px; height: 30%;">
-          <mat-icon class="primero">download</mat-icon>Descargar
-        </button>
-      </div>
-      <div>
-        <input class="buscador" (input)="buscarNodos($event.target.value)" type="search" placeholder="Buscar...">
-      </div>
+<div class="lista-container">
+    <div class="cabecera">
+      <input class="buscador" (input)="buscarNodos($event.target.value)" type="search" placeholder="Buscar...">
+
+      <ul class="cabecera-lista">
+        <li>
+            <button class="buttonAdd" (click)="anadirNodo()">
+              <mat-icon>library_add</mat-icon>
+              <span>Añadir Nodo</span>
+            </button>
+        </li>
+        <li>
+            <button class="buttonAdd" (click)="descargar()">
+              <mat-icon>download</mat-icon>
+              <span>Descargar</span>
+            </button>
+        </li>
+      </ul>
     </div>
 
     <div class="tabla-contenedor">
@@ -77,5 +78,4 @@
         </mat-paginator>
       </div>
     </div>
-  </div>
 </div>
