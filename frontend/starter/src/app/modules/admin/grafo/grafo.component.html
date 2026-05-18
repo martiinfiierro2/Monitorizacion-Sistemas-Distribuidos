@@ -12,11 +12,12 @@
             </li>
             <li>
                 <div class="checkbox">
-                    <mat-checkbox (change)="conexiones($event)" id="conexiones">Activar Mapa</mat-checkbox>
+                    <mat-checkbox (change)="mapa($event)" id="conexiones">Activar Mapa</mat-checkbox>
                 </div>
             </li>
         </ul>
     </div>
         
-    <div id="grafo" #cyContainer class="grafo-fondo"></div>
+    <div *ngIf="!activarMapa" id="grafo" #grafoContainer class="grafo-fondo"></div>
+    <div *ngIf="activarMapa" id="mapa" #mapaContainer class="grafo-fondo"></div>
 </div>
