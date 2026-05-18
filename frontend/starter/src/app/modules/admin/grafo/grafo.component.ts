@@ -2,6 +2,9 @@ import { Component, ViewEncapsulation, ElementRef, ViewChild } from '@angular/co
 import { GrafoService } from 'app/services/grafo.service';
 import { Dialog } from '../dialogs/dialog.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
@@ -17,7 +20,9 @@ import { ConfigService, Config } from 'app/services/config.service';
     standalone: true,
     templateUrl: './grafo.component.html',
     encapsulation: ViewEncapsulation.None,
-    imports: [MatButtonToggleModule, MatIconModule, MatToolbarModule, MatCheckboxModule, MatDialogModule]
+    imports: [MatButtonToggleModule, MatIconModule, MatToolbarModule, MatCheckboxModule, MatDialogModule, MatFormFieldModule,
+    MatSelectModule,
+    FormsModule]
 })
 export class GrafoComponent {
     configuracion: any;

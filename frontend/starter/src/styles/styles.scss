@@ -49,19 +49,44 @@ h1 {
     height: 100%;
 }
 
-.spacer {
-    flex: 1 auto;
-}
-
-.spacer2 {
-    flex: 1 1 auto;
-}
-
 .cabecera{
     display: flex;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    flex: 0 0 auto;
+    align-items: center;
+    gap: 20px;    
+    border-bottom: 1px solid #9f9d9d;
+    width: 100%;
+}
+
+.cabecera-lista {
+  display: flex;       
+  align-items: center;
+  list-style: none;    
+  margin: 0;
+  padding-right: 10px;
+  gap: 15px;  
+  margin-left: auto;         
+}
+
+.cabecera-lista li {
+  display: flex;
+  align-items: center; /* Asegura el centrado de los contenedores internos */
+}
+
+.cabecera-texto{
+    margin-left: 20px;
+    padding-right: 100px;
+    font-size: x-large;
+}
+
+.cabecera-select {
+    padding-top: 20px;
+    width: 140px; 
+    height: 82px;
+}
+
+.cabecera-select2 {
+    text-align: center;
+    justify-content: center;
 }
 
 .header-dialog {
@@ -69,14 +94,16 @@ h1 {
     width: 100%;
 }
 
-.cabecera2{
-    display: flex;
-    margin-bottom: 15px;
-}
-
 .checkbox {
     background-color: white;
-    border-radius: 1em;
+    color: grey;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
 }
 
 .buscador {
@@ -238,3 +265,4 @@ h2 + p {
 #botonAN {
     text-align: center;
 }
+
