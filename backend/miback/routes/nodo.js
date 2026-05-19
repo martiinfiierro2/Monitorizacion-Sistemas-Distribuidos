@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { validarCampos } = require('../middleware/validar-campos');
-const { obtenerNodos, obtenerNodosOrdenados, obtenerNodoID, crearNodo , actualizarNodo, buscarNodos} = require('../controllers/nodo');
+const { obtenerNodos, obtenerNodosOrdenados, obtenerNodoID, crearNodo , actualizarNodo, buscarNodos, borrarNodo} = require('../controllers/nodo');
 
 const router = Router(); //Declaramos un router de tipo Router
 
@@ -38,5 +38,8 @@ router.put('/nodo/:id', [
     check('visible', "El campo visible está vacío").not().isEmpty(),
     validarCampos,
 ], actualizarNodo);
+
+//delete nodo
+router.delete('/nodo/:id', borrarNodo);
 
 module.exports = router; // Exportamos el objeto router para que se pueda usar fuera del modulo

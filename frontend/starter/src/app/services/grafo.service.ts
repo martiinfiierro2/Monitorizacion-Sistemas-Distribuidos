@@ -33,6 +33,10 @@ export class GrafoService {
     return this.http.get(this.urlAPI + '/nodos/' + datos);
   }
 
+  deleteNodo(id: any): Observable<any>{
+    return this.http.delete(this.urlAPI + '/nodo/' + id);
+  }
+
   async postNodo(datosNodo: any): Promise<any>{
     try {
       const response = await lastValueFrom(this.http.post(this.urlAPI + '/nodo', datosNodo));

@@ -187,6 +187,32 @@ const actualizarNodo = async (req, res) => {
     }
 }
 
+const borrarNodo = async (req, res) => {
+    try{
+        let id = req.params.id;
+        let nodo = await Nodo.findOne({ where: { id: id }});;
 
+        if (!nodo){
+            return res.status(404).json({
+              ok: false,
+              msg: `Nodo con id ${id} no existe`,
+            });
+        }
 
-module.exports = { obtenerNodos,obtenerNodosOrdenados, obtenerNodoID, buscarNodos, crearNodo, actualizarNodo };
+        await nodo.destroy();
+      
+        return res.json({
+            ok: true,
+            msg: 'deleteNodo',
+            nodo: nodo,
+        });
+    }catch (error) {
+        return res.status(500).json({
+            ok: false,
+            msg: 'Error en delete nodo ID',
+            error: error
+        });
+    }
+};
+
+module.exports = { obtenerNodos,obtenerNodosOrdenados, obtenerNodoID, buscarNodos, crearNodo, actualizarNodo, borrarNodo };

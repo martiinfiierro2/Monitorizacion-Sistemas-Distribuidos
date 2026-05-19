@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, inject, EventEmitter, Output, Inject, ViewChild} from '@angular/core';
+import { Component, ViewEncapsulation, inject, EventEmitter, Output, Inject, ViewChild, OnInit } from '@angular/core';
 import { GrafoService } from 'app/services/grafo.service';
 import { CommonModule } from '@angular/common';
 import { Dialog } from '../dialogs/dialog.component';
@@ -26,8 +26,9 @@ import {
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+
 export interface NodeData {
-  id: number,
+  id: number;
   tipo_nodo: string;
   nombre: string;
   url: string;
@@ -57,7 +58,7 @@ export interface NodeData {
       MatTooltipModule
     ]
 })
-export class ListaComponent{
+export class ListaComponent {
   listaNodos: NodeData[] = [];
   displayedColumns: string[] = ['tipo_nodo', 'nombre', 'url', 'puerto', 'geolocalizacion', 'actions'];
   dataSource = new MatTableDataSource<NodeData>(this.listaNodos);
@@ -87,117 +88,123 @@ export class ListaComponent{
     });
   }
 
+  deleteNodo(nodo: any){
+    this.http.deleteNodo(nodo.id);
+  }
+
   actualizarDataSource(nodos: NodeData[]) {
     this.listaNodos = nodos;
     this.dataSource.data = this.listaNodos;
   }
 
-    irAGrafo(): void {
-        this.router.navigate(['/grafo']);
-    }
-
-    irAMapa():void{
-      this.router.navigate(['/mapa']);
+  irAGrafo(): void {
+      this.router.navigate(['/grafo']);
   }
 
-    dialogo(tipo: any, id: any, url: any, puerto: any): void {
-      const dialogRef = this.dialog.open(Dialog, {
-        data: {
-          id: id,
-          tipo: tipo,
-          url: url,
-          puerto: puerto
-        }
-      });
-    }
+  irAMapa():void{
+    this.router.navigate(['/mapa']);
+  }
 
-    anadirNodo(): void {
-      const dialogRef = this.dialog.open(AnadirNodo, {
-      });
+  dialogo(tipo: any, id: any, url: any, puerto: any): void {
+    const dialogRef = this.dialog.open(Dialog, {
+      data: {
+        id: id,
+        tipo: tipo,
+        url: url,
+        puerto: puerto
+      }
+    });
+  }
 
-      dialogRef.componentInstance.dialogClosed.subscribe(() => {
-        this.getNodos();
-      });
-    }
+  anadirNodo(): void {
+    const dialogRef = this.dialog.open(AnadirNodo, {
+    });
 
-    actualizarNodo(nodo: any): void {
-      const dialogRef = this.dialog.open(ActualizarNodo, {
-        data: {
-          nodo: nodo
-        }
-      });
+    dialogRef.componentInstance.dialogClosed.subscribe(() => {
+      this.getNodos();
+    });
+  }
 
-      dialogRef.componentInstance.dialogClosed.subscribe(() => {
-        this.getNodos();
-      });
-    }
+  actualizarNodo(nodo: any): void {
+    const dialogRef = this.dialog.open(ActualizarNodo, {
+      data: {
+        nodo: nodo
+      }
+    });
+
+    dialogRef.componentInstance.dialogClosed.subscribe(() => {
+      this.getNodos();
+    });
+  }
     
-    descargar(): void {
-      this.http.getNodos().subscribe(
-        (data) => {
-          const jsonData = JSON.stringify(data, null, 2);
-          const blob = new Blob([jsonData], { type: 'application/json' });
-          const url = window.URL.createObjectURL(blob);
-  
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'listaNodos.json';
-          a.click();
-  
-          window.URL.revokeObjectURL(url);
-        },
-        (error) => {
-          console.error('Error al descargar el JSON:', error);
-        }
-      );
-    }
+  descargar(): void {
+    this.http.getNodos().subscribe(
+      (data) => {
+        const jsonData = JSON.stringify(data, null, 2);
+        const blob = new Blob([jsonData], { type: 'application/json' });
+        const url = window.URL.createObjectURL(blob);
 
-    async visible(nodo: any) {
-      const nodoAct: NodeData = {
-        id: nodo.id,
-        tipo_nodo: nodo.tipo_nodo,
-        nombre: nodo.nombre,
-        url: nodo.url,
-        puerto: nodo.puerto,
-        latitud: nodo.latitud,
-        longitud: nodo.longitud,
-        visible: true,
-        tiempo: nodo.tiempo,
-        orden: nodo.orden
-      };
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'listaNodos.json';
+        a.click();
 
-      try {
-        await this.http.putNodo(nodoAct);
-        this.getNodos();
-      } catch (error) {
-        console.error('Error al actualizar la visibilidad del nodo', error);
+        window.URL.createObjectURL(blob);
+        window.URL.revokeObjectURL(url);
+      },
+      (error) => {
+        console.error('Error al descargar el JSON:', error);
       }
+    );
+  }
+
+  async visible(nodo: any) {
+    const nodoAct: NodeData = {
+      id: nodo.id,
+      tipo_nodo: nodo.tipo_nodo,
+      nombre: nodo.nombre,
+      url: nodo.url,
+      puerto: nodo.puerto,
+      latitud: nodo.latitud,
+      longitud: nodo.longitud,
+      visible: true,
+      tiempo: nodo.tiempo,
+      orden: nodo.orden
+    };
+
+    try {
+      await this.http.putNodo(nodoAct);
+      this.getNodos();
+    } catch (error) {
+      console.error('Error al actualizar la visibilidad del nodo', error);
     }
+  }
     
-    async noVisible(nodo: any){
-      const nodoAct: NodeData = {
-        id: nodo.id,
-        tipo_nodo: nodo.tipo_nodo,
-        nombre: nodo.nombre,
-        url: nodo.url,
-        puerto: nodo.puerto,
-        latitud: nodo.latitud,
-        longitud: nodo.longitud,
-        visible: false,
-        tiempo: nodo.tiempo,
-        orden: nodo.orden
-      }
-
-      try {
-        await this.http.putNodo(nodoAct);
-        this.getNodos();
-      } catch (error) {
-        console.error('Error al actualizar la visibilidad del nodo', error);
-      }
+  async noVisible(nodo: any){
+    const nodoAct: NodeData = {
+      id: nodo.id,
+      tipo_nodo: nodo.tipo_nodo,
+      nombre: nodo.nombre,
+      url: nodo.url,
+      puerto: nodo.puerto,
+      latitud: nodo.latitud,
+      longitud: nodo.longitud,
+      visible: false,
+      tiempo: nodo.tiempo,
+      orden: nodo.orden
     }
+
+    try {
+      await this.http.putNodo(nodoAct);
+      this.getNodos();
+    } catch (error) {
+      console.error('Error al actualizar la visibilidad del nodo', error);
+    }
+  }
 }
+
 @Component({
-  selector: 'dialogDatos',
+  selector: 'dialogDatos-anadir',
   templateUrl: '../dialogs/anadirNodo.html',
   standalone: true,
   encapsulation: ViewEncapsulation.None,
@@ -215,8 +222,7 @@ export class ListaComponent{
     FormsModule
   ],
 })
-
-export class AnadirNodo{
+export class AnadirNodo {
   @Output() dialogClosed = new EventEmitter<void>();
 
   options = [
@@ -279,9 +285,8 @@ export class AnadirNodo{
   }
 }
 
-
 @Component({
-  selector: 'dialogDatos',
+  selector: 'dialogDatos-actualizar',
   templateUrl: '../dialogs/actualizarNodo.html',
   standalone: true,
   encapsulation: ViewEncapsulation.None,
@@ -299,8 +304,7 @@ export class AnadirNodo{
     FormsModule
   ],
 })
-
-export class ActualizarNodo{
+export class ActualizarNodo implements OnInit {
   @Output() dialogClosed = new EventEmitter<void>();
   nodo: NodeData;
 
@@ -318,7 +322,7 @@ export class ActualizarNodo{
   tiempo: Date;
   orden: number;
 
-  readonly dialogRef = inject(MatDialogRef<AnadirNodo>);
+  readonly dialogRef = inject(MatDialogRef<ActualizarNodo>);
 
   constructor(private http: GrafoService, @Inject(MAT_DIALOG_DATA) private data: any){}
 

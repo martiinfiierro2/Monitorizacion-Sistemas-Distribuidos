@@ -56,11 +56,14 @@
             <button matTooltip="Visualizar" *ngIf="!element.visible" [style.background-color]="'grey'" [style.margin]="'5px'" mat-mini-fab (click)="visible(element)" aria-label="Boton para visualizar">
               <mat-icon>visibility_off</mat-icon>
             </button>
-            <button matTooltip="Ocultar" *ngIf="element.visible" [style.background-color]="'grey'" [style.margin]="'5px'" mat-mini-fab (click)="noVisible(element)" aria-label="Boton para visualizar">
+            <button matTooltip="Ocultar" *ngIf="element.visible" [style.background-color]="'green'" [style.margin]="'5px'" mat-mini-fab (click)="noVisible(element)" aria-label="Boton para visualizar">
               <mat-icon>visibility</mat-icon>
             </button>
             <button matTooltip="Editar" [style.background-color]="'orange'" [style.margin]="'5px'" (click)="actualizarNodo(element)" mat-mini-fab aria-label="Boton para editar">
               <mat-icon>edit</mat-icon>
+            </button>
+            <button matTooltip="Borrar" [style.background-color]="'red'" [style.margin]="'5px'" (click)="borrarNodo(element)" mat-mini-fab aria-label="Boton para editar">
+              <mat-icon>delete</mat-icon>
             </button>
           </td>
         </ng-container>

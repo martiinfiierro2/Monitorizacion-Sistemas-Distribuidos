@@ -277,7 +277,28 @@ h2 + p {
     transition: transform 0.3s ease;
 }
 
-.anadir:hover {
+.acciones-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+    margin-top: 50px;
+}
+
+.delete {
+    background-color: #394353;
+    color: white;
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border-radius: 1em;
+    font-size: medium;
+    transition: transform 0.3s ease;
+}
+
+.anadir:hover, .delete:hover {
     transform: scale(1.2);
 }
 
