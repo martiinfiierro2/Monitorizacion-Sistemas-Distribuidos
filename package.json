@@ -1,0 +1,14 @@
+{
+  "name": "monitorizacion-sistemas-distribuidos",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/dev.cjs",
+    "demo": "node scripts/dev.cjs --demo",
+    "test": "node --test tests/*.test.cjs backend/miback/test/*.test.cjs",
+    "build": "npm --prefix frontend/starter run build",
+    "test:browser": "node scripts/browser-tests.cjs"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

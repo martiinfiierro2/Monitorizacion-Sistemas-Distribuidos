@@ -1,99 +1,17 @@
-<div class="dialog" *ngIf="nodo">
-    <div class="header-dialog">
-        <h1 mat-dialog-title style="font-size: xx-large"><strong>{{nodo.tipo_nodo}}: {{nodo.nombre}}</strong></h1>
-        <span class="spacer"></span>
-        <button class="close" mat-mini-fab (click)="cerrarDialog()"><mat-icon>close</mat-icon></button>
-    </div>
-    <mat-dialog-content>
-      <div class="datos-contenedor">
-        <!-- Contenedor Izquierdo -->
-        <div class="datosNodo">
-          <h1>Estado Interno</h1>
-          <div>
-            <h2 class="espacio"><strong>Puerto: </strong><p class="linea">{{nodo.puerto}}</p></h2>
-            <h2 class="espacio"><strong>URL: </strong><p class="linea">{{nodo.url}}</p></h2>
-            <h2 class="espacio"><strong>Última consulta: </strong><p class="linea" *ngIf="nodo.tiempo !== null">{{nodo.tiempo}}</p></h2>
-            <h2 class="espacio"><strong>Geolocalización: </strong><p>Latitud-> {{nodo.latitud}}, Longitud-> {{nodo.longitud}}</p></h2>
-            <h2 class="espacio"><strong>Orden: </strong><p class="linea">{{nodo.orden}}</p></h2>
-          </div>
-      
-          <div *ngIf="tipo.startsWith('Balanceador') && estado_interno">
-            <h2 class="espacio"><strong>Estado del sustituto: </strong> <p class="linea">{{estado_interno.Data.balancerSubsActive}}</p></h2>
-            <h2 class="espacio"><strong>Balanceador Main AYA: </strong> <p class="linea">{{estado_interno.Data.balancerMainMaxAYA}}</p></h2>
-            <h2 class="espacio"><strong>Mensajes recibidos: </strong> <p class="linea">{{estado_interno.Data.receivedMessages}}</p></h2>
-            <h2 *ngIf="estado_interno.Data.internalConfig.urlMain" class="espacio"><strong>URL Main: </strong> <p class="linea">{{estado_interno.Data.internalConfig.urlMain}}</p></h2>
-          </div>
-      
-          <div *ngIf="tipo.startsWith('Controlador') && estado_interno">
-            <h2 class="espacio"><strong>Estado del sustituto: </strong><p class="linea">{{estado_interno.Data.coordinatorSubsActive}}</p></h2>
-            <h2 class="espacio"><strong>Controlador Main AYA: </strong><p class="linea">{{estado_interno.Data.coordinatorMainMaxAYA}}</p></h2>
-            <h2 class="espacio"><strong>Mensajes recibidos: </strong><p class="linea">{{estado_interno.Data.receivedMessages}}</p></h2>
-            <h2 *ngIf="estado_interno.Data.internalConfig.urlCoordinatorlMain" class="espacio"><strong>URL Main: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlCoordinatorlMain}}</p></h2>
-            <h2 class="espacio"><strong>URL Balanceador Main: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlBalancerMain}}</p></h2>
-            <h2 class="espacio"><strong>URL Balanceador Subs: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlBalancerSubs}}</p></h2>
-          </div>
-          <div *ngIf="tipo === 'Procesador' && estado_interno">
-            <h2 class="espacio"><strong>Capacidad: </strong><p class="linea">{{estado_interno.Data.internalConfig.capacity}}</p></h2>
-            <h2 class="espacio"><strong>Preferencia: </strong><p class="linea">{{estado_interno.Data.internalConfig.preference}}</p></h2>
-            <h2 class="espacio"><strong>URL Coordinador Main: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlCoordinatorMain}}</p></h2>
-            <h2 class="espacio"><strong>URL Coordinador Subs: </strong><p class="linea">{{estado_interno.Data.internalConfig.urlCoordinatorSubs}}</p></h2>
-          </div>
-        </div>
-      
-        <!-- Contenedor Derecho -->
-        <div class="estado_interno">
-          <div *ngIf="tipo.startsWith('Balanceador') && estado_interno" class="tabla-contenedor">
-            <h1>Lista de Procesadores</h1>
-            <table mat-table [dataSource]="dataSource" class="mat-table">
-              <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
-              </ng-container>
-      
-              <ng-container matColumnDef="load">
-                <th mat-header-cell *matHeaderCellDef> Carga </th>
-                <td mat-cell *matCellDef="let element"> {{ element.load }} </td>
-              </ng-container>
-      
-              <ng-container matColumnDef="url">
-                <th mat-header-cell *matHeaderCellDef> URL </th>
-                <td mat-cell *matCellDef="let element"> {{ element.url }} </td>
-              </ng-container>
-      
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-          </div>
-      
-          <div *ngIf="tipo.startsWith('Controlador') && estado_interno" class="tabla-contenedor">
-            <h1>Lista de Procesadores</h1>
-            <table mat-table [dataSource]="dataSource" class="mat-table">
-              <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
-              </ng-container>
-      
-              <ng-container matColumnDef="capacity">
-                <th mat-header-cell *matHeaderCellDef> Capacidad </th>
-                <td mat-cell *matCellDef="let element"> {{ element.capacity }} </td>
-              </ng-container>
-      
-              <ng-container matColumnDef="url">
-                <th mat-header-cell *matHeaderCellDef> URL </th>
-                <td mat-cell *matCellDef="let element"> {{ element.url }} </td>
-              </ng-container>
-      
-              <ng-container matColumnDef="load">
-                <th mat-header-cell *matHeaderCellDef> Carga </th>
-                <td mat-cell *matCellDef="let element"> {{ element.load }} </td>
-              </ng-container>
-      
-              <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns3;"></tr>
-            </table>
-          </div>
-        </div>
-      </div>
-      
-    </mat-dialog-content>
+﻿<div class="dialog" style="padding:20px;max-width:1000px">
+ <div style="display:flex;align-items:center;justify-content:space-between;gap:24px"><h1 mat-dialog-title>{{tipo}}: {{nodo?.nombre || 'Cargando…'}}</h1><button class="close" type="button" (click)="cerrarDialog()" aria-label="Cerrar detalle">Cerrar</button></div>
+ <mat-dialog-content>
+  <p *ngIf="loading" role="status">Consultando el estado…</p><p *ngIf="error" role="alert" class="monitor-error">{{error}}. {{estado_interno ? 'Se conserva el último estado recibido.' : ''}}</p>
+  <section *ngIf="nodo"><h2>Datos del catálogo</h2><p>{{nodo.url}} · Puerto {{nodo.puerto}} · Orden {{nodo.orden ?? 'Sin definir'}}</p><p>Latitud {{nodo.latitud}}, longitud {{nodo.longitud}}</p><p>Última consulta correcta anterior: {{nodo.tiempo ? (nodo.tiempo | date:'dd/MM/yyyy HH:mm:ss') : 'Sin consultas guardadas'}}</p></section>
+  <section *ngIf="estado_interno as state"><h2>Estado del proceso</h2><p>Rol confirmado: <strong>{{currentRole}}</strong> · Consulta actual: {{lastQuery | date:'HH:mm:ss'}}</p>
+   <p *ngIf="tipo !== 'Procesador'">Mensajes en ventana: {{state.Data.receivedMessages ?? 'Sin dato'}} · Mensajes/s: {{state.Data.receivedRate ?? 'Sin dato'}}</p>
+   <p *ngIf="tipo.endsWith('Subs')">Intentos restantes al principal: {{state.Data.balancerMainMaxAYA ?? state.Data.coordinatorMainMaxAYA}}</p>
+   <p *ngIf="tipo === 'Procesador'">Capacidad: {{state.Data.internalConfig.capacity}} mensajes/s · Preferencia: {{state.Data.internalConfig.preference}} · Mensajes aceptados: {{state.Data.receivedMessages ?? 'Sin dato'}} · Reintentos duplicados: {{state.Data.duplicates ?? 'Sin dato'}}</p>
+   <p *ngIf="state.Data.delivery as delivery">Cola pendiente: {{delivery.pending}} · Entregados: {{delivery.delivered}} · Intentos fallidos: {{delivery.failedAttempts}} · Rechazados: {{delivery.rejected}}</p>
+   <p *ngIf="state.Data.mqttConnected !== undefined">Entrada MQTT: {{state.Data.mqttConnected ? 'Conectada' : 'Desconectada o sin configurar'}}</p>
+   <p *ngIf="state.Data.registration as registration">Registro en principal: {{registration.main ? 'Confirmado' : 'Pendiente'}} · Sustituto: {{registration.subs ? 'Confirmado' : 'Pendiente'}}</p><details><summary>Configuración del proceso</summary><pre>{{state.Data.internalConfig | json}}</pre></details>
+   <section *ngIf="tipo.startsWith('Controlador')"><h2>Procesadores registrados ({{registered.length}})</h2><table style="width:100%;text-align:left"><thead><tr><th>Nombre</th><th>Dirección</th><th>Capacidad</th><th>Preferencia</th><th>Intentos restantes</th></tr></thead><tbody><tr *ngFor="let item of registered"><td>{{item.name}}</td><td>{{item.url}}</td><td>{{item.capacity}}</td><td>{{item.preference}}</td><td>{{item.AYACOUNT}}</td></tr></tbody></table><p *ngIf="!registered.length">No hay procesadores registrados.</p></section>
+   <section *ngIf="tipo !== 'Procesador'"><h2>Destinos seleccionados ({{selected.length}})</h2><table style="width:100%;text-align:left"><thead><tr><th>Nombre</th><th>Dirección</th><th>Reparto asignado</th></tr></thead><tbody><tr *ngFor="let item of selected"><td>{{item.name}}</td><td>{{item.url}}</td><td>{{item.load}} %</td></tr></tbody></table><p *ngIf="!selected.length">No hay destinos seleccionados.</p></section>
+  </section>
+ </mat-dialog-content>
 </div>

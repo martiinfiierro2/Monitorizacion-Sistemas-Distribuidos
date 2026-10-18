@@ -1,192 +1,85 @@
 const { Nodo } = require('../models/nodo');
 const { Op } = require('sequelize');
-
-const obtenerNodos = async(req, res) => {
-    try{
-        let nodos;
-
-        nodos = await Nodo.findAll();
-        
-        return res.json({
-            ok: true,
-            msg: 'getNodos',
-            nodos: nodos,
-        });
-    }catch (error) {
-        return res.status(500).json({
-            ok: false,
-            msg: 'Error en get all nodos',
-            error: error
-        });
-    }
-};
-
-const obtenerNodosOrdenados = async(req, res) => {
-    try{
-        let nodos;
-
-        nodos = await Nodo.findAll({
-            order: [['orden', 'ASC']],
-        });
-        
-        return res.json({
-            ok: true,
-            msg: 'getNodosOrdenados',
-            nodos: nodos,
-        });
-    }catch (error) {
-        return res.status(500).json({
-            ok: false,
-            msg: 'Error al recuperar los nodos por orden',
-            error: error
-        });
-    }
-};
-
-const obtenerNodoID = async(req, res) => {
-    try{
-        let id = req.params.id;
-        let nodo = await Nodo.findOne({ where: { id: id }});;
-
-        if (!nodo){
-            return res.status(404).json({
-              ok: false,
-              msg: `Nodo con id ${id} no existe`,
-            });
-        }
-      
-        return res.json({
-            ok: true,
-            msg: 'getNodoID',
-            nodo: nodo,
-        });
-    }catch (error) {
-        return res.status(500).json({
-            ok: false,
-            msg: 'Error en get nodo ID',
-            error: error
-        });
-    }
-};
-
-const buscarNodos = async(req, res) => {
-    const datos = req.params.datos;
-
-    try{
-        let nodos = await Nodo.findAll({
-            where: {
-                [Op.or]: [
-                    { tipo_nodo: { [Op.like]: `%${datos}%` } },
-                    { nombre: { [Op.like]: `%${datos}%` } },
-                    { puerto: { [Op.like]: `%${datos}%` } },
-                ],
-            },
-        });
-
-        if (nodos.length === 0) {
-            return res.status(404).json({
-                ok: false,
-                msg: 'No se encontraron nodos con esos parámetros de búsqueda.',
-            });
-        }
-
-        res.json({
-            ok: true,
-            msg: 'buscarNodos',
-            nodos: nodos
-        });
-    }catch (error) {
-        return res.status(400).json({
-            ok: false,
-            msg: 'Error buscando nodos',
-            error: error.message
-        });
-    }
+const { normalizeAddress } = require('../middleware/node-validation');
+const fields = ['tipo_nodo', 'nombre', 'url', 'puerto', 'latitud', 'longitud', 'visible', 'orden'];
+const values = body => normalizeAddress(Object.fromEntries(fields.filter(key => body[key] !== undefined).map(key => [key, body[key]])));
+const failure = (res, error) => { console.error('Catálogo:', error.name); return res.status(error.name === 'SequelizeUniqueConstraintError' ? 409 : 503).json({ ok: false, msg: error.name === 'SequelizeUniqueConstraintError' ? 'Ya existe ese destino' : 'No se pudo acceder al catálogo. Comprueba la base de datos.' }); };
+const obtain = ordered => async (req, res) => { try {
+    return res.json({ ok: true, nodos: await Nodo.findAll({ order: ordered ? [['orden', 'ASC'], ['id', 'ASC']] : [['id', 'ASC']] }) });
 }
-
-const crearNodo = async (req, res) => {
+catch (e) {
+    return failure(res, e);
+} };
+const obtenerNodos = obtain(false), obtenerNodosOrdenados = obtain(true);
+async function obtenerNodoID(req, res) { try {
+    const nodo = await Nodo.findByPk(req.params.id);
+    return nodo ? res.json({ ok: true, nodo }) : res.status(404).json({ ok: false, msg: 'Nodo no encontrado' });
+}
+catch (e) {
+    return failure(res, e);
+} }
+async function buscarNodos(req, res) { try {
+    const text = String(req.params.datos || '').slice(0, 100);
+    const nodos = await Nodo.findAll({ where: { [Op.or]: ['tipo_nodo', 'nombre', 'url', 'puerto'].map(key => ({ [key]: { [Op.like]: '%' + text + '%' } })) }, order: [['id', 'ASC']] });
+    return res.json({ ok: true, nodos });
+}
+catch (e) {
+    return failure(res, e);
+} }
+async function save(req, res) {
     try {
-        let nodo = await Nodo.findOne({
-            where: {
-                url: req.body.url,
-                puerto: req.body.puerto
-            }
-        });
-
-        if (!nodo) {
-            let newNodo = await Nodo.create(req.body);
-            return res.status(200).json({
-                ok: true,
-                msg: 'Nodo creado correctamente',
-                nodo: newNodo
-            });
-        } else{
-            return res.status(409).json({
-                ok: false,
-                msg: `Ya existe un nodo con url ${req.body.url} y puerto ${req.body.puerto}`
-            });
+        const data = values(req.body);
+        const node = req.params.id ? await Nodo.findByPk(req.params.id) : null;
+        if (req.params.id && !node)
+            return res.status(404).json({ ok: false, msg: 'Nodo no encontrado' });
+        // Conciliar también direcciones antiguas (localhost y puerto embebido) sin alterarlas.
+        const duplicates = await Nodo.findAll({ attributes: ['id', 'url', 'puerto'] });
+        if (duplicates.some(item => { if (item.id === node?.id)
+            return false; try {
+            const existing = normalizeAddress(item.toJSON());
+            return existing.url === data.url && existing.puerto === data.puerto;
         }
-    } catch (error) {
-        return res.status(500).json({
-            ok: false,
-            msg: 'Error creando el nodo',
-            error: error.message
-        });
+        catch {
+            return false;
+        } }))
+            return res.status(409).json({ ok: false, msg: 'Ya existe un nodo con esa dirección y puerto' });
+        const nodo = node ? await node.update(data) : await Nodo.create({ ...data, tiempo: null });
+        return res.status(node ? 200 : 201).json({ ok: true, nodo });
+    }
+    catch (e) {
+        return failure(res, e);
     }
 }
-
-const actualizarNodo = async (req, res) => {
+async function eliminarNodo(req, res) { try {
+    const count = await Nodo.destroy({ where: { id: req.params.id } });
+    return count ? res.json({ ok: true }) : res.status(404).json({ ok: false, msg: 'Nodo no encontrado' });
+}
+catch (e) {
+    return failure(res, e);
+} }
+async function registrarConsulta(req, res) { try {
+    const nodo = await Nodo.findByPk(req.params.id);
+    if (!nodo)
+        return res.status(404).json({ ok: false, msg: 'Nodo no encontrado' });
+    await nodo.update({ tiempo: new Date() });
+    return res.json({ ok: true, tiempo: nodo.tiempo });
+}
+catch (e) {
+    return failure(res, e);
+} }
+async function debugNodo(req, res) {
     try {
-        let id = req.params.id
-        let { tipo_nodo, nombre, url, puerto, latitud, longitud, visible, tiempo, orden } = req.body;
-        let nodo = await Nodo.findByPk(id);
-
-        if (nodo) {
-            let comprobacionTNyN = await Nodo.findOne({
-                where: {
-                    id: { [Op.ne]: id },
-                    url: req.body.url,
-                    puerto: req.body.puerto
-                }
-            })
-            if(!comprobacionTNyN){
-                await nodo.update({
-                    tipo_nodo: tipo_nodo,
-                    nombre: nombre,
-                    url: url,
-                    puerto: puerto,
-                    latitud: latitud,
-                    longitud: longitud,
-                    visible: visible,
-                    tiempo: tiempo,
-                    orden: orden
-                });
-                return res.status(200).json({
-                    ok: true,
-                    msg: 'Nodo actulizado correctamente',
-                    nodo: nodo
-                });
-            } else{
-                return res.status(409).json({
-                    ok: false,
-                    msg: `Ya existe un nodo con url ${req.body.url} y puerto ${req.body.puerto}`
-                });
-            }
-        } else {
-            return res.status(404).json({
-                ok: false,
-                msg: 'Nodo no encontrado'
-            });
-        }
-    } catch (error) {
-        return res.status(500).json({
-            ok: false,
-            msg: 'Error actualizando el nodo',
-            error: error.message
-        });
+        const node = await Nodo.findByPk(req.params.id);
+        if (!node)
+            return res.status(404).json({ msg: 'Nodo no encontrado' });
+        const address = normalizeAddress(node.toJSON());
+        const response = await fetch(address.url + ':' + address.puerto + '/sfmp', { method: 'POST', headers: { 'Content-Type': 'application/json', ...(process.env.SFMP_TOKEN ? { Authorization: 'Bearer ' + process.env.SFMP_TOKEN } : {}) }, body: JSON.stringify({ UID: 0, Type: 'REQUEST', Operation: 'DEBUG', Data: {} }), signal: AbortSignal.timeout(Number(process.env.REQUEST_TIMEOUT || 2500)) });
+        if (!response.ok)
+            return res.status(502).json({ msg: 'El proceso rechazó la consulta de estado' });
+        return res.json(await response.json());
+    }
+    catch {
+        return res.status(502).json({ msg: 'El proceso no responde o su dirección no es válida' });
     }
 }
-
-
-
-module.exports = { obtenerNodos,obtenerNodosOrdenados, obtenerNodoID, buscarNodos, crearNodo, actualizarNodo };
+module.exports = { obtenerNodos, obtenerNodosOrdenados, obtenerNodoID, buscarNodos, crearNodo: save, actualizarNodo: save, eliminarNodo, registrarConsulta, debugNodo };

@@ -3,12 +3,12 @@
         <h1 mat-dialog-title style="font-size: xx-large"><strong>Añadir Nodo</strong></h1>
         <span class="spacer"></span>
         <button mat-mini-fab (click)="cerrarDialog()">
-            <mat-icon>close</mat-icon>
+            <mat-icon svgIcon="mat_outline:close"></mat-icon>
         </button>
     </div>
-    <mat-dialog-content>
+    <mat-dialog-content><p *ngIf="errorPeticion2" role="alert" style="color:#a01919">{{errorPeticion2}}</p>
             <div class="grid-container">
-                <div>     
+                <div>
                     <mat-form-field class="largo">
                         <mat-label>Tipo de nodo</mat-label>
                         <mat-select [(ngModel)]="tipoNodo">
@@ -41,14 +41,14 @@
                     </mat-form-field>
                     <p style="color:red" *ngIf="errorPeticion && !tipoNodo">El tipo de nodo es necesario</p>
                 </div>
-                <div>     
+                <div>
                     <mat-form-field class="largo">
                         <mat-label>Nombre</mat-label>
                         <input matInput type="text" [(ngModel)]="nombre"/>
                     </mat-form-field>
                     <p style="color:red" *ngIf="errorPeticion && !nombre">El nombre es necesario</p>
                 </div>
-                <div>     
+                <div>
                     <mat-form-field class="largo">
                         <mat-label>URL</mat-label>
                         <input matInput type="text" [(ngModel)]="url"/>
@@ -73,16 +73,16 @@
                             <mat-label>Geolocalización</mat-label>
                             <input matInput type="number" placeholder="Latitud" [(ngModel)]="latitud"/>
                         </mat-form-field>
-                          
+
                         <mat-form-field floatLabel="always" class="corto2">
                             <input matInput type="number" placeholder="Longitud" [(ngModel)]="longitud"/>
                         </mat-form-field>
                         <p style="color:red" *ngIf="errorPeticion && latitud == null && longitud != null">La latitud es necesaria</p>
                         <p style="color:red" *ngIf="errorPeticion && latitud != null && longitud == null">La longitud es necesaria</p>
                         <p style="color:red" *ngIf="errorPeticion && latitud == null && longitud == null">La latitud y longitud son necesarias</p>
-                    </div>                     
+                    </div>
                 </div>
-                <div>     
+                <div>
                     <mat-form-field class="corto">
                         <mat-label>Visiblidad</mat-label>
                         <mat-select [(ngModel)]="visible">
@@ -92,9 +92,9 @@
                     </mat-form-field>
                 </div>
             </div>
-            
-        <div id="botonAN">     
-            <button (click)="anadirNodo()" class="anadir" >Añadir</button>
+
+        <div id="botonAN">
+            <button (click)="anadirNodo()" class="anadir" [disabled]="busy" >Añadir</button>
         </div>
     </mat-dialog-content>
 </div>

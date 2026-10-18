@@ -1,0 +1,20 @@
+﻿name: Comprobaciones
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: |
+            backend/miback/package-lock.json
+            backend/v2/package-lock.json
+            frontend/starter/package-lock.json
+      - run: npm ci --prefix backend/miback
+      - run: npm ci --prefix backend/v2
+      - run: npm ci --prefix frontend/starter
+      - run: npm test
+      - run: npm run build

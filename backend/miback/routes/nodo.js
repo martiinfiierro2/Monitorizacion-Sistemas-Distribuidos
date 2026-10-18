@@ -1,42 +1,15 @@
 const { Router } = require('express');
-const { check } = require('express-validator');
 const { validarCampos } = require('../middleware/validar-campos');
-const { obtenerNodos, obtenerNodosOrdenados, obtenerNodoID, crearNodo , actualizarNodo, buscarNodos} = require('../controllers/nodo');
-
-const router = Router(); //Declaramos un router de tipo Router
-
-//get all nodos
-router.get('/nodos', obtenerNodos);
-
-//get all nodos
-router.get('/nodosOrden', obtenerNodosOrdenados);
-
-//get nodo
-router.get('/nodo/:id', obtenerNodoID);
-
-//buscar nodos
-router.get('/nodos/:datos', buscarNodos);
-
-router.post('/nodo', [
-    check('tipo_nodo', "El tipo de nodo está vacío").not().isEmpty(),
-    check('nombre', "El nombre está vacío").not().isEmpty(),
-    check('url', "La url está vacía").not().isEmpty(),
-    check('puerto', "El puerto está vacío").not().isEmpty(),
-    check('latitud', "La latitud está vacía").not().isEmpty(),
-    check('longitud', "La longitud está vacía").not().isEmpty(),
-    check('visible', "El campo visible está vacío").not().isEmpty(),
-    validarCampos,
-], crearNodo);
-
-router.put('/nodo/:id', [
-    check('tipo_nodo', "El tipo de nodo está vacío").not().isEmpty(),
-    check('nombre', "El nombre está vacío").not().isEmpty(),
-    check('url', "La url está vacía").not().isEmpty(),
-    check('puerto', "El puerto está vacío").not().isEmpty(),
-    check('latitud', "La latitud está vacía").not().isEmpty(),
-    check('longitud', "La longitud está vacía").not().isEmpty(),
-    check('visible', "El campo visible está vacío").not().isEmpty(),
-    validarCampos,
-], actualizarNodo);
-
-module.exports = router; // Exportamos el objeto router para que se pueda usar fuera del modulo
+const { nodeRules, idRules } = require('../middleware/node-validation');
+const c = require('../controllers/nodo');
+const router = Router();
+router.get('/nodos', c.obtenerNodos);
+router.get('/nodosOrden', c.obtenerNodosOrdenados);
+router.get('/nodos/:datos', c.buscarNodos);
+router.get('/nodo/:id', idRules, validarCampos, c.obtenerNodoID);
+router.get('/nodo/:id/debug', idRules, validarCampos, c.debugNodo);
+router.patch('/nodo/:id/consulta', idRules, validarCampos, c.registrarConsulta);
+router.post('/nodo', nodeRules, validarCampos, c.crearNodo);
+router.put('/nodo/:id', idRules, nodeRules, validarCampos, c.actualizarNodo);
+router.delete('/nodo/:id', idRules, validarCampos, c.eliminarNodo);
+module.exports = router;

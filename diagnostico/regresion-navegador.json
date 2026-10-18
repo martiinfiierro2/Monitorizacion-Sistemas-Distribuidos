@@ -1,0 +1,2657 @@
+[
+  {
+    "view": "grafo",
+    "scenario": "dos_grupos_normales",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM1>BM1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "balanceador_main_caido",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>P1",
+      "BS1>Q1",
+      "BS2>BM2",
+      "CM1>BS1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "controlador_main_caido",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS1>BM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "dos_main_caidos",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>P1",
+      "BS1>Q1",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS1>BS1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BS1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BS1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "todos_caidos",
+    "pass": true,
+    "expected": [],
+    "actual": {
+      "initialized": true,
+      "links": [],
+      "configuredLinks": [],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "procesador_caido",
+    "pass": true,
+    "expected": [
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM1>BM1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "procesador_oculto_con_main",
+    "pass": true,
+    "expected": [
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM1>BM1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "procesador_oculto_con_subs",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>Q1",
+      "BS2>BM2",
+      "CM1>BS1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "subs_balanceador_aun_no_activo",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "subs_controlador_aun_no_activo",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "main_balanceador_fuera_catalogo",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>P1",
+      "BS1>Q1",
+      "BS2>BM2",
+      "CM1>BS1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "main_controlador_fuera_catalogo",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS1>BM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "equivalencia_localhost",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM1>BM1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "debug_formato_invalido",
+    "pass": true,
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "coordenadas_invalidas",
+    "pass": true,
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "tipo_desconocido",
+    "pass": true,
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "configuredLinks": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1",
+        "CS1",
+        "BM1",
+        "BS1",
+        "P1",
+        "Q1",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P2",
+        "Q2"
+      ],
+      "size": [
+        1180,
+        470
+      ]
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "dos_grupos_normales",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM1>BM1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "balanceador_main_caido",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>P1",
+      "BS1>Q1",
+      "BS2>BM2",
+      "CM1>BS1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "controlador_main_caido",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS1>BM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "dos_main_caidos",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>P1",
+      "BS1>Q1",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS1>BS1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BS1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "todos_caidos",
+    "pass": true,
+    "expected": [],
+    "actual": {
+      "initialized": true,
+      "links": [],
+      "nodes": [
+        "CM1 · Sin grupo",
+        "CS1 · Sin grupo",
+        "BM1 · Sin grupo",
+        "BS1 · Sin grupo",
+        "P1 · Sin grupo",
+        "Q1 · Sin grupo",
+        "CM2 · Sin grupo",
+        "CS2 · Sin grupo",
+        "BM2 · Sin grupo",
+        "BS2 · Sin grupo",
+        "P2 · Sin grupo",
+        "Q2 · Sin grupo"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "procesador_caido",
+    "pass": true,
+    "expected": [
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM1>BM1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "procesador_oculto_con_main",
+    "pass": true,
+    "expected": [
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM1>BM1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "procesador_oculto_con_subs",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>Q1",
+      "BS2>BM2",
+      "CM1>BS1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "subs_balanceador_aun_no_activo",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "subs_controlador_aun_no_activo",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "main_balanceador_fuera_catalogo",
+    "pass": true,
+    "expected": [
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>P1",
+      "BS1>Q1",
+      "BS2>BM2",
+      "CM1>BS1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "main_controlador_fuera_catalogo",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM2>BM2",
+      "CS1>BM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "equivalencia_localhost",
+    "pass": true,
+    "expected": [
+      "BM1>P1",
+      "BM1>Q1",
+      "BM2>P2",
+      "BM2>Q2",
+      "BS1>BM1",
+      "BS2>BM2",
+      "CM1>BM1",
+      "CM2>BM2",
+      "CS1>CM1",
+      "CS2>CM2"
+    ],
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "debug_formato_invalido",
+    "pass": true,
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "coordenadas_invalidas",
+    "pass": true,
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "tipo_desconocido",
+    "pass": true,
+    "actual": {
+      "initialized": true,
+      "links": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "nodes": [
+        "CM1 · Grupo 1",
+        "CS1 · Grupo 1",
+        "BM1 · Grupo 1",
+        "BS1 · Grupo 1",
+        "P1 · Grupo 1",
+        "Q1 · Grupo 1",
+        "CM2 · Grupo 2",
+        "CS2 · Grupo 2",
+        "BM2 · Grupo 2",
+        "BS2 · Grupo 2",
+        "P2 · Grupo 2",
+        "Q2 · Grupo 2"
+      ],
+      "size": {
+        "x": 1180,
+        "y": 470
+      }
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "cambio_nombre",
+    "pass": true,
+    "expected": "La etiqueta cambia",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "RENAMED",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "cambio_visibilidad",
+    "pass": true,
+    "expected": "P deja de dibujarse",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "alta_nodo",
+    "pass": true,
+    "expected": "Aparece NEW sin excepciones",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q",
+        "NEW"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "baja_ultimo_nodo",
+    "pass": true,
+    "expected": "Q desaparece",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "catalogo_vacio",
+    "pass": true,
+    "expected": "Se vacía la representación",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [],
+      "links": [],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "cambio_lista_balanceo",
+    "pass": true,
+    "expected": "El enlace a P se sustituye por Q",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>105",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "caida_procesador",
+    "pass": true,
+    "expected": "Se actualiza la disponibilidad y deja de mostrarse enlace operativo hacia P",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "redimensionar",
+    "pass": true,
+    "expected": "El lienzo se ajusta al contenedor",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 540,
+      "containerWidth": 540
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "ocultar_mostrar_conexiones",
+    "pass": true,
+    "expected": "Se ocultan y recuperan todas las líneas",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "api_error_recuperacion",
+    "pass": true,
+    "expected": "El sondeo se recupera tras un error de API",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "nodo_sin_responder",
+    "pass": true,
+    "expected": "Una respuesta lenta no mantiene obsoleto el conjunto",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "early": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "103>102"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "elapsed": 2225,
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "navegar_con_peticion_pendiente",
+    "pass": true,
+    "expected": "La vista destruida no conserva ni reactiva su sondeo",
+    "url": "http://127.0.0.1:24500/lista",
+    "timerClosed": true,
+    "calls": 3,
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "cambio_nombre",
+    "pass": true,
+    "expected": "La etiqueta cambia",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "RENAMED",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "cambio_visibilidad",
+    "pass": true,
+    "expected": "P deja de dibujarse",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "alta_nodo",
+    "pass": true,
+    "expected": "Aparece NEW sin excepciones",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q",
+        "NEW"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "baja_ultimo_nodo",
+    "pass": true,
+    "expected": "Q desaparece",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "catalogo_vacio",
+    "pass": true,
+    "expected": "Se vacía la representación",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [],
+      "links": [],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "cambio_lista_balanceo",
+    "pass": true,
+    "expected": "El enlace a P se sustituye por Q",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>35,15",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "caida_procesador",
+    "pass": true,
+    "expected": "Se actualiza la disponibilidad y deja de mostrarse enlace operativo hacia P",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "redimensionar",
+    "pass": true,
+    "expected": "El lienzo se ajusta al contenedor",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 540,
+      "containerWidth": 540
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "ocultar_mostrar_conexiones",
+    "pass": true,
+    "expected": "Se ocultan y recuperan todas las líneas",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "api_error_recuperacion",
+    "pass": true,
+    "expected": "El sondeo se recupera tras un error de API",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "nodo_sin_responder",
+    "pass": true,
+    "expected": "Una respuesta lenta no mantiene obsoleto el conjunto",
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "early": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1180,
+      "containerWidth": 1180
+    },
+    "elapsed": 2217,
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "navegar_con_peticion_pendiente",
+    "pass": true,
+    "expected": "La vista destruida no conserva ni reactiva su sondeo",
+    "url": "http://127.0.0.1:24500/lista",
+    "timerClosed": true,
+    "calls": 3,
+    "errors": []
+  },
+  {
+    "scenario": "alta_por_formulario",
+    "pass": true
+  },
+  {
+    "scenario": "editar_por_formulario",
+    "pass": true
+  },
+  {
+    "scenario": "ocultar_desde_lista",
+    "pass": true
+  },
+  {
+    "scenario": "eliminar_con_confirmacion",
+    "pass": true,
+    "count": 3,
+    "debug": {
+      "result": true,
+      "error": ""
+    },
+    "requests": [
+      {
+        "pathname": "/api/nodo/4",
+        "method": "DELETE"
+      }
+    ]
+  },
+  {
+    "scenario": "busqueda_vacia",
+    "pass": true
+  },
+  {
+    "scenario": "detalle_registrados_y_seleccionados",
+    "pass": true
+  },
+  {
+    "scenario": "detalle_se_refresca",
+    "pass": true
+  },
+  {
+    "scenario": "debug_fallido_no_guarda_fecha",
+    "pass": true
+  },
+  {
+    "scenario": "acceso_con_clave",
+    "pass": true
+  }
+]

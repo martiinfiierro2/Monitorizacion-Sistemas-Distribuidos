@@ -4,7 +4,7 @@
   "description": "",
   "main": "balancer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test ../../tests/delivery.test.cjs ../../tests/runtime.test.cjs",
     "balancer_main": "nodemon ./balancer/balancer 3100 main",
     "balancer_subs": "nodemon ./balancer/balancer 3101 subs http://127.0.0.1:3100",
     "coordinator_main": "nodemon ./coordinator/coordinator 3000 http://127.0.0.1:3100 http://127.0.0.1:3101 main",

@@ -1,0 +1,4000 @@
+{
+  "date": "2026-10-18",
+  "commit": "3ac9acd6d861f3fa50983522a8c7959e7d584983",
+  "method": {
+    "connectionCases": "16 scenarios per view; independent browser pages; controlled HTTP DEBUG and catalogue responses",
+    "transitions": "12 scenarios per view; component polling invoked after fixture changes; automatic polling for API recovery",
+    "runtime": "Two isolated groups, two processors each, actual Node processes; MQTT transport replaced with local event source; accelerated AYA timers",
+    "limits": [
+      "No real TTN authentication or delivery certified",
+      "No production load or network partition test",
+      "Slow-node case records synchronization latency; pass=false is an observation, not an agreed SLA failure"
+    ]
+  },
+  "live": [
+    {
+      "nodo": {
+        "id": 31,
+        "tipo_nodo": "Balanceador Main",
+        "nombre": "BM1",
+        "url": "http://127.0.0.1",
+        "puerto": "3100",
+        "latitud": "40",
+        "longitud": "80",
+        "visible": true,
+        "tiempo": "2026-05-19T09:33:34.000Z",
+        "orden": 1
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 33,
+        "tipo_nodo": "Controlador Main",
+        "nombre": "CM1",
+        "url": "http://127.0.0.1",
+        "puerto": "3000",
+        "latitud": "62",
+        "longitud": "130",
+        "visible": true,
+        "tiempo": "2026-05-19T09:33:12.000Z",
+        "orden": 1
+      },
+      "status": 200,
+      "debug": {
+        "UID": "ae408ca373aea611924f1f0c3",
+        "Type": "REPLY",
+        "Operation": "RESULT",
+        "Data": {
+          "UID": 0,
+          "coordinatorSubsActive": false,
+          "coordinatorMainMaxAYA": 3,
+          "receivedMessages": 2,
+          "processorsList": [
+            {
+              "name": "process3",
+              "capacity": 100,
+              "url": "http://127.0.0.1:4003",
+              "preference": 0.5,
+              "AYACOUNT": 3,
+              "AYAUID": ""
+            }
+          ],
+          "balancerList": [
+            {
+              "name": "process3",
+              "capacity": 100,
+              "url": "http://127.0.0.1:4003",
+              "load": 100
+            }
+          ],
+          "internalConfig": {
+            "port": 3000,
+            "type": "main",
+            "urlBalancerMain": "http://127.0.0.1:3100",
+            "urlBalancerSubs": "http://127.0.0.1:3101",
+            "urlCoordinatorlMain": "",
+            "typeRol": ""
+          }
+        }
+      }
+    },
+    {
+      "nodo": {
+        "id": 35,
+        "tipo_nodo": "Procesador",
+        "nombre": "P1",
+        "url": "http://127.0.0.1",
+        "puerto": "4001",
+        "latitud": "-32",
+        "longitud": "154",
+        "visible": true,
+        "tiempo": "2026-05-18T20:45:01.000Z",
+        "orden": 1
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 32,
+        "tipo_nodo": "Balanceador Subs",
+        "nombre": "BS1",
+        "url": "http://127.0.0.1",
+        "puerto": "3101",
+        "latitud": "36",
+        "longitud": "20",
+        "visible": true,
+        "tiempo": "2026-05-18T15:02:52.000Z",
+        "orden": 2
+      },
+      "status": 200,
+      "debug": {
+        "UID": "7fd6982634965a1fa67d07f3d",
+        "Type": "REPLY",
+        "Operation": "RESULT",
+        "Data": {
+          "UID": 0,
+          "balancerSubsActive": true,
+          "balancerMainMaxAYA": -98,
+          "receivedMessages": 3,
+          "internalConfig": {
+            "port": 3101,
+            "type": "subs",
+            "urlMain": "http://127.0.0.1:3100"
+          },
+          "balancerList": [
+            {
+              "name": "process3",
+              "load": 100,
+              "url": "http://127.0.0.1:4003"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nodo": {
+        "id": 34,
+        "tipo_nodo": "Controlador Subs",
+        "nombre": "CS1",
+        "url": "http://127.0.0.1",
+        "puerto": "3001",
+        "latitud": "-32",
+        "longitud": "130",
+        "visible": true,
+        "tiempo": "2026-05-18T20:35:58.000Z",
+        "orden": 2
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 36,
+        "tipo_nodo": "Procesador",
+        "nombre": "P2",
+        "url": "http://127.0.0.1",
+        "puerto": "4002",
+        "latitud": "10",
+        "longitud": "85",
+        "visible": true,
+        "tiempo": "2026-05-18T20:44:59.000Z",
+        "orden": 2
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 39,
+        "tipo_nodo": "Procesador",
+        "nombre": "P3",
+        "url": "http://127.0.0.1",
+        "puerto": "4003",
+        "latitud": "63",
+        "longitud": "20",
+        "visible": true,
+        "tiempo": "2026-05-18T15:02:25.000Z",
+        "orden": 3
+      },
+      "status": 200,
+      "debug": {
+        "UID": "2ac636b85cfc72ade4e2deb2c",
+        "Type": "REPLY",
+        "Operation": "RESULT",
+        "Data": {
+          "UID": 0,
+          "internalConfig": {
+            "name": "process3",
+            "port": 4003,
+            "capacity": 100,
+            "preference": 0.5,
+            "urlCoordinatorMain": "http://127.0.0.1:3000",
+            "urlCoordinatorSubs": "http://127.0.0.1:3001"
+          }
+        }
+      }
+    },
+    {
+      "nodo": {
+        "id": 47,
+        "tipo_nodo": "Controlador Main",
+        "nombre": "CM2",
+        "url": "http://127.0.0.1",
+        "puerto": "5000",
+        "latitud": "30",
+        "longitud": "-100",
+        "visible": true,
+        "tiempo": "2026-05-18T20:36:00.000Z",
+        "orden": 3
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 54,
+        "tipo_nodo": "Controlador Subs",
+        "nombre": "CS2",
+        "url": "http://127.0.0.1",
+        "puerto": "5001",
+        "latitud": "0",
+        "longitud": "0",
+        "visible": true,
+        "tiempo": "2026-05-18T20:45:06.000Z",
+        "orden": 4
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 46,
+        "tipo_nodo": "Balanceador Main",
+        "nombre": "BM2",
+        "url": "http://127.0.0.1",
+        "puerto": "4100",
+        "latitud": "-3",
+        "longitud": "-43",
+        "visible": true,
+        "tiempo": "2026-05-18T20:36:02.000Z",
+        "orden": 6
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 55,
+        "tipo_nodo": "Balanceador Subs",
+        "nombre": "BS2",
+        "url": "http://127.0.0.1",
+        "puerto": "4101",
+        "latitud": "-40",
+        "longitud": "-70",
+        "visible": true,
+        "tiempo": "2024-12-08T16:52:55.000Z",
+        "orden": 8
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 48,
+        "tipo_nodo": "Procesador",
+        "nombre": "P4",
+        "url": "http://127.0.0.1",
+        "puerto": "5004",
+        "latitud": "50",
+        "longitud": "-80",
+        "visible": true,
+        "tiempo": "2026-05-19T09:36:10.000Z",
+        "orden": 12
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 50,
+        "tipo_nodo": "Procesador",
+        "nombre": "P6",
+        "url": "http://127.0.0.1",
+        "puerto": "5003",
+        "latitud": "60",
+        "longitud": "-150",
+        "visible": true,
+        "tiempo": "2026-05-18T20:45:03.000Z",
+        "orden": 13
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 49,
+        "tipo_nodo": "Procesador",
+        "nombre": "P5",
+        "url": "http://127.0.0.1",
+        "puerto": "5002",
+        "latitud": "-40",
+        "longitud": "-40",
+        "visible": true,
+        "tiempo": "2024-12-08T16:44:58.000Z",
+        "orden": 14
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 52,
+        "tipo_nodo": "Procesador",
+        "nombre": "P7",
+        "url": "http://127.0.0.1",
+        "puerto": "4008",
+        "latitud": "39",
+        "longitud": "-4",
+        "visible": true,
+        "tiempo": "2025-01-06T19:20:16.000Z",
+        "orden": 15
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 53,
+        "tipo_nodo": "Procesador",
+        "nombre": "P8",
+        "url": "http://localhost:4002",
+        "puerto": "4002",
+        "latitud": "21",
+        "longitud": "-88",
+        "visible": true,
+        "tiempo": "2024-12-08T16:45:17.000Z",
+        "orden": 16
+      },
+      "error": "ERR_INVALID_URL"
+    },
+    {
+      "nodo": {
+        "id": 57,
+        "tipo_nodo": "Procesador",
+        "nombre": "P9",
+        "url": "http://127.0.0.1",
+        "puerto": "4041",
+        "latitud": "22",
+        "longitud": "22",
+        "visible": true,
+        "tiempo": "2024-12-08T16:45:34.000Z",
+        "orden": 99
+      },
+      "error": "ECONNREFUSED"
+    },
+    {
+      "nodo": {
+        "id": 73,
+        "tipo_nodo": "Procesador",
+        "nombre": "P13",
+        "url": "http://127.0.0.1",
+        "puerto": "4019",
+        "latitud": "43",
+        "longitud": "5",
+        "visible": true,
+        "tiempo": "2024-12-11T18:16:53.000Z",
+        "orden": 100
+      },
+      "error": "ECONNREFUSED"
+    }
+  ],
+  "liveViews": [
+    {
+      "view": "grafo",
+      "nodes": [
+        "BM1",
+        "CM1",
+        "P1",
+        "BS1",
+        "CS1",
+        "P2",
+        "P3",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P4",
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": [
+        "CM1>BS1",
+        "BS1>P3"
+      ],
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "nodes": [
+        "BM1",
+        "BS1",
+        "CM1",
+        "CS1",
+        "P1",
+        "P2",
+        "P3",
+        "BM2",
+        "CM2",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "CS2",
+        "BS2",
+        "P9",
+        "P13"
+      ],
+      "links": [
+        "BS1>P3",
+        "CM1>BS1"
+      ],
+      "errors": []
+    }
+  ],
+  "graph": [
+    {
+      "view": "grafo",
+      "scenario": "dos_grupos_normales",
+      "pass": true,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "balanceador_main_caido",
+      "pass": true,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "controlador_main_caido",
+      "pass": true,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>BM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>BM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "dos_main_caidos",
+      "pass": true,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BS1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>BS1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>BS1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "todos_caidos",
+      "pass": true,
+      "expected": [],
+      "actual": {
+        "initialized": true,
+        "links": [],
+        "configuredLinks": [],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "procesador_caido",
+      "pass": false,
+      "expected": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "procesador_oculto_con_main",
+      "pass": true,
+      "expected": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "procesador_oculto_con_subs",
+      "pass": true,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "subs_balanceador_aun_no_activo",
+      "pass": false,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "subs_controlador_aun_no_activo",
+      "pass": false,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>BM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>BM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "main_balanceador_fuera_catalogo",
+      "pass": false,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "main_controlador_fuera_catalogo",
+      "pass": false,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "equivalencia_localhost",
+      "pass": false,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "debug_formato_invalido",
+      "pass": false,
+      "actual": {
+        "initialized": false,
+        "links": [],
+        "nodes": []
+      },
+      "errors": [
+        "ERROR TypeError: Cannot read properties of undefined (reading 'balancerList')     at http://127.0.0.1:24500/src_app_modules_admin_grafo_grafo_routes_ts.js:162:48"
+      ]
+    },
+    {
+      "view": "grafo",
+      "scenario": "coordenadas_invalidas",
+      "pass": true,
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "configuredLinks": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": [
+          1180,
+          635
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "tipo_desconocido",
+      "pass": false,
+      "actual": {
+        "initialized": false,
+        "links": [],
+        "nodes": []
+      },
+      "errors": [
+        "ERROR TypeError: Cannot read properties of undefined (reading 'xFin')     at http://127.0.0.1:24500/src_app_modules_admin_grafo_grafo_routes_ts.js:122:34"
+      ]
+    }
+  ],
+  "map": [
+    {
+      "view": "mapa",
+      "scenario": "dos_grupos_normales",
+      "pass": true,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "balanceador_main_caido",
+      "pass": true,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "controlador_main_caido",
+      "pass": true,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>BM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "dos_main_caidos",
+      "pass": true,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BS1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS1>BS1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "todos_caidos",
+      "pass": true,
+      "expected": [],
+      "actual": {
+        "initialized": true,
+        "links": [],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "procesador_caido",
+      "pass": true,
+      "expected": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "procesador_oculto_con_main",
+      "pass": true,
+      "expected": [
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "procesador_oculto_con_subs",
+      "pass": false,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "subs_balanceador_aun_no_activo",
+      "pass": false,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "subs_controlador_aun_no_activo",
+      "pass": true,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "main_balanceador_fuera_catalogo",
+      "pass": true,
+      "expected": [
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>P1",
+        "BS1>Q1",
+        "BS2>BM2",
+        "CM1>BS1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>P1",
+          "BS1>Q1",
+          "BS2>BM2",
+          "CM1>BS1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "main_controlador_fuera_catalogo",
+      "pass": false,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM2>BM2",
+        "CS1>BM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM2>BM2",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "equivalencia_localhost",
+      "pass": false,
+      "expected": [
+        "BM1>P1",
+        "BM1>Q1",
+        "BM2>P2",
+        "BM2>Q2",
+        "BS1>BM1",
+        "BS2>BM2",
+        "CM1>BM1",
+        "CM2>BM2",
+        "CS1>CM1",
+        "CS2>CM2"
+      ],
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "debug_formato_invalido",
+      "pass": false,
+      "actual": {
+        "initialized": false,
+        "links": [],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": [
+        "ERROR TypeError: Cannot read properties of undefined (reading 'balancerList')     at http://127.0.0.1:24500/src_app_modules_admin_mapa_mapa_routes_ts.js:187:44"
+      ]
+    },
+    {
+      "view": "mapa",
+      "scenario": "coordenadas_invalidas",
+      "pass": false,
+      "actual": {
+        "initialized": false,
+        "links": [],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": [
+        "ERROR Error: Invalid LatLng object: (invalid, 24)     at new LatLng (http://127.0.0.1:24500/src_app_modules_admin_mapa_mapa_routes_ts.js:2142:13)"
+      ]
+    },
+    {
+      "view": "mapa",
+      "scenario": "tipo_desconocido",
+      "pass": true,
+      "actual": {
+        "initialized": true,
+        "links": [
+          "BM1>P1",
+          "BM1>Q1",
+          "BM2>P2",
+          "BM2>Q2",
+          "BS1>BM1",
+          "BS2>BM2",
+          "CM1>BM1",
+          "CM2>BM2",
+          "CS1>CM1",
+          "CS2>CM2"
+        ],
+        "nodes": [
+          "CM1",
+          "CS1",
+          "BM1",
+          "BS1",
+          "P1",
+          "Q1",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P2",
+          "Q2"
+        ],
+        "size": {
+          "x": 1100,
+          "y": 600
+        }
+      },
+      "errors": []
+    }
+  ],
+  "transitions": [
+    {
+      "view": "grafo",
+      "scenario": "cambio_nombre",
+      "pass": false,
+      "expected": "La etiqueta cambia",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "cambio_visibilidad",
+      "pass": false,
+      "expected": "P deja de dibujarse",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "alta_nodo",
+      "pass": false,
+      "expected": "Aparece NEW sin excepciones",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": [
+        "Cannot read properties of undefined (reading 'datos')"
+      ]
+    },
+    {
+      "view": "grafo",
+      "scenario": "baja_ultimo_nodo",
+      "pass": false,
+      "expected": "Q desaparece",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "catalogo_vacio",
+      "pass": false,
+      "expected": "Se vacía la representación",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "cambio_lista_balanceo",
+      "pass": true,
+      "expected": "El enlace a P se sustituye por Q",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>105",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "caida_procesador",
+      "pass": false,
+      "expected": "Se actualiza la disponibilidad y deja de mostrarse enlace operativo hacia P",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "redimensionar",
+      "pass": false,
+      "expected": "El lienzo se ajusta al contenedor",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 540
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "ocultar_mostrar_conexiones",
+      "pass": true,
+      "expected": "Se ocultan y recuperan todas las líneas",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "api_error_recuperacion",
+      "pass": false,
+      "expected": "El sondeo se recupera tras un error de API",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "nodo_sin_responder",
+      "pass": false,
+      "expected": "Una respuesta lenta no mantiene obsoleto el conjunto",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "early": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "100>102",
+          "101>100",
+          "103>102"
+        ],
+        "chartWidth": 1180,
+        "containerWidth": 1180
+      },
+      "elapsed": 2217,
+      "errors": []
+    },
+    {
+      "view": "grafo",
+      "scenario": "navegar_con_peticion_pendiente",
+      "pass": false,
+      "expected": "La vista destruida no conserva ni reactiva su sondeo",
+      "url": "http://127.0.0.1:24500/lista",
+      "timerClosed": false,
+      "calls": 4,
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "cambio_nombre",
+      "pass": true,
+      "expected": "La etiqueta cambia",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "RENAMED",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "cambio_visibilidad",
+      "pass": true,
+      "expected": "P deja de dibujarse",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "33,13>32,12"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "alta_nodo",
+      "pass": false,
+      "expected": "Aparece NEW sin excepciones",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ],
+        "chartWidth": 1100,
+        "containerWidth": 1100
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ],
+        "chartWidth": 1100,
+        "containerWidth": 1100
+      },
+      "errors": [
+        "Cannot read properties of undefined (reading 'nodo')"
+      ]
+    },
+    {
+      "view": "mapa",
+      "scenario": "baja_ultimo_nodo",
+      "pass": false,
+      "expected": "Q desaparece",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "catalogo_vacio",
+      "pass": false,
+      "expected": "Se vacía la representación",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "cambio_lista_balanceo",
+      "pass": false,
+      "expected": "El enlace a P se sustituye por Q",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "caida_procesador",
+      "pass": true,
+      "expected": "Se actualiza la disponibilidad y deja de mostrarse enlace operativo hacia P",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "33,13>32,12"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "redimensionar",
+      "pass": true,
+      "expected": "El lienzo se ajusta al contenedor",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ],
+        "chartWidth": 1100,
+        "containerWidth": 1100
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ],
+        "chartWidth": 460,
+        "containerWidth": 460
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "ocultar_mostrar_conexiones",
+      "pass": true,
+      "expected": "Se ocultan y recuperan todas las líneas",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "api_error_recuperacion",
+      "pass": true,
+      "expected": "El sondeo se recupera tras un error de API",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "nodo_sin_responder",
+      "pass": false,
+      "expected": "Una respuesta lenta no mantiene obsoleto el conjunto",
+      "before": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "early": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "after": {
+        "initialized": true,
+        "names": [
+          "CM",
+          "CS",
+          "BM",
+          "BS",
+          "P",
+          "Q"
+        ],
+        "links": [
+          "30,10>32,12",
+          "31,11>30,10",
+          "32,12>34,14",
+          "33,13>32,12"
+        ]
+      },
+      "elapsed": 2228,
+      "errors": []
+    },
+    {
+      "view": "mapa",
+      "scenario": "navegar_con_peticion_pendiente",
+      "pass": true,
+      "expected": "La vista destruida no conserva ni reactiva su sondeo",
+      "url": "http://127.0.0.1:24500/lista",
+      "calls": 3,
+      "errors": []
+    }
+  ],
+  "runtime": {
+    "events": [
+      {
+        "label": "normal_dos_grupos",
+        "data": [
+          {
+            "group": "A",
+            "cm": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "processorsList": [
+                {
+                  "name": "A-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:26401",
+                  "preference": 1,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                },
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "A-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:26401",
+                  "load": 33.33
+                },
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "load": 66.67
+                }
+              ],
+              "internalConfig": {
+                "port": 26000,
+                "type": "main",
+                "urlBalancerMain": "http://127.0.0.1:26100",
+                "urlBalancerSubs": "http://127.0.0.1:26101",
+                "urlCoordinatorlMain": "",
+                "typeRol": ""
+              }
+            },
+            "cs": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "processorsList": [
+                {
+                  "name": "A-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:26401",
+                  "preference": 1,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                },
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "A-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:26401",
+                  "load": 33.33
+                },
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "load": 66.67
+                }
+              ],
+              "internalConfig": {
+                "port": 26001,
+                "type": "subs",
+                "urlBalancerMain": "http://127.0.0.1:26100",
+                "urlBalancerSubs": "http://127.0.0.1:26101",
+                "urlCoordinatorlMain": "http://127.0.0.1:26000",
+                "typeRol": ""
+              }
+            },
+            "bm": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "internalConfig": {
+                "port": 26100,
+                "type": "main",
+                "urlMain": ""
+              },
+              "balancerList": [
+                {
+                  "name": "A-p1",
+                  "load": 33.33,
+                  "url": "http://127.0.0.1:26401"
+                },
+                {
+                  "name": "A-p2",
+                  "load": 66.67,
+                  "url": "http://127.0.0.1:26402"
+                }
+              ]
+            },
+            "bs": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "internalConfig": {
+                "port": 26101,
+                "type": "subs",
+                "urlMain": "http://127.0.0.1:26100"
+              },
+              "balancerList": [
+                {
+                  "name": "A-p1",
+                  "load": 33.33,
+                  "url": "http://127.0.0.1:26401"
+                },
+                {
+                  "name": "A-p2",
+                  "load": 66.67,
+                  "url": "http://127.0.0.1:26402"
+                }
+              ]
+            }
+          },
+          {
+            "group": "B",
+            "cm": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "processorsList": [
+                {
+                  "name": "B-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:27401",
+                  "preference": 1,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                },
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "B-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:27401",
+                  "load": 33.33
+                },
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "load": 66.67
+                }
+              ],
+              "internalConfig": {
+                "port": 27000,
+                "type": "main",
+                "urlBalancerMain": "http://127.0.0.1:27100",
+                "urlBalancerSubs": "http://127.0.0.1:27101",
+                "urlCoordinatorlMain": "",
+                "typeRol": ""
+              }
+            },
+            "cs": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "processorsList": [
+                {
+                  "name": "B-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:27401",
+                  "preference": 1,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                },
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "B-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:27401",
+                  "load": 33.33
+                },
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "load": 66.67
+                }
+              ],
+              "internalConfig": {
+                "port": 27001,
+                "type": "subs",
+                "urlBalancerMain": "http://127.0.0.1:27100",
+                "urlBalancerSubs": "http://127.0.0.1:27101",
+                "urlCoordinatorlMain": "http://127.0.0.1:27000",
+                "typeRol": ""
+              }
+            },
+            "bm": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "internalConfig": {
+                "port": 27100,
+                "type": "main",
+                "urlMain": ""
+              },
+              "balancerList": [
+                {
+                  "name": "B-p1",
+                  "load": 33.33,
+                  "url": "http://127.0.0.1:27401"
+                },
+                {
+                  "name": "B-p2",
+                  "load": 66.67,
+                  "url": "http://127.0.0.1:27402"
+                }
+              ]
+            },
+            "bs": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "internalConfig": {
+                "port": 27101,
+                "type": "subs",
+                "urlMain": "http://127.0.0.1:27100"
+              },
+              "balancerList": [
+                {
+                  "name": "B-p1",
+                  "load": 33.33,
+                  "url": "http://127.0.0.1:27401"
+                },
+                {
+                  "name": "B-p2",
+                  "load": 66.67,
+                  "url": "http://127.0.0.1:27402"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "label": "entrega_normal",
+        "counts": {
+          "A-p1": 2,
+          "A-p2": 2,
+          "B-p1": 2,
+          "B-p2": 2
+        }
+      },
+      {
+        "label": "caida_dos_main_grupo_A",
+        "data": [
+          {
+            "group": "A",
+            "cm": {
+              "error": "ECONNREFUSED"
+            },
+            "cs": {
+              "UID": 0,
+              "coordinatorSubsActive": true,
+              "coordinatorMainMaxAYA": -1,
+              "receivedMessages": -1,
+              "processorsList": [
+                {
+                  "name": "A-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:26401",
+                  "preference": 1,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                },
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "A-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:26401",
+                  "load": 33.33
+                },
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "load": 66.67
+                }
+              ],
+              "internalConfig": {
+                "port": 26001,
+                "type": "subs",
+                "urlBalancerMain": "http://127.0.0.1:26100",
+                "urlBalancerSubs": "http://127.0.0.1:26101",
+                "urlCoordinatorlMain": "http://127.0.0.1:26000",
+                "typeRol": ""
+              }
+            },
+            "bm": {
+              "error": "ECONNREFUSED"
+            },
+            "bs": {
+              "UID": 0,
+              "balancerSubsActive": true,
+              "balancerMainMaxAYA": -1,
+              "receivedMessages": -1,
+              "internalConfig": {
+                "port": 26101,
+                "type": "subs",
+                "urlMain": "http://127.0.0.1:26100"
+              },
+              "balancerList": [
+                {
+                  "name": "A-p1",
+                  "load": 33.33,
+                  "url": "http://127.0.0.1:26401"
+                },
+                {
+                  "name": "A-p2",
+                  "load": 66.67,
+                  "url": "http://127.0.0.1:26402"
+                }
+              ]
+            }
+          },
+          {
+            "group": "B",
+            "cm": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "processorsList": [
+                {
+                  "name": "B-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:27401",
+                  "preference": 1,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                },
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "B-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:27401",
+                  "load": 33.33
+                },
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "load": 66.67
+                }
+              ],
+              "internalConfig": {
+                "port": 27000,
+                "type": "main",
+                "urlBalancerMain": "http://127.0.0.1:27100",
+                "urlBalancerSubs": "http://127.0.0.1:27101",
+                "urlCoordinatorlMain": "",
+                "typeRol": ""
+              }
+            },
+            "cs": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "processorsList": [
+                {
+                  "name": "B-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:27401",
+                  "preference": 1,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                },
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "B-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:27401",
+                  "load": 33.33
+                },
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "load": 66.67
+                }
+              ],
+              "internalConfig": {
+                "port": 27001,
+                "type": "subs",
+                "urlBalancerMain": "http://127.0.0.1:27100",
+                "urlBalancerSubs": "http://127.0.0.1:27101",
+                "urlCoordinatorlMain": "http://127.0.0.1:27000",
+                "typeRol": ""
+              }
+            },
+            "bm": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": 4,
+              "internalConfig": {
+                "port": 27100,
+                "type": "main",
+                "urlMain": ""
+              },
+              "balancerList": [
+                {
+                  "name": "B-p1",
+                  "load": 33.33,
+                  "url": "http://127.0.0.1:27401"
+                },
+                {
+                  "name": "B-p2",
+                  "load": 66.67,
+                  "url": "http://127.0.0.1:27402"
+                }
+              ]
+            },
+            "bs": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "internalConfig": {
+                "port": 27101,
+                "type": "subs",
+                "urlMain": "http://127.0.0.1:27100"
+              },
+              "balancerList": [
+                {
+                  "name": "B-p1",
+                  "load": 33.33,
+                  "url": "http://127.0.0.1:27401"
+                },
+                {
+                  "name": "B-p2",
+                  "load": 66.67,
+                  "url": "http://127.0.0.1:27402"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "label": "entrega_sustituto",
+        "logs": [
+          true,
+          true
+        ]
+      },
+      {
+        "label": "procesador_caido_en_cada_grupo",
+        "data": [
+          {
+            "group": "A",
+            "cm": {
+              "error": "ECONNREFUSED"
+            },
+            "cs": {
+              "UID": 0,
+              "coordinatorSubsActive": true,
+              "coordinatorMainMaxAYA": -5,
+              "receivedMessages": 2,
+              "processorsList": [
+                {
+                  "name": "A-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:26401",
+                  "preference": 1,
+                  "AYACOUNT": -11,
+                  "AYAUID": "6725f6d16b449aa2e9c732e58"
+                },
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "A-p1",
+                  "capacity": 100,
+                  "url": "http://127.0.0.1:26401",
+                  "load": 100
+                }
+              ],
+              "internalConfig": {
+                "port": 26001,
+                "type": "subs",
+                "urlBalancerMain": "http://127.0.0.1:26100",
+                "urlBalancerSubs": "http://127.0.0.1:26101",
+                "urlCoordinatorlMain": "http://127.0.0.1:26000",
+                "typeRol": ""
+              }
+            },
+            "bm": {
+              "error": "ECONNREFUSED"
+            },
+            "bs": {
+              "UID": 0,
+              "balancerSubsActive": true,
+              "balancerMainMaxAYA": -5,
+              "receivedMessages": 2,
+              "internalConfig": {
+                "port": 26101,
+                "type": "subs",
+                "urlMain": "http://127.0.0.1:26100"
+              },
+              "balancerList": [
+                {
+                  "name": "A-p1",
+                  "load": 100,
+                  "url": "http://127.0.0.1:26401"
+                }
+              ]
+            }
+          },
+          {
+            "group": "B",
+            "cm": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": 4,
+              "processorsList": [
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "load": 100
+                }
+              ],
+              "internalConfig": {
+                "port": 27000,
+                "type": "main",
+                "urlBalancerMain": "http://127.0.0.1:27100",
+                "urlBalancerSubs": "http://127.0.0.1:27101",
+                "urlCoordinatorlMain": "",
+                "typeRol": ""
+              }
+            },
+            "cs": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": 4,
+              "processorsList": [
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "load": 100
+                }
+              ],
+              "internalConfig": {
+                "port": 27001,
+                "type": "subs",
+                "urlBalancerMain": "http://127.0.0.1:27100",
+                "urlBalancerSubs": "http://127.0.0.1:27101",
+                "urlCoordinatorlMain": "http://127.0.0.1:27000",
+                "typeRol": ""
+              }
+            },
+            "bm": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": 4,
+              "internalConfig": {
+                "port": 27100,
+                "type": "main",
+                "urlMain": ""
+              },
+              "balancerList": [
+                {
+                  "name": "B-p2",
+                  "load": 100,
+                  "url": "http://127.0.0.1:27402"
+                }
+              ]
+            },
+            "bs": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "internalConfig": {
+                "port": 27101,
+                "type": "subs",
+                "urlMain": "http://127.0.0.1:27100"
+              },
+              "balancerList": [
+                {
+                  "name": "B-p2",
+                  "load": 100,
+                  "url": "http://127.0.0.1:27402"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "label": "entrega_tras_caida_procesador",
+        "receivedBySurvivor": {
+          "A": false,
+          "B": true
+        }
+      },
+      {
+        "label": "recuperacion_main_A",
+        "data": [
+          {
+            "group": "A",
+            "cm": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": 3,
+              "processorsList": [
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "load": 100
+                }
+              ],
+              "internalConfig": {
+                "port": 26000,
+                "type": "main",
+                "urlBalancerMain": "http://127.0.0.1:26100",
+                "urlBalancerSubs": "http://127.0.0.1:26101",
+                "urlCoordinatorlMain": "",
+                "typeRol": ""
+              }
+            },
+            "cs": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": 3,
+              "processorsList": [
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "A-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:26402",
+                  "load": 100
+                }
+              ],
+              "internalConfig": {
+                "port": 26001,
+                "type": "subs",
+                "urlBalancerMain": "http://127.0.0.1:26100",
+                "urlBalancerSubs": "http://127.0.0.1:26101",
+                "urlCoordinatorlMain": "http://127.0.0.1:26000",
+                "typeRol": ""
+              }
+            },
+            "bm": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": 3,
+              "internalConfig": {
+                "port": 26100,
+                "type": "main",
+                "urlMain": ""
+              },
+              "balancerList": [
+                {
+                  "name": "A-p2",
+                  "load": 100,
+                  "url": "http://127.0.0.1:26402"
+                }
+              ]
+            },
+            "bs": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": 3,
+              "internalConfig": {
+                "port": 26101,
+                "type": "subs",
+                "urlMain": "http://127.0.0.1:26100"
+              },
+              "balancerList": [
+                {
+                  "name": "A-p2",
+                  "load": 100,
+                  "url": "http://127.0.0.1:26402"
+                }
+              ]
+            }
+          },
+          {
+            "group": "B",
+            "cm": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": 4,
+              "processorsList": [
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "load": 100
+                }
+              ],
+              "internalConfig": {
+                "port": 27000,
+                "type": "main",
+                "urlBalancerMain": "http://127.0.0.1:27100",
+                "urlBalancerSubs": "http://127.0.0.1:27101",
+                "urlCoordinatorlMain": "",
+                "typeRol": ""
+              }
+            },
+            "cs": {
+              "UID": 0,
+              "coordinatorSubsActive": false,
+              "coordinatorMainMaxAYA": 3,
+              "receivedMessages": 4,
+              "processorsList": [
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "preference": 0.5,
+                  "AYACOUNT": 3,
+                  "AYAUID": ""
+                }
+              ],
+              "balancerList": [
+                {
+                  "name": "B-p2",
+                  "capacity": 200,
+                  "url": "http://127.0.0.1:27402",
+                  "load": 100
+                }
+              ],
+              "internalConfig": {
+                "port": 27001,
+                "type": "subs",
+                "urlBalancerMain": "http://127.0.0.1:27100",
+                "urlBalancerSubs": "http://127.0.0.1:27101",
+                "urlCoordinatorlMain": "http://127.0.0.1:27000",
+                "typeRol": ""
+              }
+            },
+            "bm": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": 5,
+              "internalConfig": {
+                "port": 27100,
+                "type": "main",
+                "urlMain": ""
+              },
+              "balancerList": [
+                {
+                  "name": "B-p2",
+                  "load": 100,
+                  "url": "http://127.0.0.1:27402"
+                }
+              ]
+            },
+            "bs": {
+              "UID": 0,
+              "balancerSubsActive": false,
+              "balancerMainMaxAYA": 3,
+              "receivedMessages": -1,
+              "internalConfig": {
+                "port": 27101,
+                "type": "subs",
+                "urlMain": "http://127.0.0.1:27100"
+              },
+              "balancerList": [
+                {
+                  "name": "B-p2",
+                  "load": 100,
+                  "url": "http://127.0.0.1:27402"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "label": "procesador_arranca_antes_coordinador",
+        "processor": {
+          "UID": 0,
+          "internalConfig": {
+            "name": "late-p",
+            "port": 28401,
+            "capacity": 100,
+            "preference": 1,
+            "urlCoordinatorMain": "http://127.0.0.1:28000",
+            "urlCoordinatorSubs": "http://127.0.0.1:28001"
+          }
+        },
+        "coordinator": {
+          "UID": 0,
+          "coordinatorSubsActive": false,
+          "coordinatorMainMaxAYA": 3,
+          "receivedMessages": -1,
+          "processorsList": [],
+          "balancerList": [],
+          "internalConfig": {
+            "port": 28000,
+            "type": "main",
+            "urlBalancerMain": "http://127.0.0.1:28100",
+            "urlBalancerSubs": "http://127.0.0.1:28101",
+            "urlCoordinatorlMain": "",
+            "typeRol": ""
+          }
+        }
+      }
+    ],
+    "logs": {
+      "A-bm": "BALANCER main LISTENING PORT 26100\nResend message\nEnviamos a: http://127.0.0.1:26401/msg\nResend message\nEnviamos a: http://127.0.0.1:26402/msg\nResend message\nEnviamos a: http://127.0.0.1:26401/msg\nResend message\nEnviamos a: http://127.0.0.1:26402/msg\nBALANCER main LISTENING PORT 26100\n",
+      "A-bs": "BALANCER subs LISTENING PORT 26101\nResend message\nEnviamos a: http://127.0.0.1:26401/msg\nResend message\nEnviamos a: http://127.0.0.1:26402/msg\nResend message\nEnviamos a: http://127.0.0.1:26401/msg\n",
+      "A-cm": "COORDINATOR main LISTENING PORT 26000\nCOORDINATOR main LISTENING PORT 26000\n",
+      "A-cs": "COORDINATOR subs LISTENING PORT 26001\n",
+      "B-bm": "BALANCER main LISTENING PORT 27100\nResend message\nEnviamos a: http://127.0.0.1:27401/msg\nResend message\nEnviamos a: http://127.0.0.1:27402/msg\nResend message\nEnviamos a: http://127.0.0.1:27401/msg\nResend message\nEnviamos a: http://127.0.0.1:27402/msg\nResend message\nEnviamos a: http://127.0.0.1:27402/msg\n",
+      "B-bs": "BALANCER subs LISTENING PORT 27101\n",
+      "B-cm": "COORDINATOR main LISTENING PORT 27000\n",
+      "B-cs": "COORDINATOR subs LISTENING PORT 27001\n",
+      "A-p1": "PROCESSOR A-p1 LISTENING PORT 26401\nNos llega un mensaje del balanceador: {\"matrix\":\"A\",\"seq\":0}\nNos llega un mensaje del balanceador: {\"matrix\":\"A\",\"seq\":2}\nNos llega un mensaje del balanceador: {\"matrix\":\"failover\",\"seq\":0}\n",
+      "A-p2": "PROCESSOR A-p2 LISTENING PORT 26402\nNos llega un mensaje del balanceador: {\"matrix\":\"A\",\"seq\":1}\nNos llega un mensaje del balanceador: {\"matrix\":\"A\",\"seq\":3}\nNos llega un mensaje del balanceador: {\"matrix\":\"failover\",\"seq\":1}\n",
+      "B-p1": "PROCESSOR B-p1 LISTENING PORT 27401\nNos llega un mensaje del balanceador: {\"matrix\":\"B\",\"seq\":0}\nNos llega un mensaje del balanceador: {\"matrix\":\"B\",\"seq\":2}\n",
+      "B-p2": "PROCESSOR B-p2 LISTENING PORT 27402\nNos llega un mensaje del balanceador: {\"matrix\":\"B\",\"seq\":1}\nNos llega un mensaje del balanceador: {\"matrix\":\"B\",\"seq\":3}\nNos llega un mensaje del balanceador: {\"afterProcessorFailure\":\"B\"}\n",
+      "late-p": "PROCESSOR late-p LISTENING PORT 28401\n",
+      "late-cm": "COORDINATOR main LISTENING PORT 28000\n"
+    }
+  },
+  "protocol": [
+    {
+      "label": "config_con_destino",
+      "status": 200,
+      "body": {
+        "UID": "57e20bc2357a8ea1d60a428f1",
+        "Type": "REPLY",
+        "Operation": "RESULT",
+        "Data": {
+          "info": "OK",
+          "UID": 0
+        }
+      }
+    },
+    {
+      "label": "config_vacia",
+      "status": 200,
+      "body": {
+        "UID": "e20bc2357a8ea1d60a428f1f3",
+        "Type": "REPLY",
+        "Operation": "RESULT",
+        "Data": {
+          "info": "OK",
+          "UID": 0
+        }
+      }
+    },
+    {
+      "label": "estado_tras_vaciar",
+      "status": 200,
+      "body": {
+        "UID": "0bc2357a8ea1d60a428f1f3fa",
+        "Type": "REPLY",
+        "Operation": "RESULT",
+        "Data": {
+          "UID": 0,
+          "balancerSubsActive": false,
+          "balancerMainMaxAYA": 3,
+          "receivedMessages": -1,
+          "internalConfig": {
+            "port": 29500,
+            "type": "main",
+            "urlMain": ""
+          },
+          "balancerList": []
+        }
+      }
+    }
+  ],
+  "scriptNames": {
+    "scripts": [
+      "run4.bat",
+      "run5.bat",
+      "run6.bat"
+    ],
+    "names": [
+      "process1",
+      "process1",
+      "process1"
+    ],
+    "ports": [
+      5002,
+      5003,
+      5004
+    ],
+    "registrationResults": [
+      1,
+      0,
+      0
+    ]
+  },
+  "balancerLogic": {
+    "configuredWeights": [
+      90,
+      10
+    ],
+    "messages": 10,
+    "actualDistribution": [
+      5,
+      5
+    ],
+    "deliveryAfterListShrink": 0,
+    "loadAfterOneMessageAnd60SecondsIdle": 1
+  }
+}

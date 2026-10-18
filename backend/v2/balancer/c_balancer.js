@@ -1,220 +1,108 @@
-// Para tipar los parámetros
-const { response, request } = require('express'); // Response de Express
-
-const { updateBalancerList } = require('./functions');
-const { createSFMPMessage, sendSFMPMessage, createResendMessage } = require('../commons/commons')
-
-// Lista de nodos que maneja el balanceador
-// Lista de procesadores
-const balancerList = [
-    //    { name: 'example1', load: 50, url: 'http://localhost:3001' }
-]
-
-// mecanismo para reenvio, temporal, esto se va fuera
-var pivote = 0;
-
-
-
-const { getInternal, internalConfig } = require('./balancerData');
-
-// Variables para controlar reenvios de AYA al coordinador principal
-var balancerMainMaxAYA = Number(process.env.AYAMAXSENDS);
-// Variable para controlar si soy coordinadorSustitutoActivo
-var balancerSubsActive = false;
-var receivedMessages = -1;
-
-const axios = require('axios');
-
-const processBalancerSFMP = (req = request, res = response) => {
-
-    const { UID, Type, Operation, Data } = req.body;
-    var reply = createSFMPMessage('REPLY', 'RESULT', { info: 'Operación no manejada', UID: UID })
-
-    if (Type == 'REQUEST') {
-
-        if (Operation == 'DEBUG') {
-            reply = createSFMPMessage('REPLY', 'RESULT', { UID: UID, balancerSubsActive, balancerMainMaxAYA, receivedMessages, internalConfig, balancerList })
-            res.status(200).json(reply)
-            return;
-        }
-
-        // Me llega un infostatus del balanceador secundario, cojo los datos
-        if (Operation == 'INFOSTATUS') {
-            receivedMessages = Data.receivedMessages;
-            balancerList.splice(0, balancerList.length);
-            for (i = 0; i < Data.balancerList.length; i++) {
-                balancerList.push(Data.balancerList[i])
-            }
-            reply = createSFMPMessage('REPLY', 'RESULT', { info: 'OK', UID: UID })
-            res.status(200).json(reply);
-            return;
-        }
-
-        // Si nos piden el estado del sistema, contestamos
-        if (Operation == 'GETSTATUS') {
-            reply = createSFMPMessage('REPLY', 'RESULT', { info: 'OK', UID: UID })
-            res.status(200).json(reply);
-            // si soy el balanceador subs y no estoy activo, NO contesto
-            if (getInternal('type') == 'subs' && balancerSubsActive == false) return
-
-            //console.log('GETSTATUS, nos llega Data:', Data);
-            const urlCoordinator = Data.urlCoordinator;
-            // load implica porcentaje, receivedMessages indica cantidad
-            const newData = { receivedMessages: receivedMessages, balancerList: balancerList };
-            const messageINFOSTATUS = createSFMPMessage('REQUEST', 'INFOSTATUS', newData)
-            //console.log('Hacemos un infoSTATUS a a:', urlCoordinator, ' con la lista:', newData)
-            sendSFMPMessage(urlCoordinator, messageINFOSTATUS);
-
-            return;
-        }
-
-        // Llega una nueva configuración y la guardamos
-        if (Operation == 'SETCONFIG') {
-            //console.log('Actualizamos balancerList:', Data);
-            updateBalancerList(balancerList, Data);
-            reply = createSFMPMessage('REPLY', 'RESULT', { info: 'OK', UID: UID })
-            res.status(200).json(reply);
-
-            return;
-
-        }
-
-        if (Operation == 'AYA') {
-            reply = createSFMPMessage('REPLY', 'RESULT', { info: 'OK', UID: UID });
-            res.status(200).json(reply);
-
-            return;
-        }
-
-    }
-
-    if (Type == 'REPLY') {
-        // NO HACEMOS NADA
-    }
-
-    res.status(200).json(reply);
-    return;
-}
-
-
-const activeAYA = () => {
-    if (getInternal('type') == 'subs') {
-        setTimeout(balancerAYA, process.env.AYASENDTIME);
-    }
-}
-
-const balancerAYA = () => {
-    // Envio un AYA al principal
-    const messageAYABalancer = createSFMPMessage('REQUEST', 'AYA', {});
-    //console.log('BalancedorAYA envía a: ', getInternal('urlMain') + '/' + process.env.SFMPROUTE, ' el mensaje: ', messageAYABalancer)
-    axios.post(getInternal('urlMain') + '/' + process.env.SFMPROUTE, messageAYABalancer)
-        .then(function (response) {
-            // console.log('lo qu erespende al aya:',response)
-            //console.log('El balanceador principal sigue activo:', messageAYABalancer.UID == response.data.Data.UID);
-            // Si soy un subs activo y me acaban de responder, le hago un INFOSTATUS al principal
-            if (balancerSubsActive) {
-                // Desactivamos el envio de mensajes desde balanceador hacia los procesadores
-                // para eso simplemente cerramos la conexión con MQTT
-                disconnectMQTT();
-                const messageINFOSTATUS = createSFMPMessage('REQUEST', 'INFOSTATUS', { receivedMessages, balancerList });
-                //console.log('Envio INFOSTATUS del balanceador subs al main:', getInternal('urlMain'), balancerList)
-                sendSFMPMessage(getInternal('urlMain'), messageINFOSTATUS);
-                //console.log('Desconecto de MQTT')
-            }
-
-            balancerMainMaxAYA = Number(process.env.AYAMAXSENDS);
-            balancerSubsActive = false;
-            setTimeout(balancerAYA, process.env.AYASENDTIME);
-        })
-        .catch(function (error) {
-            //console.log('El balanceador principal no responde:');//,error);
-            balancerMainMaxAYA--;
-            if (balancerMainMaxAYA <= 0) {
-                //console.log('Ya se han terminado los intentos, debe asumir el rol de balanceador principal principal');
-                // Si soy subs y no he asumido ya el control, asumo el control, me conecto a MQTT y le sigo lanzando AYA al balanceador
-                if (getInternal('type') == 'subs' && balancerSubsActive == false) {
-
-                    balancerSubsActive = true;
-                    //console.log('Coneccto con MQTT');
-                    connectMQTT();
-
-                }
-
-                // Dejo programado el siguiete AYA por
-                //console.log('Dejo el AYA de comprobación activo')
-                setTimeout(balancerAYA, Number(process.env.AYASENDTIME))
-
-
-            } else {
-                //console.log('Reenviamos AYA a balanceador principal en:', process.env.AYARESENDTIME)
-                setTimeout(balancerAYA, Number(process.env.AYARESENDTIME))
-            }
-        })
-
-}
-
-// Conectarnos con MQTT
-// Configuramos la conexión a MQTT para pillar la de TTN
+const axios = require('axios'), path = require('path'), mqtt = require('mqtt');
 const config = require('./ttn/configTTN');
-const mqtt = require('mqtt');
-const { create } = require('domain');
-
-var clientMQTT;
-
-const disconnectMQTT = () => {
-    clientMQTT.unsubscribe(config.mqttQue);
-    clientMQTT.end();
+const { getInternal, internalConfig } = require('./balancerData');
+const { createSFMPMessage, createResendMessage, requestSFMP, sendSFMPMessage, httpOptions } = require('../commons/commons');
+const { addMessage, totalMeters, messageRate } = require('./loadMeter');
+const { DeliveryQueue } = require('./delivery');
+const balancerList = [];
+const maxAttempts = () => Math.max(1, Number(process.env.AYAMAXSENDS || 3));
+let balancerMainMaxAYA = maxAttempts(), balancerSubsActive = false, clientMQTT, timer, stopped = false, queue;
+function deliveryQueue() {
+    if (!queue)
+        queue = new DeliveryQueue({
+            file: path.join(process.env.DATA_DIR || path.join(__dirname, '..', '.data'), 'balancer-' + getInternal('port') + '.json'),
+            retryMs: Number(process.env.DELIVERY_RETRY_MS || 1000), limit: Number(process.env.QUEUE_LIMIT || 1000),
+            deliver: async (target, message) => {
+                const response = await axios.post(target.url + '/' + (process.env.MSGROUTE || 'msg'), message, httpOptions());
+                if (response.data?.UID !== message.UID)
+                    throw new Error('Entrega sin confirmación correlacionada');
+            }
+        });
+    return queue;
 }
-
-const { addMessage, totalMeters} = require('./loadMeter');
-
-// Función que reenvia el mensaje al procesador que toca en funcíon de su carga
-const resendMessage = (message) => {
-    console.log('Resend message')
-    addMessage();
-    receivedMessages = totalMeters();
-    //console.log('Balanceador receivedMessages:',receivedMessages)
-    if (balancerList.length > 0) {
-        console.log('Enviamos a:',balancerList[pivote].url + '/' + process.env.MSGROUTE)
-        const newMessage = createResendMessage(getInternal('type'), message.toString());
-        axios.post(balancerList[pivote].url + '/' + process.env.MSGROUTE, newMessage)
-            .then(function (response) {
-
-            })
-
-            .catch(function (error) {
-            })
-        // Avanzamos pivite si no está ya al final
-        pivote == balancerList.length - 1 ? pivote=0: pivote++;
-        //console.log('Pivote nuevo:',pivote);
-    } else {
-        console.log('No hay elementos en la lista de balancerList')
+function configure(data) {
+    if (!Array.isArray(data) || data.some(p => !p || typeof p.url !== 'string' || !/^https?:\/\//.test(p.url)))
+        throw new Error('Lista de destinos inválida');
+    balancerList.splice(0, balancerList.length, ...data.map(p => ({ ...p })));
+    deliveryQueue().configure(balancerList);
+}
+const snapshot = () => ({ balancerSubsActive, balancerMainMaxAYA, receivedMessages: totalMeters(), receivedRate: messageRate(), internalConfig, balancerList, delivery: deliveryQueue().status(), mqttConnected: Boolean(clientMQTT?.connected) });
+async function processBalancerSFMP(req, res) {
+    const { UID, Type, Operation, Data } = req.body;
+    const reply = data => res.json(createSFMPMessage('REPLY', 'RESULT', { UID, ...data }));
+    if (Type !== 'REQUEST')
+        return reply({ info: 'Operación no manejada' });
+    try {
+        if (Operation === 'DEBUG' || Operation === 'GETSTATUS') {
+            const data = snapshot();
+            if (Operation === 'GETSTATUS' && Data.urlCoordinator && (getInternal('type') === 'main' || balancerSubsActive))
+                void sendSFMPMessage(Data.urlCoordinator, createSFMPMessage('REQUEST', 'INFOSTATUS', data));
+            return reply(data);
+        }
+        if (Operation === 'SETCONFIG') {
+            configure(Data);
+            return reply({ info: 'OK' });
+        }
+        if (Operation === 'INFOSTATUS') {
+            configure(Data.balancerList);
+            return reply({ info: 'OK' });
+        }
+        if (Operation === 'AYA')
+            return reply({ info: 'OK' });
+        return reply({ info: 'Operación no manejada' });
+    }
+    catch (error) {
+        return res.status(400).json({ error: error.message });
     }
 }
-
-const connectMQTT = () => {
-
-    clientMQTT = mqtt.connect((config.mqttQue), {
-        username: config.appID,
-        password: config.accessKey
-    });
-
-    clientMQTT.on('connect', () => {
-        clientMQTT.subscribe(config.suscribe);
-    });
-
-    clientMQTT.on('message', async (topic, message) => {
+function disconnectMQTT() { if (clientMQTT) {
+    clientMQTT.end();
+    clientMQTT = undefined;
+} }
+function connectMQTT() {
+    if (clientMQTT || process.env.MQTT_ENABLED === 'false')
+        return;
+    if (!config.appID || !config.accessKey) {
+        console.warn('MQTT sin configurar; DEBUG y supervisión disponibles.');
+        return;
+    }
+    clientMQTT = mqtt.connect(config.mqttQue, { username: config.appID, password: config.accessKey });
+    clientMQTT.on('error', error => console.error('MQTT:', error.message));
+    clientMQTT.on('connect', () => clientMQTT.subscribe(config.suscribe, { qos: 1 }));
+    clientMQTT.on('message', (topic, message) => {
         try {
-            // console.log('Mensaje original recibido:')
-            // console.log(String(message));
-
-            resendMessage(message)
-            //await sendMessage(message);
-        } catch (error) {
-            //console.log(error)
+            addMessage();
+            if (!deliveryQueue().enqueue(createResendMessage(getInternal('type'), message.toString())))
+                console.error('Cola llena: mensaje rechazado. Revisa delivery.rejected en DEBUG.');
+        }
+        catch (error) {
+            console.error('No se pudo guardar el mensaje:', error.message);
         }
     });
 }
-
-module.exports = { connectMQTT, processBalancerSFMP, activeAYA }
-
+async function balancerAYA() {
+    try {
+        await requestSFMP(getInternal('urlMain'), createSFMPMessage('REQUEST', 'AYA', {}));
+        if (balancerSubsActive) {
+            await requestSFMP(getInternal('urlMain'), createSFMPMessage('REQUEST', 'INFOSTATUS', { balancerList }));
+            disconnectMQTT();
+        }
+        balancerMainMaxAYA = maxAttempts();
+        balancerSubsActive = false;
+    }
+    catch {
+        balancerMainMaxAYA = Math.max(0, balancerMainMaxAYA - 1);
+        if (!balancerMainMaxAYA && !balancerSubsActive) {
+            balancerSubsActive = true;
+            connectMQTT();
+        }
+    }
+    finally {
+        if (!stopped)
+            timer = setTimeout(balancerAYA, Number(process.env.AYASENDTIME || 8000));
+    }
+}
+function activeAYA() { if (getInternal('type') === 'subs' && !timer)
+    timer = setTimeout(balancerAYA, 0); }
+function stopBalancer() { stopped = true; clearTimeout(timer); disconnectMQTT(); queue?.stop(); }
+module.exports = { connectMQTT, processBalancerSFMP, activeAYA, stopBalancer };

@@ -1,17 +1,2 @@
-
-// Topic Y
-mqttQue='mqtt://eu1.cloud.thethings.network:1883'
-
-// Aplicación ua-sensors
-appID='ua-sensor@ttn'
-accessKey='NNSXS.VHCKXEROUIBVRURMLCECRVTHRF77EGFRV2G3RNI.GCFZXXJF4VZCBH5V7YHHNT3OWKLCTPDVLRU74XVWFAPQ7IMI2S2A'
-
-// suscribe es un array de colas a las que se suscribe el usuario
-suscribe=['v3/'+appID+'/devices/+/up']
-
-module.exports = {
-    appID,
-    accessKey,
-    suscribe, 
-    mqttQue
-}
+const appID = process.env.TTN_APP_ID || '';
+module.exports = { appID, accessKey: process.env.TTN_ACCESS_KEY || '', mqttQue: process.env.MQTT_URL || 'mqtts://eu1.cloud.thethings.network:8883', suscribe: (process.env.MQTT_TOPICS || ('v3/' + appID + '/devices/+/up')).split(',') };

@@ -8,7 +8,7 @@ const Nodo = sequelize.define('Nodo', {
         autoIncrement: true,
     },
     tipo_nodo: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: false
     },
     nombre: {
@@ -16,7 +16,7 @@ const Nodo = sequelize.define('Nodo', {
         allowNull: false
     },
     url: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(100),
         allowNull: false
     },
     puerto: {
@@ -33,6 +33,8 @@ const Nodo = sequelize.define('Nodo', {
     },
     visible: {
         type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
     },
     tiempo: {
         type: DataTypes.DATE,
@@ -45,6 +47,7 @@ const Nodo = sequelize.define('Nodo', {
 },{
     tableName: 'nodos',
     timestamps: false,
+    indexes: [{ name: 'nodos_endpoint_unique', unique: true, fields: ['url', 'puerto'] }],
 });
 
 module.exports = { Nodo }

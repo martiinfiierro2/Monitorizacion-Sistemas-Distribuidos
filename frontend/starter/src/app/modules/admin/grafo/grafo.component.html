@@ -1,10 +1,3 @@
-<div class="contenedor-grafo">
-    <div class="cabecera">
-        <span class="spacer"></span>
-        <div class="checkbox">
-            <mat-checkbox (change)="conexiones($event)" id="conexiones">Desactivar conexiones</mat-checkbox>
-        </div>
-    </div>
-        
-    <div id="grafo" #cyContainer class="grafo-fondo"></div>
-</div>
+﻿<monitor-toolbar title="Topología del sistema" [snapshot]="snapshot" [filters]="filters" [connections]="activarConexiones" (changed)="render()" (refresh)="comprobar()" (fit)="fit()" (toggle)="conexiones($event)" (connect)="connect($event)"></monitor-toolbar>
+<p class="monitor-empty" *ngIf="snapshot && !selectedNodes.length">No hay nodos visibles con los filtros seleccionados.</p>
+<div class="monitor-canvas"><div id="grafo" #chart aria-label="Grafo de nodos y conexiones"></div></div>
