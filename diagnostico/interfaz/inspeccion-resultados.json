@@ -1,0 +1,160 @@
+{
+  "graph": {
+    "toolbar": {
+      "x": 73,
+      "y": 13,
+      "width": 1280,
+      "height": 83,
+      "top": 13,
+      "right": 1353,
+      "bottom": 96,
+      "left": 73
+    },
+    "canvas": {
+      "x": 73,
+      "y": 96,
+      "width": 1280,
+      "height": 659,
+      "top": 96,
+      "right": 1353,
+      "bottom": 755,
+      "left": 73
+    },
+    "main": {
+      "height": 768,
+      "scroll": 768
+    },
+    "text": "Topología del sistema\n8 / 18 responden\n\nAsignación\nSupervisión\n\nActualizado 17:06:32\n11 avisos\nAcceso protegido\nGrupo\nTodos\nGrupo 1\nGrupo 2\nSin grupo\nTipo\nTodos\nControlador Main\nControlador Subs\nBalanceador Main\nBalanceador Subs\nProcesador\nEstado\nTodos\nResponden\nSin respuesta válida\nDesactivar conexiones\nActualizar\nAjustar vista"
+  },
+  "map": {
+    "canvas": {
+      "x": 73,
+      "y": 96,
+      "width": 1280,
+      "height": 659,
+      "top": 96,
+      "right": 1353,
+      "bottom": 755,
+      "left": 73
+    },
+    "icons": [
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      },
+      {
+        "width": 48,
+        "height": 48
+      }
+    ]
+  },
+  "detail": {
+    "pane": {
+      "x": 123,
+      "y": 24,
+      "width": 1120,
+      "height": 720,
+      "top": 24,
+      "right": 1243,
+      "bottom": 744,
+      "left": 123
+    },
+    "surface": {
+      "x": 123,
+      "y": 24,
+      "width": 1120,
+      "height": 720,
+      "top": 24,
+      "right": 1243,
+      "bottom": 744,
+      "left": 123
+    },
+    "body": {
+      "x": 123,
+      "y": 111.5,
+      "width": 1120,
+      "height": 592.5,
+      "top": 111.5,
+      "right": 1243,
+      "bottom": 704,
+      "left": 123
+    },
+    "scrollHeight": 657,
+    "footer": {
+      "x": 123,
+      "y": 704,
+      "width": 1120,
+      "height": 40,
+      "top": 704,
+      "right": 1243,
+      "bottom": 744,
+      "left": 123
+    },
+    "text": "Controlador Main\nCM1\nResponde\nCerrar\n×\nDatos del catálogo\nDirección\nhttp://127.0.0.1\nPuerto\n3000\nOrden\n1\nLatitud\n62\nLongitud\n130\nÚltima consulta correcta anterior\n18/10/2026 14:48:46\nEstado del proceso\nPrincipal\nMensajes en ventana\n0\nMensajes por segundo\n0\nProcesadores registrados (2)\nNombre\tDirección\tCapacidad\tPreferencia\tIntentos restantes\nprocess3\thttp://127.0.0.1:4003\t100\t0.5\t3\nprocess2\thttp://127.0.0.1:4002\t100\t0.3\t3\nDestinos seleccionados (1)\nNombre\tDirección\tReparto asignado\nprocess3\thttp://127.0.0.1:4003\t100 %\nConfiguración del proceso\nEstado recibido del ejecutable\nConsulta actual: 17:06:34"
+  },
+  "errors": []
+}

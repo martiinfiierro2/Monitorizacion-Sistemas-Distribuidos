@@ -18,7 +18,7 @@ export class Dialog {
     private recorded = false;
     constructor(private api: GrafoService, private config: ConfigService, private dialogRef: MatDialogRef<Dialog>,
     @Inject(MAT_DIALOG_DATA)
-    private data: any) { this.tipo = data.tipo; }
+    private data: any) { this.tipo = data.tipo; this.dialogRef.addPanelClass('node-detail-panel'); }
     ngOnInit() {
         this.subscriptions.add(forkJoin({ config: this.config.getConfig(), node: this.api.getNodo(this.data.id) }).subscribe({ next: ({ config, node }) => {
                 this.nodo = node.nodo;

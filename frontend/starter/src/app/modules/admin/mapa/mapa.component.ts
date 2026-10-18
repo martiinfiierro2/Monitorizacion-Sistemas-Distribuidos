@@ -35,10 +35,10 @@ export class MapaComponent extends MonitorView {
         const selected = this.selectedNodes.filter(s => validCoordinates(s.nodo)), ids = new Set(selected.map(s => s.nodo.id));
         for (const s of selected) {
             const n = s.nodo;
-            const marker = L.marker([Number(n.latitud), Number(n.longitud)], { icon: L.icon({ iconUrl: 'assets/map/png/' + this.icon(s), iconSize: [32, 32] }) }).addTo(this.map);
+            const marker = L.marker([Number(n.latitud), Number(n.longitud)], { title: n.nombre, icon: L.icon({ iconUrl: 'assets/map/png/' + this.icon(s), iconSize: [48, 48], iconAnchor: [24, 24] }) }).addTo(this.map);
             const label = document.createElement('span');
             label.textContent = n.nombre + ' · ' + s.group;
-            marker.bindTooltip(label, { className: 'monitor-node-tooltip', direction: 'top', offset: [0, -16] });
+            marker.bindTooltip(label, { className: 'monitor-node-tooltip', direction: 'top', offset: [0, -24] });
             marker.on('click', () => this.dialogo(n.tipo_nodo, n.id, n.url, n.puerto));
             this.iconos.push(marker);
         }

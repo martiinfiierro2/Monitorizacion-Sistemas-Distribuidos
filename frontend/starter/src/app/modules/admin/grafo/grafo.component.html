@@ -1,3 +1,13 @@
 ﻿<monitor-toolbar title="Topología del sistema" [snapshot]="snapshot" [filters]="filters" [connections]="activarConexiones" (changed)="render()" (refresh)="comprobar()" (fit)="fit()" (toggle)="conexiones($event)" (connect)="connect($event)"></monitor-toolbar>
-<p class="monitor-empty" *ngIf="snapshot && !selectedNodes.length">No hay nodos visibles con los filtros seleccionados.</p>
-<div class="monitor-canvas" [style.min-height.px]="layoutHeight"><div id="grafo" #chart aria-label="Grafo de nodos y conexiones"></div></div>
+<div class="monitor-canvas monitor-graph-canvas">
+  <p class="monitor-empty" *ngIf="snapshot && !selectedNodes.length">No hay nodos visibles con los filtros seleccionados.</p>
+  <div id="grafo" #chart aria-label="Grafo de nodos y conexiones"></div>
+  <div class="canvas-navigation" aria-label="Navegación del grafo">
+    <button type="button" (click)="zoomBy(1.25)" aria-label="Acercar grafo" title="Acercar">+</button>
+    <span>{{zoomPercent}} %</span>
+    <button type="button" (click)="zoomBy(0.8)" aria-label="Alejar grafo" title="Alejar">−</button>
+    <button type="button" class="canvas-center" (click)="fit()" aria-label="Centrar grafo" title="Mostrar todos los nodos">Centrar</button>
+  </div>
+  <div class="canvas-meta" *ngIf="snapshot">{{selectedNodes.length}} nodos visibles <span>·</span> {{selectedLinks.length}} conexiones</div>
+  <p class="canvas-gesture">Arrastra para mover · Rueda para ampliar</p>
+</div>

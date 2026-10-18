@@ -1,5 +1,7 @@
 # Correcciones del grafo y etiquetas del mapa
 
+> Este documento describe el cambio del commit `556597e`. La composición posterior sustituye el grafo con desplazamiento vertical por un encuadre dentro de la ventana; se documenta en [Composición y navegación de la interfaz](../interfaz/README.md).
+
 Se corrigen los puntos 1 y 3 del diagnóstico de escritorio. El punto 2 se investiga en [REFRESCO.md](REFRESCO.md) y su lógica permanece intacta.
 
 ## Grafo

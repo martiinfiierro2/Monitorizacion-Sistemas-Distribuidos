@@ -7,7 +7,7 @@
 
 /* 1. Contenedor principal a pantalla completa */
 .sidenav-container {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
 }
 
@@ -29,13 +29,23 @@
 .main-content {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .main-container {
-  padding: 20px;
-  flex: 1;
-  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  flex: 1 1 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #eef2f5;
 }
+
+.icon-nav-list a { margin: 6px; width: 48px; padding: 0 12px; border-radius: 8px; }
+.icon-nav-list a.active { background: #235a63; }
+.icon-nav-list a.active mat-icon { color: #fff; }
 
 mat-icon {
   color: rgb(195, 192, 192);
