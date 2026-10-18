@@ -1,0 +1,178 @@
+{
+  "observedAt": "2026-10-18T12:37:25.289Z",
+  "source": "Playwright CLI, respuestas reales, sin retardos ni errores introducidos",
+  "samples": [
+    {
+      "time": "2026-10-18T12:36:55.482Z",
+      "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:36:55",
+      "responding": 8,
+      "pending": [],
+      "links": 4
+    },
+    {
+      "time": "2026-10-18T12:37:00.238Z",
+      "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:37:00",
+      "responding": 3,
+      "pending": [
+        "P3",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P4",
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": 1
+    },
+    {
+      "time": "2026-10-18T12:37:00.281Z",
+      "summary": "Topología del sistema\n7 / 18 responden\nActualizado 14:37:00",
+      "responding": 7,
+      "pending": [
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": 4
+    },
+    {
+      "time": "2026-10-18T12:37:00.306Z",
+      "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:00",
+      "responding": 8,
+      "pending": [],
+      "links": 4
+    },
+    {
+      "time": "2026-10-18T12:37:05.237Z",
+      "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:37:05",
+      "responding": 3,
+      "pending": [
+        "P3",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P4",
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": 1
+    },
+    {
+      "time": "2026-10-18T12:37:05.269Z",
+      "summary": "Topología del sistema\n7 / 18 responden\nActualizado 14:37:05",
+      "responding": 7,
+      "pending": [
+        "P4",
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": 4
+    },
+    {
+      "time": "2026-10-18T12:37:05.306Z",
+      "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:05",
+      "responding": 8,
+      "pending": [],
+      "links": 4
+    },
+    {
+      "time": "2026-10-18T12:37:10.239Z",
+      "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:37:10",
+      "responding": 3,
+      "pending": [
+        "P3",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P4",
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": 1
+    },
+    {
+      "time": "2026-10-18T12:37:10.269Z",
+      "summary": "Topología del sistema\n7 / 18 responden\nActualizado 14:37:10",
+      "responding": 7,
+      "pending": [
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": 4
+    },
+    {
+      "time": "2026-10-18T12:37:10.307Z",
+      "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:10",
+      "responding": 8,
+      "pending": [],
+      "links": 4
+    },
+    {
+      "time": "2026-10-18T12:37:15.235Z",
+      "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:37:15",
+      "responding": 3,
+      "pending": [
+        "P3",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P4",
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": 1
+    },
+    {
+      "time": "2026-10-18T12:37:15.264Z",
+      "summary": "Topología del sistema\n7 / 18 responden\nActualizado 14:37:15",
+      "responding": 7,
+      "pending": [
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "links": 4
+    },
+    {
+      "time": "2026-10-18T12:37:15.306Z",
+      "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+      "responding": 8,
+      "pending": [],
+      "links": 4
+    }
+  ]
+}

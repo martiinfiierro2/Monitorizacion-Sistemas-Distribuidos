@@ -12,6 +12,7 @@ export class GrafoComponent extends MonitorView {
     @ViewChild('chart')
     container: ElementRef<HTMLElement>;
     myChart: echarts.ECharts;
+    layoutHeight = 360;
     private resize: ResizeObserver;
     private resetView = false;
     constructor(monitor: MonitorService, api: GrafoService, dialog: MatDialog, router: Router) { super(monitor, api, dialog, router); }
@@ -29,27 +30,45 @@ export class GrafoComponent extends MonitorView {
     render() {
         if (!this.myChart || !this.snapshot)
             return;
-        const groups = [...new Set(this.selectedNodes.map(s => s.group))].sort();
-        const width = Math.max(500, this.container.nativeElement.clientWidth);
+        const selected = this.selectedNodes;
+        const groups = [...new Set(selected.map(s => s.group))].sort();
+        const width = this.container.nativeElement.clientWidth;
+        const symbolSize = this.configuracion.map.iconSize || 60;
+        const rowHeight = symbolSize + 36;
+        const topPadding = symbolSize / 2 + 60;
+        const column = (type: string) => type.startsWith('Controlador') ? 0 : type.startsWith('Balanceador') ? 1 : 2;
         const offsets = new Map<string, number>();
         let offset = 0;
         for (const group of groups) {
             offsets.set(group, offset);
-            const members = this.selectedNodes.filter(node => node.group === group);
-            const processors = members.filter(node => !node.nodo.tipo_nodo.startsWith('Controlador') && !node.nodo.tipo_nodo.startsWith('Balanceador')).length;
-            offset += Math.max(240, Math.ceil(processors / Math.max(1, Math.ceil(Math.sqrt(processors)))) * 90 + 100);
+            const members = selected.filter(node => node.group === group);
+            const processors = members.filter(node => column(node.nodo.tipo_nodo) === 2).length;
+            const processorColumns = Math.max(1, Math.ceil(Math.sqrt(processors)));
+            const rows = Math.max(
+                members.filter(node => column(node.nodo.tipo_nodo) === 0).length,
+                members.filter(node => column(node.nodo.tipo_nodo) === 1).length,
+                Math.ceil(processors / processorColumns)
+            );
+            offset += rows * rowHeight + 32;
         }
+        this.layoutHeight = Math.max(360, offset - rowHeight - 32 + topPadding + symbolSize / 2 + 36);
         const previous = (this.myChart.getOption() as any)?.series?.[0];
-        const nodes = this.selectedNodes.map(s => {
-            const column = s.nodo.tipo_nodo.startsWith('Controlador') ? 0 : s.nodo.tipo_nodo.startsWith('Balanceador') ? 1 : 2;
-            const siblings = this.selectedNodes.filter(n => n.group === s.group && (n.nodo.tipo_nodo.startsWith('Controlador') ? 0 : n.nodo.tipo_nodo.startsWith('Balanceador') ? 1 : 2) === column);
+        const nodes = selected.map(s => {
+            const roleColumn = column(s.nodo.tipo_nodo);
+            const siblings = selected.filter(n => n.group === s.group && column(n.nodo.tipo_nodo) === roleColumn);
             const row = siblings.findIndex(n => n.nodo.id === s.nodo.id);
-            const columns = column === 2 ? Math.max(1, Math.ceil(Math.sqrt(siblings.length))) : 1;
-            const x = column === 0 ? 60 : column === 1 ? width * .28 : width * .53 + (row % columns) * width * .4 / Math.max(1, columns - 1);
-            const y = 50 + offsets.get(s.group) + Math.floor(row / columns) * 90;
-            return { id: String(s.nodo.id), name: s.nodo.nombre, x, y, symbol: 'image://assets/map/png/' + this.icon(s), symbolSize: this.configuracion.map.iconSize || 60, group: s.group, tipo_nodo: s.nodo.tipo_nodo, status: s.status, endpoint: s.endpoint, error: s.error };
+            const columns = roleColumn === 2 ? Math.max(1, Math.ceil(Math.sqrt(siblings.length))) : 1;
+            const x = roleColumn === 0 ? 100 : roleColumn === 1 ? width * .28 : width * .53 + (row % columns) * width * .4 / Math.max(1, columns - 1);
+            const y = topPadding + offsets.get(s.group) + Math.floor(row / columns) * rowHeight;
+            const labelWidth = roleColumn === 2 ? Math.min(160, width * .4 / columns - 16) : 160;
+            return { id: String(s.nodo.id), name: s.nodo.nombre, x, y, symbol: 'image://assets/map/png/' + this.icon(s), symbolSize, label: { width: labelWidth, overflow: 'truncate' }, group: s.group, tipo_nodo: s.nodo.tipo_nodo, status: s.status, endpoint: s.endpoint, error: s.error };
         });
-        this.myChart.setOption({ animation: false, tooltip: { trigger: 'item', formatter: (p: any) => p.dataType === 'node' ? [p.data.name, p.data.group, p.data.tipo_nodo, p.data.status ? 'Responde' : 'Sin respuesta válida', p.data.endpoint].map(v => String(v || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))).join('<br>') : p.data.kind === 'supervision' ? 'Supervisión' : 'Asignación operativa' }, series: [{ type: 'graph', layout: 'none', roam: true, zoom: this.resetView ? 1 : (previous?.zoom || 1), center: this.resetView ? undefined : previous?.center, scaleLimit: { min: 0.2, max: 4 }, label: { show: true, position: 'bottom', formatter: (p: any) => p.data.name }, data: nodes, links: this.selectedLinks.map(l => ({ ...l, source: String(l.source), target: String(l.target), lineStyle: { color: l.kind === 'assignment' ? '#18823b' : '#687587', width: l.kind === 'assignment' ? 3 : 2, type: l.kind === 'assignment' ? 'solid' : 'dashed', curveness: 0.12 } })), edgeSymbol: ['none', 'arrow'], edgeSymbolSize: [0, 12] }] }, true);
+        // Keep one layout unit equal to one pixel: automatic fitting compresses
+        // the positions without reducing the symbols or reserving label space.
+        const xs = nodes.map(node => node.x), ys = nodes.map(node => node.y);
+        const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+        const bounds = nodes.length ? { left: minX - (minX === maxX ? 1 : 0), top: minY - (minY === maxY ? 1 : 0), width: maxX - minX || 2, height: maxY - minY || 2 } : {};
+        this.myChart.setOption({ animation: false, tooltip: { trigger: 'item', formatter: (p: any) => p.dataType === 'node' ? [p.data.name, p.data.group, p.data.tipo_nodo, p.data.status ? 'Responde' : 'Sin respuesta válida', p.data.endpoint].map(v => String(v || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))).join('<br>') : p.data.kind === 'supervision' ? 'Supervisión' : 'Asignación operativa' }, series: [{ type: 'graph', layout: 'none', ...bounds, roam: true, zoom: this.resetView ? 1 : (previous?.zoom || 1), center: this.resetView ? undefined : previous?.center, scaleLimit: { min: 0.2, max: 4 }, label: { show: true, position: 'bottom', distance: 6, fontSize: 12, lineHeight: 16, formatter: (p: any) => p.data.name }, data: nodes, links: this.selectedLinks.map(l => ({ ...l, source: String(l.source), target: String(l.target), lineStyle: { color: l.kind === 'assignment' ? '#18823b' : '#687587', width: l.kind === 'assignment' ? 3 : 2, type: l.kind === 'assignment' ? 'solid' : 'dashed', curveness: 0.12 } })), edgeSymbol: ['none', 'arrow'], edgeSymbolSize: [0, 12] }] }, true);
         this.resetView = false;
     }
     fit() { this.resetView = true; this.render(); }
