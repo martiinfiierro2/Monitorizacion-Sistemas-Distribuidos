@@ -1,0 +1,654 @@
+{
+  "date": "2026-10-18T12:07:19.057Z",
+  "isolated": true,
+  "results": [
+    {
+      "name": "respuesta_malformada_aislamiento",
+      "snapshot": {
+        "error": "Cannot read properties of null (reading 'url')",
+        "stale": true,
+        "nodes": [],
+        "filters": {
+          "group": "",
+          "type": "",
+          "status": ""
+        },
+        "selected": 0,
+        "summary": "Topología del sistema\n0 / 0 responden\nDatos anteriores"
+      },
+      "body": "Topología del sistema\n0 / 0 responden\nDatos anteriores\nGrupo\nTodos\nTipo\nTodos\nControlador Main\nControlador Subs\nBalanceador Main\nBalanceador Subs\nProcesador\nEstado\nTodos\nResponden\nSin respuesta válida\nDesactivar conexiones\nActualizar\nAjustar vista\n\nAsignación operativa\nSupervisión · Una conexión no confirma entrega de mensajes.\n\nCannot read properties of null (reading 'url')\n\nAcceso protegido",
+      "pageErrors": []
+    },
+    {
+      "name": "nodo_lento_sin_caida",
+      "stable": {
+        "nodes": [
+          {
+            "name": "CM audit",
+            "status": true,
+            "lastSeen": 1792325220867,
+            "group": "Grupo 1"
+          },
+          {
+            "name": "BM audit",
+            "status": true,
+            "lastSeen": 1792325220868,
+            "group": "Grupo 1"
+          },
+          {
+            "name": "P audit",
+            "status": true,
+            "lastSeen": 1792325220869,
+            "group": "Grupo 1"
+          }
+        ],
+        "filters": {
+          "group": "",
+          "type": "",
+          "status": ""
+        },
+        "selected": 3,
+        "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00"
+      },
+      "requests": 2,
+      "falseOffline": [
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        },
+        {
+          "nodes": [
+            {
+              "name": "CM audit",
+              "status": true,
+              "lastSeen": 1792325222871,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "BM audit",
+              "status": true,
+              "lastSeen": 1792325222872,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P audit",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            }
+          ],
+          "filters": {
+            "group": "",
+            "type": "",
+            "status": ""
+          },
+          "selected": 3,
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02"
+        }
+      ],
+      "samples": [
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:00",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n2 / 3 responden\nActualizado 14:07:02",
+          "online": 2
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:04",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:04",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:04",
+          "online": 3
+        },
+        {
+          "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:04",
+          "online": 3
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "filtro_grupo_tras_caida",
+      "before": {
+        "nodes": [
+          {
+            "name": "CM audit",
+            "status": true,
+            "lastSeen": 1792325225051,
+            "group": "Grupo 1"
+          },
+          {
+            "name": "BM audit",
+            "status": true,
+            "lastSeen": 1792325225053,
+            "group": "Grupo 1"
+          },
+          {
+            "name": "P audit",
+            "status": true,
+            "lastSeen": 1792325225056,
+            "group": "Grupo 1"
+          }
+        ],
+        "filters": {
+          "group": "Grupo 1",
+          "type": "",
+          "status": ""
+        },
+        "selected": 3,
+        "summary": "Topología del sistema\n3 / 3 responden\nActualizado 14:07:05"
+      },
+      "after": {
+        "nodes": [
+          {
+            "name": "CM audit",
+            "status": false,
+            "lastSeen": 1792325225051,
+            "group": "Sin grupo"
+          },
+          {
+            "name": "BM audit",
+            "status": false,
+            "lastSeen": 1792325225053,
+            "group": "Sin grupo"
+          },
+          {
+            "name": "P audit",
+            "status": false,
+            "lastSeen": 1792325225056,
+            "group": "Sin grupo"
+          }
+        ],
+        "filters": {
+          "group": "Grupo 1",
+          "type": "",
+          "status": ""
+        },
+        "selected": 0,
+        "summary": "Topología del sistema\n0 / 3 responden\nActualizado 14:07:05"
+      },
+      "options": [
+        "Todos",
+        "Sin grupo"
+      ],
+      "value": "",
+      "empty": [
+        "No hay nodos visibles con los filtros seleccionados."
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "catalogo_recuperacion_sin_recargar",
+      "unchanged": {
+        "requests": 1,
+        "rows": 0,
+        "error": "Base de datos temporalmente no disponible",
+        "retryButtons": 0
+      },
+      "emptySearchRetry": 1,
+      "recoveredBySearch": 3,
+      "pageErrors": []
+    },
+    {
+      "name": "acceso_protegido_entrada_directa_catalogo",
+      "body": "Añadir Nodo\nDescargar\n\nAcceso no autorizado. Introduce la clave de acceso.\n\nNo hay nodos que coincidan con la búsqueda.\n\nTipo Nodo\tNombre\tURL\tPuerto\tGeolocalización\tAcciones\nItems per page:\n10\n0 of 0",
+      "passwordInputs": 0,
+      "connectButtons": 0,
+      "pageErrors": []
+    },
+    {
+      "name": "formulario_validacion_y_teclado",
+      "validation": "Añadir Nodo\n\nEl nombre debe tener entre 1 y 50 caracteres · Puerto entre 1 y 65535\n\nTipo de nodo\nProcesador\nNombre\n\nEl nombre es necesario\n\nURL\n\nEl nombre debe tener entre 1 y 50 caracteres · Puerto entre 1 y 65535\n\nPuerto\nOrden\n\nEl puerto es necesario\n\nGeolocalización\n\nLa latitud y longitud son necesarias\n\nVisiblidad\nActivada\nAñadir",
+      "closeButton": null,
+      "requestsAfterInvalid": 1,
+      "submittedWithEnter": false,
+      "writes": [
+        {
+          "path": "/api/nodo",
+          "method": "POST",
+          "data": {
+            "tipo_nodo": "Procesador",
+            "nombre": "",
+            "url": "http://127.0.0.1",
+            "visible": true
+          }
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "detalle_fecha_fallo_guardado",
+      "body": "Controlador Main: CM audit\nCerrar\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 3000 · Orden 1\n\nLatitud 38, longitud 0\n\nÚltima consulta correcta anterior: Sin consultas guardadas\n\nEstado del proceso\n\nRol confirmado: Principal · Consulta actual: 14:07:13\n\nMensajes en ventana: 7 · Mensajes/s: 0\n\nConfiguración del proceso\nProcesadores registrados (1)\nNombre\tDirección\tCapacidad\tPreferencia\tIntentos restantes\nP audit\thttp://127.0.0.1:4001\t100\t1\t\nDestinos seleccionados (0)\nNombre\tDirección\tReparto asignado\n\nNo hay destinos seleccionados.",
+      "visibleErrors": [],
+      "patchRequests": 1,
+      "pageErrors": []
+    },
+    {
+      "name": "marcador_teclado_pierde_foco_al_refrescar",
+      "before": {
+        "tag": "IMG",
+        "role": "button",
+        "alt": "Marker"
+      },
+      "after": {
+        "tag": "BODY",
+        "role": null,
+        "alt": null
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "ruta_inexistente_consola",
+      "httpStatus": 200,
+      "url": "http://127.0.0.1:4200/",
+      "body": "",
+      "consoleErrors": [
+        "ERROR RuntimeError: NG04002: Cannot match any routes. URL Segment: 'ruta-que-no-existe'\n    at Recognizer.noMatchError (http://127.0.0.1:4200/vendor.js:110699:12)\n    at http://127.0.0.1:4200/vendor.js:110732:20\n    at http://127.0.0.1:4200/vendor.js:9242:88\n    at OperatorSubscriber._error (http://127.0.0.1:4200/vendor.js:9112:9)\n    at OperatorSubscriber.error (http://127.0.0.1:4200/vendor.js:8096:12)\n    at OperatorSubscriber._error (http://127.0.0.1:4200/vendor.js:8119:24)\n    at OperatorSubscriber.error (http://127.0.0.1:4200/vendor.js:8096:12)\n    at OperatorSubscriber._error (http://127.0.0.1:4200/vendor.js:8119:24)\n    at OperatorSubscriber.error (http://127.0.0.1:4200/vendor.js:8096:12)\n    at OperatorSubscriber._error (http://127.0.0.1:4200/vendor.js:8119:24)"
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "cancelar_borrado_y_edicion",
+      "writes": [],
+      "rows": 3,
+      "pageErrors": []
+    }
+  ]
+}

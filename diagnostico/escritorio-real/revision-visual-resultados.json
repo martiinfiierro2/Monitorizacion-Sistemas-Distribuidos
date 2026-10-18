@@ -1,0 +1,5242 @@
+{
+  "date": "2026-10-18T12:37:25.289Z",
+  "mode": "desktop-real-no-network-interception",
+  "results": [
+    {
+      "name": "estado_inicial_real",
+      "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:36:55",
+      "nodes": [
+        {
+          "id": 31,
+          "name": "BM1",
+          "type": "Balanceador Main",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:3100"
+        },
+        {
+          "id": 33,
+          "name": "CM1",
+          "type": "Controlador Main",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:3000"
+        },
+        {
+          "id": 35,
+          "name": "P1",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:4001"
+        },
+        {
+          "id": 32,
+          "name": "BS1",
+          "type": "Balanceador Subs",
+          "group": "Grupo 1",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:3101"
+        },
+        {
+          "id": 34,
+          "name": "CS1",
+          "type": "Controlador Subs",
+          "group": "Grupo 1",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:3001"
+        },
+        {
+          "id": 36,
+          "name": "P2",
+          "type": "Procesador",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4002"
+        },
+        {
+          "id": 39,
+          "name": "P3",
+          "type": "Procesador",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4003"
+        },
+        {
+          "id": 47,
+          "name": "CM2",
+          "type": "Controlador Main",
+          "group": "Grupo 2",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:5000"
+        },
+        {
+          "id": 54,
+          "name": "CS2",
+          "type": "Controlador Subs",
+          "group": "Grupo 2",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:5001"
+        },
+        {
+          "id": 46,
+          "name": "BM2",
+          "type": "Balanceador Main",
+          "group": "Grupo 2",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4100"
+        },
+        {
+          "id": 55,
+          "name": "BS2",
+          "type": "Balanceador Subs",
+          "group": "Grupo 2",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4101"
+        },
+        {
+          "id": 48,
+          "name": "P4",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:5004"
+        },
+        {
+          "id": 50,
+          "name": "P6",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:5003"
+        },
+        {
+          "id": 49,
+          "name": "P5",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:5002"
+        },
+        {
+          "id": 52,
+          "name": "P7",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:4008"
+        },
+        {
+          "id": 53,
+          "name": "P8",
+          "type": "Procesador",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4002"
+        },
+        {
+          "id": 57,
+          "name": "P9",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:4041"
+        },
+        {
+          "id": 73,
+          "name": "P13",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:4019"
+        }
+      ],
+      "links": [
+        {
+          "from": "BM1",
+          "to": "P3",
+          "kind": "assignment"
+        },
+        {
+          "from": "CM1",
+          "to": "BM1",
+          "kind": "assignment"
+        },
+        {
+          "from": "CS2",
+          "to": "BM2",
+          "kind": "assignment"
+        },
+        {
+          "from": "BS2",
+          "to": "BM2",
+          "kind": "supervision"
+        }
+      ],
+      "warnings": [
+        "P8: dirección duplicada en el catálogo",
+        "P1: El proceso no responde o su dirección no es válida",
+        "BS1: El proceso no responde o su dirección no es válida",
+        "CS1: El proceso no responde o su dirección no es válida",
+        "CM2: El proceso no responde o su dirección no es válida",
+        "P4: El proceso no responde o su dirección no es válida",
+        "P6: El proceso no responde o su dirección no es válida",
+        "P5: El proceso no responde o su dirección no es válida",
+        "P7: El proceso no responde o su dirección no es válida",
+        "P9: El proceso no responde o su dirección no es válida",
+        "P13: El proceso no responde o su dirección no es válida"
+      ],
+      "selected": [
+        "BM1",
+        "CM1",
+        "P1",
+        "BS1",
+        "CS1",
+        "P2",
+        "P3",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P4",
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ]
+    },
+    {
+      "name": "refresco_real_sin_interceptar",
+      "samples": [
+        {
+          "time": "2026-10-18T12:36:55.482Z",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:36:55",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:00.238Z",
+          "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:37:00",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "CS2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BM2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:00.281Z",
+          "summary": "Topología del sistema\n7 / 18 responden\nActualizado 14:37:00",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:00.306Z",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:00",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:05.237Z",
+          "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:37:05",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "CS2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BM2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:05.269Z",
+          "summary": "Topología del sistema\n7 / 18 responden\nActualizado 14:37:05",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:05.306Z",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:05",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:10.239Z",
+          "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:37:10",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "CS2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BM2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:10.269Z",
+          "summary": "Topología del sistema\n7 / 18 responden\nActualizado 14:37:10",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:10.307Z",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:10",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:15.235Z",
+          "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": false,
+              "pending": true,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "CS2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BM2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS2",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:15.264Z",
+          "summary": "Topología del sistema\n7 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": true,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        },
+        {
+          "time": "2026-10-18T12:37:15.306Z",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "name": "BM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM1",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P1",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "BS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CS1",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P3",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "CM2",
+              "status": false,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "CS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BM2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "BS2",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 2"
+            },
+            {
+              "name": "P4",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P6",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P5",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P7",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P8",
+              "status": true,
+              "pending": false,
+              "group": "Grupo 1"
+            },
+            {
+              "name": "P9",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            },
+            {
+              "name": "P13",
+              "status": false,
+              "pending": false,
+              "group": "Sin grupo"
+            }
+          ],
+          "links": [
+            {
+              "source": 31,
+              "target": 39,
+              "kind": "assignment"
+            },
+            {
+              "source": 33,
+              "target": 31,
+              "kind": "assignment"
+            },
+            {
+              "source": 54,
+              "target": 46,
+              "kind": "assignment"
+            },
+            {
+              "source": 55,
+              "target": 46,
+              "kind": "supervision"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "distribucion_1366x768",
+      "size": {
+        "width": 1366,
+        "height": 768,
+        "canvasWidth": 1266,
+        "canvasHeight": 518
+      },
+      "iconCollisions": [
+        [
+          "BM1",
+          "BS1"
+        ],
+        [
+          "CM1",
+          "CS1"
+        ],
+        [
+          "P1",
+          "P5"
+        ],
+        [
+          "P2",
+          "P8"
+        ],
+        [
+          "CM2",
+          "CS2"
+        ],
+        [
+          "BM2",
+          "BS2"
+        ],
+        [
+          "P4",
+          "P7"
+        ],
+        [
+          "P6",
+          "P9"
+        ],
+        [
+          "P5",
+          "P13"
+        ]
+      ],
+      "labelIconCollisions": [],
+      "items": [
+        {
+          "name": "BM1",
+          "icon": {
+            "x": 446.58768,
+            "y": 21.799999999999983,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CM1",
+          "icon": {
+            "x": 272.25551999999993,
+            "y": 21.799999999999983,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P1",
+          "icon": {
+            "x": 633.95568,
+            "y": 329.64000000000004,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BS1",
+          "icon": {
+            "x": 446.58768,
+            "y": 75.07999999999998,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CS1",
+          "icon": {
+            "x": 272.25551999999993,
+            "y": 75.07999999999998,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P2",
+          "icon": {
+            "x": 633.95568,
+            "y": 21.799999999999983,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P3",
+          "icon": {
+            "x": 933.7444800000001,
+            "y": 21.799999999999983,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CM2",
+          "icon": {
+            "x": 272.25551999999993,
+            "y": 187.56,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CS2",
+          "icon": {
+            "x": 272.25551999999993,
+            "y": 240.84000000000003,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BM2",
+          "icon": {
+            "x": 446.58768,
+            "y": 187.56,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BS2",
+          "icon": {
+            "x": 446.58768,
+            "y": 240.84000000000003,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P4",
+          "icon": {
+            "x": 783.85008,
+            "y": 329.64000000000004,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P6",
+          "icon": {
+            "x": 933.7444800000001,
+            "y": 329.64000000000004,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P5",
+          "icon": {
+            "x": 633.95568,
+            "y": 382.92,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P7",
+          "icon": {
+            "x": 783.85008,
+            "y": 382.92,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P8",
+          "icon": {
+            "x": 633.95568,
+            "y": 75.07999999999998,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P9",
+          "icon": {
+            "x": 933.7444800000001,
+            "y": 382.92,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P13",
+          "icon": {
+            "x": 633.95568,
+            "y": 436.20000000000005,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        }
+      ]
+    },
+    {
+      "name": "distribucion_1920x1080",
+      "size": {
+        "width": 1920,
+        "height": 1080,
+        "canvasWidth": 1820,
+        "canvasHeight": 830
+      },
+      "iconCollisions": [],
+      "labelIconCollisions": [],
+      "items": [
+        {
+          "name": "BM1",
+          "icon": {
+            "x": 552.9663114051207,
+            "y": 72.85985544530195,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CM1",
+          "icon": {
+            "x": 152,
+            "y": 72.85985544530195,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P1",
+          "icon": {
+            "x": 958.7484993262283,
+            "y": 536.6109273551391,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BS1",
+          "icon": {
+            "x": 552.9663114051207,
+            "y": 153.12446404508145,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CS1",
+          "icon": {
+            "x": 152,
+            "y": 153.12446404508145,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P2",
+          "icon": {
+            "x": 958.7484993262283,
+            "y": 72.85985544530195,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P3",
+          "icon": {
+            "x": 1608,
+            "y": 72.85985544530195,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CM2",
+          "icon": {
+            "x": 152,
+            "y": 322.5719710890604,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CS2",
+          "icon": {
+            "x": 152,
+            "y": 402.8365796888399,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BM2",
+          "icon": {
+            "x": 552.9663114051207,
+            "y": 322.5719710890604,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BS2",
+          "icon": {
+            "x": 552.9663114051207,
+            "y": 402.8365796888399,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P4",
+          "icon": {
+            "x": 1283.3742496631141,
+            "y": 536.6109273551391,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P6",
+          "icon": {
+            "x": 1608,
+            "y": 536.6109273551391,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P5",
+          "icon": {
+            "x": 958.7484993262283,
+            "y": 616.8755359549185,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P7",
+          "icon": {
+            "x": 1283.3742496631141,
+            "y": 616.8755359549185,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P8",
+          "icon": {
+            "x": 958.7484993262283,
+            "y": 153.12446404508145,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P9",
+          "icon": {
+            "x": 1608,
+            "y": 616.8755359549185,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P13",
+          "icon": {
+            "x": 958.7484993262283,
+            "y": 697.140144554698,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        }
+      ]
+    },
+    {
+      "name": "distribucion_1280x720",
+      "size": {
+        "width": 1280,
+        "height": 720,
+        "canvasWidth": 1180,
+        "canvasHeight": 470
+      },
+      "iconCollisions": [
+        [
+          "BM1",
+          "BS1"
+        ],
+        [
+          "CM1",
+          "CS1"
+        ],
+        [
+          "P1",
+          "P5"
+        ],
+        [
+          "P2",
+          "P8"
+        ],
+        [
+          "CM2",
+          "CS2"
+        ],
+        [
+          "BM2",
+          "BS2"
+        ],
+        [
+          "P4",
+          "P7"
+        ],
+        [
+          "P6",
+          "P9"
+        ],
+        [
+          "P5",
+          "P13"
+        ]
+      ],
+      "labelIconCollisions": [],
+      "items": [
+        {
+          "name": "BM1",
+          "icon": {
+            "x": 426.6274285714285,
+            "y": 17,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CM1",
+          "icon": {
+            "x": 281.3839999999999,
+            "y": 17,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P1",
+          "icon": {
+            "x": 585.0845714285713,
+            "y": 296.31428571428575,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BS1",
+          "icon": {
+            "x": 426.6274285714285,
+            "y": 65.34285714285714,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CS1",
+          "icon": {
+            "x": 281.3839999999999,
+            "y": 65.34285714285714,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P2",
+          "icon": {
+            "x": 585.0845714285713,
+            "y": 17,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P3",
+          "icon": {
+            "x": 838.616,
+            "y": 17,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CM2",
+          "icon": {
+            "x": 281.3839999999999,
+            "y": 167.4,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "CS2",
+          "icon": {
+            "x": 281.3839999999999,
+            "y": 215.74285714285713,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BM2",
+          "icon": {
+            "x": 426.6274285714285,
+            "y": 167.4,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "BS2",
+          "icon": {
+            "x": 426.6274285714285,
+            "y": 215.74285714285713,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P4",
+          "icon": {
+            "x": 711.8502857142856,
+            "y": 296.31428571428575,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P6",
+          "icon": {
+            "x": 838.616,
+            "y": 296.31428571428575,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P5",
+          "icon": {
+            "x": 585.0845714285713,
+            "y": 344.6571428571429,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P7",
+          "icon": {
+            "x": 711.8502857142856,
+            "y": 344.6571428571429,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P8",
+          "icon": {
+            "x": 585.0845714285713,
+            "y": 65.34285714285714,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P9",
+          "icon": {
+            "x": 838.616,
+            "y": 344.6571428571429,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        },
+        {
+          "name": "P13",
+          "icon": {
+            "x": 585.0845714285713,
+            "y": 393,
+            "w": 60,
+            "h": 60
+          },
+          "label": null
+        }
+      ]
+    },
+    {
+      "name": "filtros_reales",
+      "records": [
+        {
+          "group": "",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "id": 31,
+              "name": "BM1",
+              "type": "Balanceador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3100"
+            },
+            {
+              "id": 33,
+              "name": "CM1",
+              "type": "Controlador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3000"
+            },
+            {
+              "id": 35,
+              "name": "P1",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4001"
+            },
+            {
+              "id": 32,
+              "name": "BS1",
+              "type": "Balanceador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3101"
+            },
+            {
+              "id": 34,
+              "name": "CS1",
+              "type": "Controlador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3001"
+            },
+            {
+              "id": 36,
+              "name": "P2",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 39,
+              "name": "P3",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4003"
+            },
+            {
+              "id": 47,
+              "name": "CM2",
+              "type": "Controlador Main",
+              "group": "Grupo 2",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5000"
+            },
+            {
+              "id": 54,
+              "name": "CS2",
+              "type": "Controlador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:5001"
+            },
+            {
+              "id": 46,
+              "name": "BM2",
+              "type": "Balanceador Main",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4100"
+            },
+            {
+              "id": 55,
+              "name": "BS2",
+              "type": "Balanceador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4101"
+            },
+            {
+              "id": 48,
+              "name": "P4",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5004"
+            },
+            {
+              "id": 50,
+              "name": "P6",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5003"
+            },
+            {
+              "id": 49,
+              "name": "P5",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5002"
+            },
+            {
+              "id": 52,
+              "name": "P7",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4008"
+            },
+            {
+              "id": 53,
+              "name": "P8",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 57,
+              "name": "P9",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4041"
+            },
+            {
+              "id": 73,
+              "name": "P13",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4019"
+            }
+          ],
+          "links": [
+            {
+              "from": "BM1",
+              "to": "P3",
+              "kind": "assignment"
+            },
+            {
+              "from": "CM1",
+              "to": "BM1",
+              "kind": "assignment"
+            },
+            {
+              "from": "CS2",
+              "to": "BM2",
+              "kind": "assignment"
+            },
+            {
+              "from": "BS2",
+              "to": "BM2",
+              "kind": "supervision"
+            }
+          ],
+          "warnings": [
+            "P8: dirección duplicada en el catálogo",
+            "P1: El proceso no responde o su dirección no es válida",
+            "BS1: El proceso no responde o su dirección no es válida",
+            "CS1: El proceso no responde o su dirección no es válida",
+            "CM2: El proceso no responde o su dirección no es válida",
+            "P4: El proceso no responde o su dirección no es válida",
+            "P6: El proceso no responde o su dirección no es válida",
+            "P5: El proceso no responde o su dirección no es válida",
+            "P7: El proceso no responde o su dirección no es válida",
+            "P9: El proceso no responde o su dirección no es válida",
+            "P13: El proceso no responde o su dirección no es válida"
+          ],
+          "selected": [
+            "BM1",
+            "CM1",
+            "P1",
+            "BS1",
+            "CS1",
+            "P2",
+            "P3",
+            "CM2",
+            "CS2",
+            "BM2",
+            "BS2",
+            "P4",
+            "P6",
+            "P5",
+            "P7",
+            "P8",
+            "P9",
+            "P13"
+          ]
+        },
+        {
+          "group": "Grupo 1",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "id": 31,
+              "name": "BM1",
+              "type": "Balanceador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3100"
+            },
+            {
+              "id": 33,
+              "name": "CM1",
+              "type": "Controlador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3000"
+            },
+            {
+              "id": 35,
+              "name": "P1",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4001"
+            },
+            {
+              "id": 32,
+              "name": "BS1",
+              "type": "Balanceador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3101"
+            },
+            {
+              "id": 34,
+              "name": "CS1",
+              "type": "Controlador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3001"
+            },
+            {
+              "id": 36,
+              "name": "P2",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 39,
+              "name": "P3",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4003"
+            },
+            {
+              "id": 47,
+              "name": "CM2",
+              "type": "Controlador Main",
+              "group": "Grupo 2",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5000"
+            },
+            {
+              "id": 54,
+              "name": "CS2",
+              "type": "Controlador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:5001"
+            },
+            {
+              "id": 46,
+              "name": "BM2",
+              "type": "Balanceador Main",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4100"
+            },
+            {
+              "id": 55,
+              "name": "BS2",
+              "type": "Balanceador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4101"
+            },
+            {
+              "id": 48,
+              "name": "P4",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5004"
+            },
+            {
+              "id": 50,
+              "name": "P6",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5003"
+            },
+            {
+              "id": 49,
+              "name": "P5",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5002"
+            },
+            {
+              "id": 52,
+              "name": "P7",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4008"
+            },
+            {
+              "id": 53,
+              "name": "P8",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 57,
+              "name": "P9",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4041"
+            },
+            {
+              "id": 73,
+              "name": "P13",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4019"
+            }
+          ],
+          "links": [
+            {
+              "from": "BM1",
+              "to": "P3",
+              "kind": "assignment"
+            },
+            {
+              "from": "CM1",
+              "to": "BM1",
+              "kind": "assignment"
+            },
+            {
+              "from": "CS2",
+              "to": "BM2",
+              "kind": "assignment"
+            },
+            {
+              "from": "BS2",
+              "to": "BM2",
+              "kind": "supervision"
+            }
+          ],
+          "warnings": [
+            "P8: dirección duplicada en el catálogo",
+            "P1: El proceso no responde o su dirección no es válida",
+            "BS1: El proceso no responde o su dirección no es válida",
+            "CS1: El proceso no responde o su dirección no es válida",
+            "CM2: El proceso no responde o su dirección no es válida",
+            "P4: El proceso no responde o su dirección no es válida",
+            "P6: El proceso no responde o su dirección no es válida",
+            "P5: El proceso no responde o su dirección no es válida",
+            "P7: El proceso no responde o su dirección no es válida",
+            "P9: El proceso no responde o su dirección no es válida",
+            "P13: El proceso no responde o su dirección no es válida"
+          ],
+          "selected": [
+            "BM1",
+            "CM1",
+            "BS1",
+            "CS1",
+            "P2",
+            "P3",
+            "P8"
+          ]
+        },
+        {
+          "group": "Grupo 2",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "id": 31,
+              "name": "BM1",
+              "type": "Balanceador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3100"
+            },
+            {
+              "id": 33,
+              "name": "CM1",
+              "type": "Controlador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3000"
+            },
+            {
+              "id": 35,
+              "name": "P1",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4001"
+            },
+            {
+              "id": 32,
+              "name": "BS1",
+              "type": "Balanceador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3101"
+            },
+            {
+              "id": 34,
+              "name": "CS1",
+              "type": "Controlador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3001"
+            },
+            {
+              "id": 36,
+              "name": "P2",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 39,
+              "name": "P3",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4003"
+            },
+            {
+              "id": 47,
+              "name": "CM2",
+              "type": "Controlador Main",
+              "group": "Grupo 2",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5000"
+            },
+            {
+              "id": 54,
+              "name": "CS2",
+              "type": "Controlador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:5001"
+            },
+            {
+              "id": 46,
+              "name": "BM2",
+              "type": "Balanceador Main",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4100"
+            },
+            {
+              "id": 55,
+              "name": "BS2",
+              "type": "Balanceador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4101"
+            },
+            {
+              "id": 48,
+              "name": "P4",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5004"
+            },
+            {
+              "id": 50,
+              "name": "P6",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5003"
+            },
+            {
+              "id": 49,
+              "name": "P5",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5002"
+            },
+            {
+              "id": 52,
+              "name": "P7",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4008"
+            },
+            {
+              "id": 53,
+              "name": "P8",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 57,
+              "name": "P9",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4041"
+            },
+            {
+              "id": 73,
+              "name": "P13",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4019"
+            }
+          ],
+          "links": [
+            {
+              "from": "BM1",
+              "to": "P3",
+              "kind": "assignment"
+            },
+            {
+              "from": "CM1",
+              "to": "BM1",
+              "kind": "assignment"
+            },
+            {
+              "from": "CS2",
+              "to": "BM2",
+              "kind": "assignment"
+            },
+            {
+              "from": "BS2",
+              "to": "BM2",
+              "kind": "supervision"
+            }
+          ],
+          "warnings": [
+            "P8: dirección duplicada en el catálogo",
+            "P1: El proceso no responde o su dirección no es válida",
+            "BS1: El proceso no responde o su dirección no es válida",
+            "CS1: El proceso no responde o su dirección no es válida",
+            "CM2: El proceso no responde o su dirección no es válida",
+            "P4: El proceso no responde o su dirección no es válida",
+            "P6: El proceso no responde o su dirección no es válida",
+            "P5: El proceso no responde o su dirección no es válida",
+            "P7: El proceso no responde o su dirección no es válida",
+            "P9: El proceso no responde o su dirección no es válida",
+            "P13: El proceso no responde o su dirección no es válida"
+          ],
+          "selected": [
+            "CM2",
+            "CS2",
+            "BM2",
+            "BS2"
+          ]
+        },
+        {
+          "group": "Sin grupo",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "id": 31,
+              "name": "BM1",
+              "type": "Balanceador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3100"
+            },
+            {
+              "id": 33,
+              "name": "CM1",
+              "type": "Controlador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3000"
+            },
+            {
+              "id": 35,
+              "name": "P1",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4001"
+            },
+            {
+              "id": 32,
+              "name": "BS1",
+              "type": "Balanceador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3101"
+            },
+            {
+              "id": 34,
+              "name": "CS1",
+              "type": "Controlador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3001"
+            },
+            {
+              "id": 36,
+              "name": "P2",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 39,
+              "name": "P3",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4003"
+            },
+            {
+              "id": 47,
+              "name": "CM2",
+              "type": "Controlador Main",
+              "group": "Grupo 2",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5000"
+            },
+            {
+              "id": 54,
+              "name": "CS2",
+              "type": "Controlador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:5001"
+            },
+            {
+              "id": 46,
+              "name": "BM2",
+              "type": "Balanceador Main",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4100"
+            },
+            {
+              "id": 55,
+              "name": "BS2",
+              "type": "Balanceador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4101"
+            },
+            {
+              "id": 48,
+              "name": "P4",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5004"
+            },
+            {
+              "id": 50,
+              "name": "P6",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5003"
+            },
+            {
+              "id": 49,
+              "name": "P5",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5002"
+            },
+            {
+              "id": 52,
+              "name": "P7",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4008"
+            },
+            {
+              "id": 53,
+              "name": "P8",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 57,
+              "name": "P9",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4041"
+            },
+            {
+              "id": 73,
+              "name": "P13",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4019"
+            }
+          ],
+          "links": [
+            {
+              "from": "BM1",
+              "to": "P3",
+              "kind": "assignment"
+            },
+            {
+              "from": "CM1",
+              "to": "BM1",
+              "kind": "assignment"
+            },
+            {
+              "from": "CS2",
+              "to": "BM2",
+              "kind": "assignment"
+            },
+            {
+              "from": "BS2",
+              "to": "BM2",
+              "kind": "supervision"
+            }
+          ],
+          "warnings": [
+            "P8: dirección duplicada en el catálogo",
+            "P1: El proceso no responde o su dirección no es válida",
+            "BS1: El proceso no responde o su dirección no es válida",
+            "CS1: El proceso no responde o su dirección no es válida",
+            "CM2: El proceso no responde o su dirección no es válida",
+            "P4: El proceso no responde o su dirección no es válida",
+            "P6: El proceso no responde o su dirección no es válida",
+            "P5: El proceso no responde o su dirección no es válida",
+            "P7: El proceso no responde o su dirección no es válida",
+            "P9: El proceso no responde o su dirección no es válida",
+            "P13: El proceso no responde o su dirección no es válida"
+          ],
+          "selected": [
+            "P1",
+            "P4",
+            "P6",
+            "P5",
+            "P7",
+            "P9",
+            "P13"
+          ]
+        },
+        {
+          "status": "online",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "id": 31,
+              "name": "BM1",
+              "type": "Balanceador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3100"
+            },
+            {
+              "id": 33,
+              "name": "CM1",
+              "type": "Controlador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3000"
+            },
+            {
+              "id": 35,
+              "name": "P1",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4001"
+            },
+            {
+              "id": 32,
+              "name": "BS1",
+              "type": "Balanceador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3101"
+            },
+            {
+              "id": 34,
+              "name": "CS1",
+              "type": "Controlador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3001"
+            },
+            {
+              "id": 36,
+              "name": "P2",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 39,
+              "name": "P3",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4003"
+            },
+            {
+              "id": 47,
+              "name": "CM2",
+              "type": "Controlador Main",
+              "group": "Grupo 2",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5000"
+            },
+            {
+              "id": 54,
+              "name": "CS2",
+              "type": "Controlador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:5001"
+            },
+            {
+              "id": 46,
+              "name": "BM2",
+              "type": "Balanceador Main",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4100"
+            },
+            {
+              "id": 55,
+              "name": "BS2",
+              "type": "Balanceador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4101"
+            },
+            {
+              "id": 48,
+              "name": "P4",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5004"
+            },
+            {
+              "id": 50,
+              "name": "P6",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5003"
+            },
+            {
+              "id": 49,
+              "name": "P5",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5002"
+            },
+            {
+              "id": 52,
+              "name": "P7",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4008"
+            },
+            {
+              "id": 53,
+              "name": "P8",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 57,
+              "name": "P9",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4041"
+            },
+            {
+              "id": 73,
+              "name": "P13",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4019"
+            }
+          ],
+          "links": [
+            {
+              "from": "BM1",
+              "to": "P3",
+              "kind": "assignment"
+            },
+            {
+              "from": "CM1",
+              "to": "BM1",
+              "kind": "assignment"
+            },
+            {
+              "from": "CS2",
+              "to": "BM2",
+              "kind": "assignment"
+            },
+            {
+              "from": "BS2",
+              "to": "BM2",
+              "kind": "supervision"
+            }
+          ],
+          "warnings": [
+            "P8: dirección duplicada en el catálogo",
+            "P1: El proceso no responde o su dirección no es válida",
+            "BS1: El proceso no responde o su dirección no es válida",
+            "CS1: El proceso no responde o su dirección no es válida",
+            "CM2: El proceso no responde o su dirección no es válida",
+            "P4: El proceso no responde o su dirección no es válida",
+            "P6: El proceso no responde o su dirección no es válida",
+            "P5: El proceso no responde o su dirección no es válida",
+            "P7: El proceso no responde o su dirección no es válida",
+            "P9: El proceso no responde o su dirección no es válida",
+            "P13: El proceso no responde o su dirección no es válida"
+          ],
+          "selected": [
+            "BM1",
+            "CM1",
+            "P2",
+            "P3",
+            "CS2",
+            "BM2",
+            "BS2",
+            "P8"
+          ]
+        },
+        {
+          "status": "offline",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "id": 31,
+              "name": "BM1",
+              "type": "Balanceador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3100"
+            },
+            {
+              "id": 33,
+              "name": "CM1",
+              "type": "Controlador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3000"
+            },
+            {
+              "id": 35,
+              "name": "P1",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4001"
+            },
+            {
+              "id": 32,
+              "name": "BS1",
+              "type": "Balanceador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3101"
+            },
+            {
+              "id": 34,
+              "name": "CS1",
+              "type": "Controlador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3001"
+            },
+            {
+              "id": 36,
+              "name": "P2",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 39,
+              "name": "P3",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4003"
+            },
+            {
+              "id": 47,
+              "name": "CM2",
+              "type": "Controlador Main",
+              "group": "Grupo 2",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5000"
+            },
+            {
+              "id": 54,
+              "name": "CS2",
+              "type": "Controlador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:5001"
+            },
+            {
+              "id": 46,
+              "name": "BM2",
+              "type": "Balanceador Main",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4100"
+            },
+            {
+              "id": 55,
+              "name": "BS2",
+              "type": "Balanceador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4101"
+            },
+            {
+              "id": 48,
+              "name": "P4",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5004"
+            },
+            {
+              "id": 50,
+              "name": "P6",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5003"
+            },
+            {
+              "id": 49,
+              "name": "P5",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5002"
+            },
+            {
+              "id": 52,
+              "name": "P7",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4008"
+            },
+            {
+              "id": 53,
+              "name": "P8",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 57,
+              "name": "P9",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4041"
+            },
+            {
+              "id": 73,
+              "name": "P13",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4019"
+            }
+          ],
+          "links": [
+            {
+              "from": "BM1",
+              "to": "P3",
+              "kind": "assignment"
+            },
+            {
+              "from": "CM1",
+              "to": "BM1",
+              "kind": "assignment"
+            },
+            {
+              "from": "CS2",
+              "to": "BM2",
+              "kind": "assignment"
+            },
+            {
+              "from": "BS2",
+              "to": "BM2",
+              "kind": "supervision"
+            }
+          ],
+          "warnings": [
+            "P8: dirección duplicada en el catálogo",
+            "P1: El proceso no responde o su dirección no es válida",
+            "BS1: El proceso no responde o su dirección no es válida",
+            "CS1: El proceso no responde o su dirección no es válida",
+            "CM2: El proceso no responde o su dirección no es válida",
+            "P4: El proceso no responde o su dirección no es válida",
+            "P6: El proceso no responde o su dirección no es válida",
+            "P5: El proceso no responde o su dirección no es válida",
+            "P7: El proceso no responde o su dirección no es válida",
+            "P9: El proceso no responde o su dirección no es válida",
+            "P13: El proceso no responde o su dirección no es válida"
+          ],
+          "selected": [
+            "P1",
+            "BS1",
+            "CS1",
+            "CM2",
+            "P4",
+            "P6",
+            "P5",
+            "P7",
+            "P9",
+            "P13"
+          ]
+        },
+        {
+          "status": "",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "id": 31,
+              "name": "BM1",
+              "type": "Balanceador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3100"
+            },
+            {
+              "id": 33,
+              "name": "CM1",
+              "type": "Controlador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3000"
+            },
+            {
+              "id": 35,
+              "name": "P1",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4001"
+            },
+            {
+              "id": 32,
+              "name": "BS1",
+              "type": "Balanceador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3101"
+            },
+            {
+              "id": 34,
+              "name": "CS1",
+              "type": "Controlador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3001"
+            },
+            {
+              "id": 36,
+              "name": "P2",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 39,
+              "name": "P3",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4003"
+            },
+            {
+              "id": 47,
+              "name": "CM2",
+              "type": "Controlador Main",
+              "group": "Grupo 2",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5000"
+            },
+            {
+              "id": 54,
+              "name": "CS2",
+              "type": "Controlador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:5001"
+            },
+            {
+              "id": 46,
+              "name": "BM2",
+              "type": "Balanceador Main",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4100"
+            },
+            {
+              "id": 55,
+              "name": "BS2",
+              "type": "Balanceador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4101"
+            },
+            {
+              "id": 48,
+              "name": "P4",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5004"
+            },
+            {
+              "id": 50,
+              "name": "P6",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5003"
+            },
+            {
+              "id": 49,
+              "name": "P5",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5002"
+            },
+            {
+              "id": 52,
+              "name": "P7",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4008"
+            },
+            {
+              "id": 53,
+              "name": "P8",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 57,
+              "name": "P9",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4041"
+            },
+            {
+              "id": 73,
+              "name": "P13",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4019"
+            }
+          ],
+          "links": [
+            {
+              "from": "BM1",
+              "to": "P3",
+              "kind": "assignment"
+            },
+            {
+              "from": "CM1",
+              "to": "BM1",
+              "kind": "assignment"
+            },
+            {
+              "from": "CS2",
+              "to": "BM2",
+              "kind": "assignment"
+            },
+            {
+              "from": "BS2",
+              "to": "BM2",
+              "kind": "supervision"
+            }
+          ],
+          "warnings": [
+            "P8: dirección duplicada en el catálogo",
+            "P1: El proceso no responde o su dirección no es válida",
+            "BS1: El proceso no responde o su dirección no es válida",
+            "CS1: El proceso no responde o su dirección no es válida",
+            "CM2: El proceso no responde o su dirección no es válida",
+            "P4: El proceso no responde o su dirección no es válida",
+            "P6: El proceso no responde o su dirección no es válida",
+            "P5: El proceso no responde o su dirección no es válida",
+            "P7: El proceso no responde o su dirección no es válida",
+            "P9: El proceso no responde o su dirección no es válida",
+            "P13: El proceso no responde o su dirección no es válida"
+          ],
+          "selected": [
+            "BM1",
+            "CM1",
+            "P1",
+            "BS1",
+            "CS1",
+            "P2",
+            "P3",
+            "CM2",
+            "CS2",
+            "BM2",
+            "BS2",
+            "P4",
+            "P6",
+            "P5",
+            "P7",
+            "P8",
+            "P9",
+            "P13"
+          ]
+        },
+        {
+          "type": "Procesador",
+          "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:37:15",
+          "nodes": [
+            {
+              "id": 31,
+              "name": "BM1",
+              "type": "Balanceador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3100"
+            },
+            {
+              "id": 33,
+              "name": "CM1",
+              "type": "Controlador Main",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:3000"
+            },
+            {
+              "id": 35,
+              "name": "P1",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4001"
+            },
+            {
+              "id": 32,
+              "name": "BS1",
+              "type": "Balanceador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3101"
+            },
+            {
+              "id": 34,
+              "name": "CS1",
+              "type": "Controlador Subs",
+              "group": "Grupo 1",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:3001"
+            },
+            {
+              "id": 36,
+              "name": "P2",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 39,
+              "name": "P3",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4003"
+            },
+            {
+              "id": 47,
+              "name": "CM2",
+              "type": "Controlador Main",
+              "group": "Grupo 2",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5000"
+            },
+            {
+              "id": 54,
+              "name": "CS2",
+              "type": "Controlador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:5001"
+            },
+            {
+              "id": 46,
+              "name": "BM2",
+              "type": "Balanceador Main",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4100"
+            },
+            {
+              "id": 55,
+              "name": "BS2",
+              "type": "Balanceador Subs",
+              "group": "Grupo 2",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4101"
+            },
+            {
+              "id": 48,
+              "name": "P4",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5004"
+            },
+            {
+              "id": 50,
+              "name": "P6",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5003"
+            },
+            {
+              "id": 49,
+              "name": "P5",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:5002"
+            },
+            {
+              "id": 52,
+              "name": "P7",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4008"
+            },
+            {
+              "id": 53,
+              "name": "P8",
+              "type": "Procesador",
+              "group": "Grupo 1",
+              "status": true,
+              "pending": false,
+              "endpoint": "http://127.0.0.1:4002"
+            },
+            {
+              "id": 57,
+              "name": "P9",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4041"
+            },
+            {
+              "id": 73,
+              "name": "P13",
+              "type": "Procesador",
+              "group": "Sin grupo",
+              "status": false,
+              "pending": false,
+              "error": "El proceso no responde o su dirección no es válida",
+              "endpoint": "http://127.0.0.1:4019"
+            }
+          ],
+          "links": [
+            {
+              "from": "BM1",
+              "to": "P3",
+              "kind": "assignment"
+            },
+            {
+              "from": "CM1",
+              "to": "BM1",
+              "kind": "assignment"
+            },
+            {
+              "from": "CS2",
+              "to": "BM2",
+              "kind": "assignment"
+            },
+            {
+              "from": "BS2",
+              "to": "BM2",
+              "kind": "supervision"
+            }
+          ],
+          "warnings": [
+            "P8: dirección duplicada en el catálogo",
+            "P1: El proceso no responde o su dirección no es válida",
+            "BS1: El proceso no responde o su dirección no es válida",
+            "CS1: El proceso no responde o su dirección no es válida",
+            "CM2: El proceso no responde o su dirección no es válida",
+            "P4: El proceso no responde o su dirección no es válida",
+            "P6: El proceso no responde o su dirección no es válida",
+            "P5: El proceso no responde o su dirección no es válida",
+            "P7: El proceso no responde o su dirección no es válida",
+            "P9: El proceso no responde o su dirección no es válida",
+            "P13: El proceso no responde o su dirección no es válida"
+          ],
+          "selected": [
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P6",
+            "P5",
+            "P7",
+            "P8",
+            "P9",
+            "P13"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "conexiones_y_avisos",
+      "off": 0,
+      "on": 4,
+      "warnings": "11 avisos de nodos y conexiones\nP8: dirección duplicada en el catálogo\nP1: El proceso no responde o su dirección no es válida\nBS1: El proceso no responde o su dirección no es válida\nCS1: El proceso no responde o su dirección no es válida\nCM2: El proceso no responde o su dirección no es válida\nP4: El proceso no responde o su dirección no es válida\nP6: El proceso no responde o su dirección no es válida\nP5: El proceso no responde o su dirección no es válida\nP7: El proceso no responde o su dirección no es válida\nP9: El proceso no responde o su dirección no es válida\nP13: El proceso no responde o su dirección no es válida"
+    },
+    {
+      "name": "mapa_y_conexiones_reales",
+      "summary": "Mapa del sistema\n8 / 18 responden\nActualizado 14:37:18",
+      "nodes": [
+        {
+          "id": 31,
+          "name": "BM1",
+          "type": "Balanceador Main",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:3100"
+        },
+        {
+          "id": 33,
+          "name": "CM1",
+          "type": "Controlador Main",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:3000"
+        },
+        {
+          "id": 35,
+          "name": "P1",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:4001"
+        },
+        {
+          "id": 32,
+          "name": "BS1",
+          "type": "Balanceador Subs",
+          "group": "Grupo 1",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:3101"
+        },
+        {
+          "id": 34,
+          "name": "CS1",
+          "type": "Controlador Subs",
+          "group": "Grupo 1",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:3001"
+        },
+        {
+          "id": 36,
+          "name": "P2",
+          "type": "Procesador",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4002"
+        },
+        {
+          "id": 39,
+          "name": "P3",
+          "type": "Procesador",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4003"
+        },
+        {
+          "id": 47,
+          "name": "CM2",
+          "type": "Controlador Main",
+          "group": "Grupo 2",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:5000"
+        },
+        {
+          "id": 54,
+          "name": "CS2",
+          "type": "Controlador Subs",
+          "group": "Grupo 2",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:5001"
+        },
+        {
+          "id": 46,
+          "name": "BM2",
+          "type": "Balanceador Main",
+          "group": "Grupo 2",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4100"
+        },
+        {
+          "id": 55,
+          "name": "BS2",
+          "type": "Balanceador Subs",
+          "group": "Grupo 2",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4101"
+        },
+        {
+          "id": 48,
+          "name": "P4",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:5004"
+        },
+        {
+          "id": 50,
+          "name": "P6",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:5003"
+        },
+        {
+          "id": 49,
+          "name": "P5",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:5002"
+        },
+        {
+          "id": 52,
+          "name": "P7",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:4008"
+        },
+        {
+          "id": 53,
+          "name": "P8",
+          "type": "Procesador",
+          "group": "Grupo 1",
+          "status": true,
+          "pending": false,
+          "endpoint": "http://127.0.0.1:4002"
+        },
+        {
+          "id": 57,
+          "name": "P9",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:4041"
+        },
+        {
+          "id": 73,
+          "name": "P13",
+          "type": "Procesador",
+          "group": "Sin grupo",
+          "status": false,
+          "pending": false,
+          "error": "El proceso no responde o su dirección no es válida",
+          "endpoint": "http://127.0.0.1:4019"
+        }
+      ],
+      "links": [
+        {
+          "from": "BM1",
+          "to": "P3",
+          "kind": "assignment"
+        },
+        {
+          "from": "CM1",
+          "to": "BM1",
+          "kind": "assignment"
+        },
+        {
+          "from": "CS2",
+          "to": "BM2",
+          "kind": "assignment"
+        },
+        {
+          "from": "BS2",
+          "to": "BM2",
+          "kind": "supervision"
+        }
+      ],
+      "warnings": [
+        "P8: dirección duplicada en el catálogo",
+        "P1: El proceso no responde o su dirección no es válida",
+        "BS1: El proceso no responde o su dirección no es válida",
+        "CS1: El proceso no responde o su dirección no es válida",
+        "CM2: El proceso no responde o su dirección no es válida",
+        "P4: El proceso no responde o su dirección no es válida",
+        "P6: El proceso no responde o su dirección no es válida",
+        "P5: El proceso no responde o su dirección no es válida",
+        "P7: El proceso no responde o su dirección no es válida",
+        "P9: El proceso no responde o su dirección no es válida",
+        "P13: El proceso no responde o su dirección no es válida"
+      ],
+      "selected": [
+        "BM1",
+        "CM1",
+        "P1",
+        "BS1",
+        "CS1",
+        "P2",
+        "P3",
+        "CM2",
+        "CS2",
+        "BM2",
+        "BS2",
+        "P4",
+        "P6",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P13"
+      ],
+      "map": {
+        "markers": [
+          {
+            "name": "BM1",
+            "point": {
+              "x": 744,
+              "y": 243
+            },
+            "latlng": {
+              "lat": 40,
+              "lng": 80
+            }
+          },
+          {
+            "name": "CM1",
+            "point": {
+              "x": 815,
+              "y": 192
+            },
+            "latlng": {
+              "lat": 62,
+              "lng": 130
+            }
+          },
+          {
+            "name": "P1",
+            "point": {
+              "x": 849,
+              "y": 353
+            },
+            "latlng": {
+              "lat": -32,
+              "lng": 154
+            }
+          },
+          {
+            "name": "BS1",
+            "point": {
+              "x": 658,
+              "y": 250
+            },
+            "latlng": {
+              "lat": 36,
+              "lng": 20
+            }
+          },
+          {
+            "name": "CS1",
+            "point": {
+              "x": 815,
+              "y": 353
+            },
+            "latlng": {
+              "lat": -32,
+              "lng": 130
+            }
+          },
+          {
+            "name": "P2",
+            "point": {
+              "x": 751,
+              "y": 291
+            },
+            "latlng": {
+              "lat": 10,
+              "lng": 85
+            }
+          },
+          {
+            "name": "P3",
+            "point": {
+              "x": 658,
+              "y": 189
+            },
+            "latlng": {
+              "lat": 63,
+              "lng": 20
+            }
+          },
+          {
+            "name": "CM2",
+            "point": {
+              "x": 488,
+              "y": 260
+            },
+            "latlng": {
+              "lat": 30,
+              "lng": -100
+            }
+          },
+          {
+            "name": "CS2",
+            "point": {
+              "x": 630,
+              "y": 305
+            },
+            "latlng": {
+              "lat": 0,
+              "lng": 0
+            }
+          },
+          {
+            "name": "BM2",
+            "point": {
+              "x": 569,
+              "y": 309
+            },
+            "latlng": {
+              "lat": -3,
+              "lng": -43
+            }
+          },
+          {
+            "name": "BS2",
+            "point": {
+              "x": 530,
+              "y": 367
+            },
+            "latlng": {
+              "lat": -40,
+              "lng": -70
+            }
+          },
+          {
+            "name": "P4",
+            "point": {
+              "x": 516,
+              "y": 223
+            },
+            "latlng": {
+              "lat": 50,
+              "lng": -80
+            }
+          },
+          {
+            "name": "P6",
+            "point": {
+              "x": 417,
+              "y": 198
+            },
+            "latlng": {
+              "lat": 60,
+              "lng": -150
+            }
+          },
+          {
+            "name": "P5",
+            "point": {
+              "x": 573,
+              "y": 367
+            },
+            "latlng": {
+              "lat": -40,
+              "lng": -40
+            }
+          },
+          {
+            "name": "P7",
+            "point": {
+              "x": 624,
+              "y": 245
+            },
+            "latlng": {
+              "lat": 39,
+              "lng": -4
+            }
+          },
+          {
+            "name": "P8",
+            "point": {
+              "x": 505,
+              "y": 274
+            },
+            "latlng": {
+              "lat": 21,
+              "lng": -88
+            }
+          },
+          {
+            "name": "P9",
+            "point": {
+              "x": 661,
+              "y": 273
+            },
+            "latlng": {
+              "lat": 22,
+              "lng": 22
+            }
+          },
+          {
+            "name": "P13",
+            "point": {
+              "x": 637,
+              "y": 237
+            },
+            "latlng": {
+              "lat": 43,
+              "lng": 5
+            }
+          }
+        ],
+        "lineCount": 4,
+        "markerCollisions": [
+          [
+            "BS1",
+            "P9"
+          ],
+          [
+            "BS1",
+            "P13"
+          ],
+          [
+            "CM2",
+            "P8"
+          ],
+          [
+            "P7",
+            "P13"
+          ]
+        ],
+        "zoom": 1,
+        "names": [
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          },
+          {
+            "alt": "Marker",
+            "label": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "mapa_foco_con_refresco_real",
+      "before": {
+        "tag": "IMG",
+        "role": "button"
+      },
+      "after": {
+        "tag": "BODY",
+        "role": null
+      }
+    }
+  ],
+  "errors": [],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    }
+  ],
+  "writes": []
+}

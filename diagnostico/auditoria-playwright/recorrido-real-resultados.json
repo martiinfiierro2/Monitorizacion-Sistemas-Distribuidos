@@ -1,0 +1,960 @@
+{
+  "date": "2026-10-18T12:04:33.874Z",
+  "base": "http://127.0.0.1:4200",
+  "catalogCount": 18,
+  "catalogUnchanged": true,
+  "results": [
+    {
+      "name": "grafo_real_escritorio",
+      "nodes": 18,
+      "links": 4,
+      "collisions": [
+        [
+          "BM1",
+          "BS1"
+        ],
+        [
+          "CM1",
+          "CS1"
+        ],
+        [
+          "P1",
+          "P5"
+        ],
+        [
+          "P2",
+          "P8"
+        ],
+        [
+          "CM2",
+          "CS2"
+        ],
+        [
+          "BM2",
+          "BS2"
+        ],
+        [
+          "P4",
+          "P7"
+        ],
+        [
+          "P6",
+          "P9"
+        ],
+        [
+          "P5",
+          "P13"
+        ]
+      ],
+      "boxes": [
+        {
+          "name": "BM1",
+          "x": 446.58768,
+          "y": 21.799999999999983,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "CM1",
+          "x": 272.25551999999993,
+          "y": 21.799999999999983,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P1",
+          "x": 633.95568,
+          "y": 329.64000000000004,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "BS1",
+          "x": 446.58768,
+          "y": 75.07999999999998,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "CS1",
+          "x": 272.25551999999993,
+          "y": 75.07999999999998,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P2",
+          "x": 633.95568,
+          "y": 21.799999999999983,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P3",
+          "x": 933.7444800000001,
+          "y": 21.799999999999983,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "CM2",
+          "x": 272.25551999999993,
+          "y": 187.56,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "CS2",
+          "x": 272.25551999999993,
+          "y": 240.84000000000003,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "BM2",
+          "x": 446.58768,
+          "y": 187.56,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "BS2",
+          "x": 446.58768,
+          "y": 240.84000000000003,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P4",
+          "x": 783.85008,
+          "y": 329.64000000000004,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P6",
+          "x": 933.7444800000001,
+          "y": 329.64000000000004,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P5",
+          "x": 633.95568,
+          "y": 382.92,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P7",
+          "x": 783.85008,
+          "y": 382.92,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P8",
+          "x": 633.95568,
+          "y": 75.07999999999998,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P9",
+          "x": 933.7444800000001,
+          "y": 382.92,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P13",
+          "x": 633.95568,
+          "y": 436.20000000000005,
+          "w": 60,
+          "h": 60
+        }
+      ],
+      "selected": 18,
+      "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:04:19"
+    },
+    {
+      "name": "filtros_y_conexiones",
+      "processors": 10,
+      "responding": 3,
+      "disabledLinks": 0,
+      "restoredLinks": 4
+    },
+    {
+      "name": "grafo_movil",
+      "nodes": 18,
+      "links": 4,
+      "collisions": [
+        [
+          "BM1",
+          "CM1"
+        ],
+        [
+          "BM1",
+          "BS1"
+        ],
+        [
+          "BM1",
+          "CS1"
+        ],
+        [
+          "CM1",
+          "BS1"
+        ],
+        [
+          "CM1",
+          "CS1"
+        ],
+        [
+          "P1",
+          "P4"
+        ],
+        [
+          "P1",
+          "P5"
+        ],
+        [
+          "P1",
+          "P7"
+        ],
+        [
+          "BS1",
+          "CS1"
+        ],
+        [
+          "P2",
+          "P8"
+        ],
+        [
+          "CM2",
+          "CS2"
+        ],
+        [
+          "CM2",
+          "BM2"
+        ],
+        [
+          "CM2",
+          "BS2"
+        ],
+        [
+          "CS2",
+          "BM2"
+        ],
+        [
+          "CS2",
+          "BS2"
+        ],
+        [
+          "BM2",
+          "BS2"
+        ],
+        [
+          "P4",
+          "P6"
+        ],
+        [
+          "P4",
+          "P5"
+        ],
+        [
+          "P4",
+          "P7"
+        ],
+        [
+          "P4",
+          "P9"
+        ],
+        [
+          "P6",
+          "P7"
+        ],
+        [
+          "P6",
+          "P9"
+        ],
+        [
+          "P5",
+          "P7"
+        ],
+        [
+          "P5",
+          "P13"
+        ],
+        [
+          "P7",
+          "P9"
+        ],
+        [
+          "P7",
+          "P13"
+        ]
+      ],
+      "boxes": [
+        {
+          "name": "BM1",
+          "x": 44.827160493827165,
+          "y": 22.506172839506178,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "CM1",
+          "x": -1,
+          "y": 22.506172839506178,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P1",
+          "x": 116.4320987654321,
+          "y": 320.38271604938274,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "BS1",
+          "x": 44.827160493827165,
+          "y": 74.06172839506173,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "CS1",
+          "x": -1,
+          "y": 74.06172839506173,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P2",
+          "x": 116.4320987654321,
+          "y": 22.506172839506178,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P3",
+          "x": 231,
+          "y": 22.506172839506178,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "CM2",
+          "x": -1,
+          "y": 182.90123456790124,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "CS2",
+          "x": -1,
+          "y": 234.4567901234568,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "BM2",
+          "x": 44.827160493827165,
+          "y": 182.90123456790124,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "BS2",
+          "x": 44.827160493827165,
+          "y": 234.4567901234568,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P4",
+          "x": 173.71604938271605,
+          "y": 320.38271604938274,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P6",
+          "x": 231,
+          "y": 320.38271604938274,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P5",
+          "x": 116.4320987654321,
+          "y": 371.9382716049383,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P7",
+          "x": 173.71604938271605,
+          "y": 371.9382716049383,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P8",
+          "x": 116.4320987654321,
+          "y": 74.06172839506173,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P9",
+          "x": 231,
+          "y": 371.9382716049383,
+          "w": 60,
+          "h": 60
+        },
+        {
+          "name": "P13",
+          "x": 116.4320987654321,
+          "y": 423.4938271604938,
+          "w": 60,
+          "h": 60
+        }
+      ],
+      "selected": 18,
+      "summary": "Topología del sistema\n8 / 18 responden\nActualizado 14:04:19",
+      "layout": {
+        "width": 390,
+        "documentWidth": 390,
+        "mainWidth": 330,
+        "mainClient": 330,
+        "canvas": {
+          "x": 80,
+          "y": 464,
+          "width": 290,
+          "height": 506.390625,
+          "top": 464,
+          "right": 370,
+          "bottom": 970.390625,
+          "left": 80
+        },
+        "keyboardGraphItems": 0
+      }
+    },
+    {
+      "name": "catalogo_paginacion_busqueda",
+      "firstCount": 10,
+      "paginator": "Items per page:\n10\n1 – 10 of 18",
+      "secondCount": 8,
+      "empty": [
+        "No hay nodos que coincidan con la búsqueda."
+      ],
+      "restored": 10
+    },
+    {
+      "name": "exportar_catalogo",
+      "file": "listaNodos.json",
+      "failure": null
+    },
+    {
+      "name": "catalogo_movil_y_formulario",
+      "layout": [
+        {
+          "text": "Añadir Nodo",
+          "rect": {
+            "x": 188.484375,
+            "y": 44,
+            "width": 152.515625,
+            "height": 40,
+            "top": 44,
+            "right": 341,
+            "bottom": 84,
+            "left": 188.484375
+          }
+        },
+        {
+          "text": "Descargar",
+          "rect": {
+            "x": 104,
+            "y": 94,
+            "width": 138.765625,
+            "height": 40,
+            "top": 94,
+            "right": 242.765625,
+            "bottom": 134,
+            "left": 104
+          }
+        },
+        {
+          "text": "Buscar...",
+          "rect": {
+            "x": 104,
+            "y": 144,
+            "width": 211,
+            "height": 29,
+            "top": 144,
+            "right": 315,
+            "bottom": 173,
+            "left": 104
+          }
+        }
+      ],
+      "form": {
+        "width": 312,
+        "scrollWidth": 312,
+        "text": "Añadir Nodo\nTipo de nodo\nProcesador\nNombre\nURL\nPuerto\nOrden\nGeolocalización\nVisiblidad\nActivada\nAñadir",
+        "unlabelledButtons": 1,
+        "inputs": [
+          {
+            "placeholder": "",
+            "rect": {
+              "x": 104,
+              "y": 352.203125,
+              "width": 214.390625,
+              "height": 24,
+              "top": 352.203125,
+              "right": 318.390625,
+              "bottom": 376.203125,
+              "left": 104
+            }
+          },
+          {
+            "placeholder": "",
+            "rect": {
+              "x": 104,
+              "y": 462.203125,
+              "width": 214.390625,
+              "height": 24,
+              "top": 462.203125,
+              "right": 318.390625,
+              "bottom": 486.203125,
+              "left": 104
+            }
+          },
+          {
+            "placeholder": "",
+            "rect": {
+              "x": 104,
+              "y": 572.203125,
+              "width": 214.390625,
+              "height": 24,
+              "top": 572.203125,
+              "right": 318.390625,
+              "bottom": 596.203125,
+              "left": 104
+            }
+          },
+          {
+            "placeholder": "",
+            "rect": {
+              "x": 104,
+              "y": 666.203125,
+              "width": 214.390625,
+              "height": 24,
+              "top": 666.203125,
+              "right": 318.390625,
+              "bottom": 690.203125,
+              "left": 104
+            }
+          },
+          {
+            "placeholder": "Latitud",
+            "rect": {
+              "x": 104,
+              "y": 776.203125,
+              "width": 210,
+              "height": 24,
+              "top": 776.203125,
+              "right": 314,
+              "bottom": 800.203125,
+              "left": 104
+            }
+          },
+          {
+            "placeholder": "Longitud",
+            "rect": {
+              "x": 104,
+              "y": 846.203125,
+              "width": 210,
+              "height": 24,
+              "top": 846.203125,
+              "right": 314,
+              "bottom": 870.203125,
+              "left": 104
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "mapa_real_movil_y_teclado",
+      "markers": 18,
+      "keyboardNames": [
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        },
+        {
+          "alt": "Marker",
+          "title": null,
+          "label": null,
+          "tabindex": "0"
+        }
+      ],
+      "imagesFailed": []
+    },
+    {
+      "name": "navegacion_repetida",
+      "url": "http://127.0.0.1:4200/grafo",
+      "errors": []
+    },
+    {
+      "name": "url_inexistente",
+      "url": "http://127.0.0.1:4200/",
+      "text": ""
+    }
+  ],
+  "errors": [],
+  "failures": [
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/35/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/32/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/34/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/47/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/48/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/50/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/49/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/52/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/57/debug",
+      "status": 502
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/73/debug",
+      "status": 502
+    }
+  ],
+  "blockedWrites": []
+}

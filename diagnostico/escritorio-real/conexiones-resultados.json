@@ -1,0 +1,232 @@
+{
+  "date": "2026-10-18T12:42:55.306Z",
+  "debugResponses": "real",
+  "processes": [
+    {
+      "catalogName": "BM1",
+      "type": "Balanceador Main",
+      "endpoint": "http://127.0.0.1:3100",
+      "balancerSubsActive": false,
+      "configuredReferences": {
+        "urlMain": ""
+      },
+      "selectedDestinations": [
+        {
+          "name": "process3",
+          "url": "http://127.0.0.1:4003",
+          "load": 100
+        }
+      ]
+    },
+    {
+      "catalogName": "CM1",
+      "type": "Controlador Main",
+      "endpoint": "http://127.0.0.1:3000",
+      "coordinatorSubsActive": false,
+      "configuredReferences": {
+        "urlBalancerMain": "http://127.0.0.1:3100",
+        "urlBalancerSubs": "http://127.0.0.1:3101",
+        "urlCoordinatorlMain": ""
+      },
+      "selectedDestinations": [
+        {
+          "name": "process3",
+          "url": "http://127.0.0.1:4003",
+          "load": 100
+        }
+      ]
+    },
+    {
+      "catalogName": "P2",
+      "type": "Procesador",
+      "endpoint": "http://127.0.0.1:4002",
+      "runtimeName": "process2",
+      "configuredReferences": {
+        "urlCoordinatorMain": "http://127.0.0.1:3000",
+        "urlCoordinatorSubs": "http://127.0.0.1:3001"
+      },
+      "selectedDestinations": []
+    },
+    {
+      "catalogName": "P3",
+      "type": "Procesador",
+      "endpoint": "http://127.0.0.1:4003",
+      "runtimeName": "process3",
+      "configuredReferences": {
+        "urlCoordinatorMain": "http://127.0.0.1:3000",
+        "urlCoordinatorSubs": "http://127.0.0.1:3001"
+      },
+      "selectedDestinations": []
+    },
+    {
+      "catalogName": "CS2",
+      "type": "Controlador Subs",
+      "endpoint": "http://127.0.0.1:5001",
+      "coordinatorSubsActive": true,
+      "configuredReferences": {
+        "urlBalancerMain": "http://127.0.0.1:4100",
+        "urlBalancerSubs": "http://127.0.0.1:4101",
+        "urlCoordinatorlMain": "http://127.0.0.1:5000"
+      },
+      "selectedDestinations": []
+    },
+    {
+      "catalogName": "BM2",
+      "type": "Balanceador Main",
+      "endpoint": "http://127.0.0.1:4100",
+      "balancerSubsActive": false,
+      "configuredReferences": {
+        "urlMain": ""
+      },
+      "selectedDestinations": []
+    },
+    {
+      "catalogName": "BS2",
+      "type": "Balanceador Subs",
+      "endpoint": "http://127.0.0.1:4101",
+      "balancerSubsActive": false,
+      "configuredReferences": {
+        "urlMain": "http://127.0.0.1:4100"
+      },
+      "selectedDestinations": []
+    },
+    {
+      "catalogName": "P8",
+      "type": "Procesador",
+      "endpoint": "http://127.0.0.1:4002",
+      "runtimeName": "process2",
+      "configuredReferences": {
+        "urlCoordinatorMain": "http://127.0.0.1:3000",
+        "urlCoordinatorSubs": "http://127.0.0.1:3001"
+      },
+      "selectedDestinations": []
+    }
+  ],
+  "displayedLinks": [
+    {
+      "from": "BM1",
+      "to": "P3",
+      "kind": "assignment"
+    },
+    {
+      "from": "CM1",
+      "to": "BM1",
+      "kind": "assignment"
+    },
+    {
+      "from": "CS2",
+      "to": "BM2",
+      "kind": "assignment"
+    },
+    {
+      "from": "BS2",
+      "to": "BM2",
+      "kind": "supervision"
+    }
+  ],
+  "groups": [
+    {
+      "name": "BM1",
+      "group": "Grupo 1",
+      "status": true
+    },
+    {
+      "name": "CM1",
+      "group": "Grupo 1",
+      "status": true
+    },
+    {
+      "name": "P1",
+      "group": "Sin grupo",
+      "status": false
+    },
+    {
+      "name": "BS1",
+      "group": "Grupo 1",
+      "status": false
+    },
+    {
+      "name": "CS1",
+      "group": "Grupo 1",
+      "status": false
+    },
+    {
+      "name": "P2",
+      "group": "Grupo 1",
+      "status": true
+    },
+    {
+      "name": "P3",
+      "group": "Grupo 1",
+      "status": true
+    },
+    {
+      "name": "CM2",
+      "group": "Grupo 2",
+      "status": false
+    },
+    {
+      "name": "CS2",
+      "group": "Grupo 2",
+      "status": true
+    },
+    {
+      "name": "BM2",
+      "group": "Grupo 2",
+      "status": true
+    },
+    {
+      "name": "BS2",
+      "group": "Grupo 2",
+      "status": true
+    },
+    {
+      "name": "P4",
+      "group": "Sin grupo",
+      "status": false
+    },
+    {
+      "name": "P6",
+      "group": "Sin grupo",
+      "status": false
+    },
+    {
+      "name": "P5",
+      "group": "Sin grupo",
+      "status": false
+    },
+    {
+      "name": "P7",
+      "group": "Sin grupo",
+      "status": false
+    },
+    {
+      "name": "P8",
+      "group": "Grupo 1",
+      "status": true
+    },
+    {
+      "name": "P9",
+      "group": "Sin grupo",
+      "status": false
+    },
+    {
+      "name": "P13",
+      "group": "Sin grupo",
+      "status": false
+    }
+  ],
+  "warnings": [
+    "P8: dirección duplicada en el catálogo",
+    "P1: El proceso no responde o su dirección no es válida",
+    "BS1: El proceso no responde o su dirección no es válida",
+    "CS1: El proceso no responde o su dirección no es válida",
+    "CM2: El proceso no responde o su dirección no es válida",
+    "P4: El proceso no responde o su dirección no es válida",
+    "P6: El proceso no responde o su dirección no es válida",
+    "P5: El proceso no responde o su dirección no es válida",
+    "P7: El proceso no responde o su dirección no es válida",
+    "P9: El proceso no responde o su dirección no es válida",
+    "P13: El proceso no responde o su dirección no es válida"
+  ]
+}

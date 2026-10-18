@@ -1,0 +1,562 @@
+{
+  "date": "2026-10-18T12:39:28.693Z",
+  "mode": "desktop-real-debug-only-query-date-writes-blocked",
+  "results": [
+    {
+      "name": "BM1",
+      "type": "Balanceador Main",
+      "error": "",
+      "role": "Principal",
+      "receivedMessages": 0,
+      "receivedRate": 0,
+      "delivery": {
+        "delivered": 0,
+        "failedAttempts": 0,
+        "rejected": 0,
+        "pending": 0
+      },
+      "registered": [],
+      "selected": [
+        {
+          "name": "process3",
+          "url": "http://127.0.0.1:4003",
+          "load": 100
+        }
+      ],
+      "body": "Balanceador Main: BM1\nCerrar\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 3100 · Orden 1\n\nLatitud 40, longitud 80\n\nÚltima consulta correcta anterior: 18/10/2026 13:57:12\n\nEstado del proceso\n\nRol confirmado: Principal · Consulta actual: 14:39:15\n\nMensajes en ventana: 0 · Mensajes/s: 0\n\nCola pendiente: 0 · Entregados: 0 · Intentos fallidos: 0 · Rechazados: 0\n\nEntrada MQTT: Desconectada o sin configurar\n\nConfiguración del proceso\nDestinos seleccionados (1)\nNombre\tDirección\tReparto asignado\nprocess3\thttp://127.0.0.1:4003\t100 %",
+      "tableHeads": [
+        "Nombre",
+        "Dirección",
+        "Reparto asignado"
+      ],
+      "horizontalOverflow": [
+        {
+          "width": 912,
+          "parent": 912
+        }
+      ],
+      "dialog": {
+        "x": 159,
+        "y": 61.90625,
+        "width": 1048,
+        "height": 644.1875,
+        "top": 61.90625,
+        "right": 1207,
+        "bottom": 706.09375,
+        "left": 159
+      }
+    },
+    {
+      "name": "BS1",
+      "type": "Balanceador Subs",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Balanceador Subs: BS1\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 3101 · Orden 2\n\nLatitud 36, longitud 20\n\nÚltima consulta correcta anterior: 18/05/2026 17:02:52",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "CM1",
+      "type": "Controlador Main",
+      "error": "",
+      "role": "Principal",
+      "receivedMessages": 0,
+      "receivedRate": 0,
+      "registered": [
+        {
+          "name": "process3",
+          "url": "http://127.0.0.1:4003",
+          "capacity": 100,
+          "preference": 0.5,
+          "AYACOUNT": 3
+        },
+        {
+          "name": "process2",
+          "url": "http://127.0.0.1:4002",
+          "capacity": 100,
+          "preference": 0.3,
+          "AYACOUNT": 3
+        }
+      ],
+      "selected": [
+        {
+          "name": "process3",
+          "url": "http://127.0.0.1:4003",
+          "load": 100
+        }
+      ],
+      "body": "Controlador Main: CM1\nCerrar\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 3000 · Orden 1\n\nLatitud 62, longitud 130\n\nÚltima consulta correcta anterior: 18/10/2026 13:53:30\n\nEstado del proceso\n\nRol confirmado: Principal · Consulta actual: 14:39:16\n\nMensajes en ventana: 0 · Mensajes/s: 0\n\nConfiguración del proceso\nProcesadores registrados (2)\nNombre\tDirección\tCapacidad\tPreferencia\tIntentos restantes\nprocess3\thttp://127.0.0.1:4003\t100\t0.5\t3\nprocess2\thttp://127.0.0.1:4002\t100\t0.3\t3\nDestinos seleccionados (1)\nNombre\tDirección\tReparto asignado\nprocess3\thttp://127.0.0.1:4003\t100 %",
+      "tableHeads": [
+        "Nombre",
+        "Dirección",
+        "Capacidad",
+        "Preferencia",
+        "Intentos restantes",
+        "Nombre",
+        "Dirección",
+        "Reparto asignado"
+      ],
+      "horizontalOverflow": [
+        {
+          "width": 912,
+          "parent": 912
+        },
+        {
+          "width": 912,
+          "parent": 912
+        }
+      ],
+      "dialog": {
+        "x": 159,
+        "y": 61.90625,
+        "width": 1048,
+        "height": 644.1875,
+        "top": 61.90625,
+        "right": 1207,
+        "bottom": 706.09375,
+        "left": 159
+      }
+    },
+    {
+      "name": "CS1",
+      "type": "Controlador Subs",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Controlador Subs: CS1\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 3001 · Orden 2\n\nLatitud -32, longitud 130\n\nÚltima consulta correcta anterior: 18/05/2026 22:35:58",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P1",
+      "type": "Procesador",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Procesador: P1\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 4001 · Orden 1\n\nLatitud -32, longitud 154\n\nÚltima consulta correcta anterior: 18/05/2026 22:45:01",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P2",
+      "type": "Procesador",
+      "error": "",
+      "role": "Procesador",
+      "configName": "process2",
+      "receivedMessages": 0,
+      "registered": [],
+      "selected": [],
+      "internalCapacity": 100,
+      "internalPreference": 0.3,
+      "body": "Procesador: P2\nCerrar\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 4002 · Orden 2\n\nLatitud 10, longitud 85\n\nÚltima consulta correcta anterior: 18/10/2026 13:53:40\n\nEstado del proceso\n\nRol confirmado: Procesador · Consulta actual: 14:39:18\n\nCapacidad: 100 mensajes/s · Preferencia: 0.3 · Mensajes aceptados: 0 · Reintentos duplicados: 0\n\nRegistro en principal: Confirmado · Sustituto: Pendiente\n\nConfiguración del proceso",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 135.5,
+        "width": 1048,
+        "height": 497,
+        "top": 135.5,
+        "right": 1207,
+        "bottom": 632.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P3",
+      "type": "Procesador",
+      "error": "",
+      "role": "Procesador",
+      "configName": "process3",
+      "receivedMessages": 0,
+      "registered": [],
+      "selected": [],
+      "internalCapacity": 100,
+      "internalPreference": 0.5,
+      "body": "Procesador: P3\nCerrar\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 4003 · Orden 3\n\nLatitud 63, longitud 20\n\nÚltima consulta correcta anterior: 18/10/2026 13:58:04\n\nEstado del proceso\n\nRol confirmado: Procesador · Consulta actual: 14:39:19\n\nCapacidad: 100 mensajes/s · Preferencia: 0.5 · Mensajes aceptados: 0 · Reintentos duplicados: 0\n\nRegistro en principal: Confirmado · Sustituto: Pendiente\n\nConfiguración del proceso",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 135.5,
+        "width": 1048,
+        "height": 497,
+        "top": 135.5,
+        "right": 1207,
+        "bottom": 632.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "BM2",
+      "type": "Balanceador Main",
+      "error": "",
+      "role": "Principal",
+      "receivedMessages": 0,
+      "receivedRate": 0,
+      "delivery": {
+        "delivered": 0,
+        "failedAttempts": 0,
+        "rejected": 0,
+        "pending": 0
+      },
+      "registered": [],
+      "selected": [],
+      "body": "Balanceador Main: BM2\nCerrar\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 4100 · Orden 6\n\nLatitud -3, longitud -43\n\nÚltima consulta correcta anterior: 18/05/2026 22:36:02\n\nEstado del proceso\n\nRol confirmado: Principal · Consulta actual: 14:39:20\n\nMensajes en ventana: 0 · Mensajes/s: 0\n\nCola pendiente: 0 · Entregados: 0 · Intentos fallidos: 0 · Rechazados: 0\n\nEntrada MQTT: Desconectada o sin configurar\n\nConfiguración del proceso\nDestinos seleccionados (0)\nNombre\tDirección\tReparto asignado\n\nNo hay destinos seleccionados.",
+      "tableHeads": [
+        "Nombre",
+        "Dirección",
+        "Reparto asignado"
+      ],
+      "horizontalOverflow": [
+        {
+          "width": 912,
+          "parent": 912
+        }
+      ],
+      "dialog": {
+        "x": 159,
+        "y": 61.90625,
+        "width": 1048,
+        "height": 644.1875,
+        "top": 61.90625,
+        "right": 1207,
+        "bottom": 706.09375,
+        "left": 159
+      }
+    },
+    {
+      "name": "CM2",
+      "type": "Controlador Main",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Controlador Main: CM2\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 5000 · Orden 3\n\nLatitud 30, longitud -100\n\nÚltima consulta correcta anterior: 18/05/2026 22:36:00",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P4",
+      "type": "Procesador",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Procesador: P4\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 5004 · Orden 12\n\nLatitud 50, longitud -80\n\nÚltima consulta correcta anterior: 19/05/2026 11:36:10",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P5",
+      "type": "Procesador",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Procesador: P5\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 5002 · Orden 14\n\nLatitud -40, longitud -40\n\nÚltima consulta correcta anterior: 08/12/2024 17:44:58",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P6",
+      "type": "Procesador",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Procesador: P6\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 5003 · Orden 13\n\nLatitud 60, longitud -150\n\nÚltima consulta correcta anterior: 18/10/2026 13:53:00",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P7",
+      "type": "Procesador",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Procesador: P7\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 4008 · Orden 15\n\nLatitud 39, longitud -4\n\nÚltima consulta correcta anterior: 06/01/2025 20:20:16",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P8",
+      "type": "Procesador",
+      "error": "",
+      "role": "Procesador",
+      "configName": "process2",
+      "receivedMessages": 0,
+      "registered": [],
+      "selected": [],
+      "internalCapacity": 100,
+      "internalPreference": 0.3,
+      "body": "Procesador: P8\nCerrar\nDatos del catálogo\n\nhttp://localhost:4002 · Puerto 4002 · Orden 16\n\nLatitud 21, longitud -88\n\nÚltima consulta correcta anterior: 08/12/2024 17:45:17\n\nEstado del proceso\n\nRol confirmado: Procesador · Consulta actual: 14:39:24\n\nCapacidad: 100 mensajes/s · Preferencia: 0.3 · Mensajes aceptados: 0 · Reintentos duplicados: 0\n\nRegistro en principal: Confirmado · Sustituto: Pendiente\n\nConfiguración del proceso",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 135.5,
+        "width": 1048,
+        "height": 497,
+        "top": 135.5,
+        "right": 1207,
+        "bottom": 632.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "CS2",
+      "type": "Controlador Subs",
+      "error": "",
+      "role": "Sustituto activo",
+      "receivedMessages": 0,
+      "receivedRate": 0,
+      "registered": [],
+      "selected": [],
+      "body": "Controlador Subs: CS2\nCerrar\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 5001 · Orden 4\n\nLatitud 0, longitud 0\n\nÚltima consulta correcta anterior: 18/05/2026 22:45:06\n\nEstado del proceso\n\nRol confirmado: Sustituto activo · Consulta actual: 14:39:25\n\nMensajes en ventana: 0 · Mensajes/s: 0\n\nIntentos restantes al principal: 0\n\nConfiguración del proceso\nProcesadores registrados (0)\nNombre\tDirección\tCapacidad\tPreferencia\tIntentos restantes\n\nNo hay procesadores registrados.\n\nDestinos seleccionados (0)\nNombre\tDirección\tReparto asignado\n\nNo hay destinos seleccionados.",
+      "tableHeads": [
+        "Nombre",
+        "Dirección",
+        "Capacidad",
+        "Preferencia",
+        "Intentos restantes",
+        "Nombre",
+        "Dirección",
+        "Reparto asignado"
+      ],
+      "horizontalOverflow": [
+        {
+          "width": 912,
+          "parent": 912
+        },
+        {
+          "width": 912,
+          "parent": 912
+        }
+      ],
+      "dialog": {
+        "x": 159,
+        "y": 61.90625,
+        "width": 1048,
+        "height": 644.1875,
+        "top": 61.90625,
+        "right": 1207,
+        "bottom": 706.09375,
+        "left": 159
+      }
+    },
+    {
+      "name": "BS2",
+      "type": "Balanceador Subs",
+      "error": "",
+      "role": "Sustituto en espera",
+      "receivedMessages": 0,
+      "receivedRate": 0,
+      "delivery": {
+        "delivered": 0,
+        "failedAttempts": 0,
+        "rejected": 0,
+        "pending": 0
+      },
+      "registered": [],
+      "selected": [],
+      "body": "Balanceador Subs: BS2\nCerrar\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 4101 · Orden 8\n\nLatitud -40, longitud -70\n\nÚltima consulta correcta anterior: 08/12/2024 17:52:55\n\nEstado del proceso\n\nRol confirmado: Sustituto en espera · Consulta actual: 14:39:26\n\nMensajes en ventana: 0 · Mensajes/s: 0\n\nIntentos restantes al principal: 3\n\nCola pendiente: 0 · Entregados: 0 · Intentos fallidos: 0 · Rechazados: 0\n\nEntrada MQTT: Desconectada o sin configurar\n\nConfiguración del proceso\nDestinos seleccionados (0)\nNombre\tDirección\tReparto asignado\n\nNo hay destinos seleccionados.",
+      "tableHeads": [
+        "Nombre",
+        "Dirección",
+        "Reparto asignado"
+      ],
+      "horizontalOverflow": [
+        {
+          "width": 912,
+          "parent": 912
+        }
+      ],
+      "dialog": {
+        "x": 159,
+        "y": 61.90625,
+        "width": 1048,
+        "height": 644.1875,
+        "top": 61.90625,
+        "right": 1207,
+        "bottom": 706.09375,
+        "left": 159
+      }
+    },
+    {
+      "name": "P9",
+      "type": "Procesador",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Procesador: P9\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 4041 · Orden 99\n\nLatitud 22, longitud 22\n\nÚltima consulta correcta anterior: 08/12/2024 17:45:34",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    },
+    {
+      "name": "P13",
+      "type": "Procesador",
+      "error": "El proceso no responde o su dirección no es válida",
+      "role": "Sin confirmar",
+      "registered": [],
+      "selected": [],
+      "body": "Procesador: P13\nCerrar\n\nEl proceso no responde o su dirección no es válida.\n\nDatos del catálogo\n\nhttp://127.0.0.1 · Puerto 4019 · Orden 100\n\nLatitud 43, longitud 5\n\nÚltima consulta correcta anterior: 11/12/2024 19:16:53",
+      "tableHeads": [],
+      "horizontalOverflow": [],
+      "dialog": {
+        "x": 159,
+        "y": 205.5,
+        "width": 1048,
+        "height": 357,
+        "top": 205.5,
+        "right": 1207,
+        "bottom": 562.5,
+        "left": 159
+      }
+    }
+  ],
+  "errors": [],
+  "writes": [
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/31/consulta",
+      "method": "PATCH"
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/33/consulta",
+      "method": "PATCH"
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/36/consulta",
+      "method": "PATCH"
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/39/consulta",
+      "method": "PATCH"
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/46/consulta",
+      "method": "PATCH"
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/53/consulta",
+      "method": "PATCH"
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/54/consulta",
+      "method": "PATCH"
+    },
+    {
+      "url": "http://127.0.0.1:4200/api/nodo/55/consulta",
+      "method": "PATCH"
+    }
+  ],
+  "blockedQueryDates": [
+    "http://127.0.0.1:4200/api/nodo/31/consulta",
+    "http://127.0.0.1:4200/api/nodo/33/consulta",
+    "http://127.0.0.1:4200/api/nodo/36/consulta",
+    "http://127.0.0.1:4200/api/nodo/39/consulta",
+    "http://127.0.0.1:4200/api/nodo/46/consulta",
+    "http://127.0.0.1:4200/api/nodo/53/consulta",
+    "http://127.0.0.1:4200/api/nodo/54/consulta",
+    "http://127.0.0.1:4200/api/nodo/55/consulta"
+  ],
+  "catalogCount": 18,
+  "catalogStructureUnchanged": true,
+  "queryDatesUpdated": []
+}

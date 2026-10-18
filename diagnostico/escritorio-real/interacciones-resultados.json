@@ -1,0 +1,432 @@
+{
+  "date": "2026-10-18T12:41:21.515Z",
+  "results": [
+    {
+      "name": "capturas_refresco_real",
+      "stable": "Topología del sistema\n8 / 18 responden\nActualizado 14:41:08",
+      "pending": {
+        "summary": "Topología del sistema\n3 / 18 responden\nActualizado 14:41:13",
+        "nodes": [
+          "P3",
+          "CM2",
+          "CS2",
+          "BM2",
+          "BS2",
+          "P4",
+          "P6",
+          "P5",
+          "P7",
+          "P8",
+          "P9",
+          "P13"
+        ]
+      },
+      "after": "Topología del sistema\n8 / 18 responden\nActualizado 14:41:13"
+    },
+    {
+      "name": "zoom_grafo_se_conserva",
+      "zoom": 1.1,
+      "after": 1.1
+    },
+    {
+      "name": "clics_reales_en_grafo",
+      "clicks": [
+        {
+          "expected": "CM1",
+          "actual": "CM1",
+          "target": {
+            "x": 382.25551999999993,
+            "y": 268.79999999999995
+          }
+        },
+        {
+          "expected": "BM1",
+          "actual": "BM1",
+          "target": {
+            "x": 556.58768,
+            "y": 268.79999999999995
+          }
+        },
+        {
+          "expected": "P3",
+          "actual": "P3",
+          "target": {
+            "x": 1043.74448,
+            "y": 268.79999999999995
+          }
+        },
+        {
+          "expected": "P1",
+          "actual": "P1",
+          "target": {
+            "x": 743.95568,
+            "y": 576.6400000000001
+          }
+        },
+        {
+          "expected": "P7",
+          "actual": "P7",
+          "target": {
+            "x": 893.85008,
+            "y": 629.9200000000001
+          }
+        },
+        {
+          "expected": "P13",
+          "actual": "P13",
+          "target": {
+            "x": 743.95568,
+            "y": 683.2
+          }
+        }
+      ]
+    },
+    {
+      "name": "etiquetas_del_mapa",
+      "labels": [
+        {
+          "text": "BM1 · Grupo 1",
+          "width": 47.359375,
+          "height": 68.00003051757812,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CM1 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P1 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BS1 · Grupo 1",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CS1 · Grupo 1",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P2 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P3 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CM2 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CS2 · Sin grupo",
+          "width": 44.703125,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BM2 · Sin grupo",
+          "width": 44.703125,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BS2 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P4 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P6 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P5 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P7 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P8 · Sin grupo",
+          "width": 44.6875,
+          "height": 67.99996948242188,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P9 · Sin grupo",
+          "width": 44.6875,
+          "height": 67.99996948242188,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P13 · Sin grupo",
+          "width": 44.6875,
+          "height": 67.99996948242188,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BM1 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CM1 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P1 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BS1 · Grupo 1",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CS1 · Grupo 1",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P2 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P3 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CM2 · Grupo 2",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CS2 · Grupo 2",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BM2 · Grupo 2",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BS2 · Grupo 2",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P4 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P6 · Sin grupo",
+          "width": 44.68751525878906,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P5 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P7 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P8 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P9 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P13 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BM1 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CM1 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P1 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BS1 · Grupo 1",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CS1 · Grupo 1",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P2 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P3 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CM2 · Grupo 2",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "CS2 · Grupo 2",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BM2 · Grupo 2",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "BS2 · Grupo 2",
+          "width": 47.34375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P4 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P6 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P5 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P7 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P8 · Grupo 1",
+          "width": 47.359375,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P9 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "P13 · Sin grupo",
+          "width": 44.6875,
+          "height": 68,
+          "whiteSpace": "normal"
+        }
+      ],
+      "filteredLabels": [
+        {
+          "text": "CM1 · Grupo 1",
+          "width": 47.359375,
+          "height": 68
+        },
+        {
+          "text": "CM2 · Grupo 2",
+          "width": 47.359375,
+          "height": 68
+        }
+      ]
+    }
+  ],
+  "blockedWrites": [
+    "http://127.0.0.1:4200/api/nodo/33/consulta",
+    "http://127.0.0.1:4200/api/nodo/31/consulta",
+    "http://127.0.0.1:4200/api/nodo/39/consulta"
+  ],
+  "debugResponses": "real"
+}
