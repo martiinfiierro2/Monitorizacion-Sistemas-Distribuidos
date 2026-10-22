@@ -1,0 +1,26 @@
+<div class="node-editor node-delete">
+  <header class="node-editor-header">
+    <div class="node-editor-heading">
+      <span class="node-editor-eyebrow">Catálogo del sistema</span>
+      <h2 mat-dialog-title class="node-editor-title">Eliminar ficha</h2>
+    </div>
+    <button type="button" class="node-editor-close" (click)="close(false)" aria-label="Cerrar confirmación">
+      <mat-icon svgIcon="mat_outline:close"></mat-icon>
+    </button>
+  </header>
+  <mat-dialog-content class="node-editor-content">
+    <div class="node-delete-summary">
+      <mat-icon svgIcon="mat_outline:delete"></mat-icon>
+      <div>
+        <strong>{{node.nombre}}</strong>
+        <span>{{node.tipo_nodo}}</span>
+        <span class="node-delete-address">{{node.url}} · Puerto {{node.puerto}}</span>
+      </div>
+    </div>
+    <p class="node-delete-note">Se eliminará esta ficha del catálogo. El ejecutable seguirá funcionando.</p>
+  </mat-dialog-content>
+  <footer class="node-editor-footer">
+    <button type="button" class="node-editor-button" (click)="close(false)">Cancelar</button>
+    <button type="button" class="node-editor-button node-editor-delete" (click)="close(true)">Eliminar ficha</button>
+  </footer>
+</div>

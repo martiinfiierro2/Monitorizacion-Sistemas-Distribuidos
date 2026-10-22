@@ -1,0 +1,49 @@
+[
+  {
+    "scenario": "alta_por_formulario",
+    "pass": true
+  },
+  {
+    "scenario": "editar_por_formulario",
+    "pass": true
+  },
+  {
+    "scenario": "ocultar_desde_lista",
+    "pass": true
+  },
+  {
+    "scenario": "eliminar_con_confirmacion",
+    "pass": true,
+    "count": 3,
+    "debug": {
+      "result": true,
+      "error": ""
+    },
+    "requests": [
+      {
+        "pathname": "/api/nodo/4",
+        "method": "DELETE"
+      }
+    ]
+  },
+  {
+    "scenario": "busqueda_vacia",
+    "pass": true
+  },
+  {
+    "scenario": "detalle_registrados_y_seleccionados",
+    "pass": true
+  },
+  {
+    "scenario": "detalle_se_refresca",
+    "pass": true
+  },
+  {
+    "scenario": "debug_fallido_no_guarda_fecha",
+    "pass": true
+  },
+  {
+    "scenario": "acceso_con_clave",
+    "pass": true
+  }
+]

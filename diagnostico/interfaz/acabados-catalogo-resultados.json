@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-22T11:05:47.630Z",
+  "controlledResponses": true,
+  "results": [
+    {
+      "name": "paginador_en_espanol",
+      "pass": true
+    },
+    {
+      "name": "pagina_siguiente_y_anterior",
+      "pass": true,
+      "text": "11–18 de 18"
+    },
+    {
+      "name": "paginador_vacio",
+      "pass": true,
+      "text": "0 de 0"
+    },
+    {
+      "name": "dialogo_borrado_y_cancelacion",
+      "pass": true,
+      "panel": {
+        "x": 390,
+        "y": 189.265625,
+        "width": 500,
+        "height": 341.46875
+      }
+    },
+    {
+      "name": "aviso_al_anadir",
+      "pass": true
+    },
+    {
+      "name": "aviso_al_editar",
+      "pass": true
+    },
+    {
+      "name": "aviso_al_ocultar",
+      "pass": true
+    },
+    {
+      "name": "aviso_al_mostrar",
+      "pass": true
+    },
+    {
+      "name": "aviso_se_cierra_solo",
+      "pass": true
+    },
+    {
+      "name": "aviso_al_eliminar",
+      "pass": true
+    },
+    {
+      "name": "error_visibilidad_sin_aviso_de_exito",
+      "pass": true
+    },
+    {
+      "name": "error_borrado_sin_aviso_de_exito",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

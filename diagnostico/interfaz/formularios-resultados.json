@@ -1,0 +1,936 @@
+{
+  "date": "2026-10-22T10:54:38.532Z",
+  "controlledResponses": true,
+  "results": [
+    {
+      "name": "anadir_1366x768",
+      "pass": true,
+      "panel": {
+        "x": 273,
+        "y": 72.25,
+        "width": 820,
+        "height": 623.5,
+        "top": 72.25,
+        "right": 1093,
+        "bottom": 695.75,
+        "left": 273
+      },
+      "header": {
+        "x": 273,
+        "y": 72.25,
+        "width": 820,
+        "height": 115.5,
+        "top": 72.25,
+        "right": 1093,
+        "bottom": 187.75,
+        "left": 273
+      },
+      "footer": {
+        "x": 273,
+        "y": 632.75,
+        "width": 820,
+        "height": 63,
+        "top": 632.75,
+        "right": 1093,
+        "bottom": 695.75,
+        "left": 273
+      },
+      "body": {
+        "x": 273,
+        "y": 187.75,
+        "width": 820,
+        "height": 445,
+        "top": 187.75,
+        "right": 1093,
+        "bottom": 632.75,
+        "left": 273
+      },
+      "contentWidth": 820,
+      "availableWidth": 820,
+      "contentHeight": 445,
+      "availableHeight": 445,
+      "fields": [
+        {
+          "x": 297,
+          "y": 247.75,
+          "width": 378,
+          "height": 56,
+          "top": 247.75,
+          "right": 675,
+          "bottom": 303.75,
+          "left": 297
+        },
+        {
+          "x": 691,
+          "y": 247.75,
+          "width": 378,
+          "height": 56,
+          "top": 247.75,
+          "right": 1069,
+          "bottom": 303.75,
+          "left": 691
+        },
+        {
+          "x": 297,
+          "y": 363.75,
+          "width": 504,
+          "height": 57,
+          "top": 363.75,
+          "right": 801,
+          "bottom": 420.75,
+          "left": 297
+        },
+        {
+          "x": 817,
+          "y": 363.75,
+          "width": 252,
+          "height": 57,
+          "top": 363.75,
+          "right": 1069,
+          "bottom": 420.75,
+          "left": 817
+        },
+        {
+          "x": 297,
+          "y": 480.75,
+          "width": 378,
+          "height": 56,
+          "top": 480.75,
+          "right": 675,
+          "bottom": 536.75,
+          "left": 297
+        },
+        {
+          "x": 691,
+          "y": 480.75,
+          "width": 378,
+          "height": 56,
+          "top": 480.75,
+          "right": 1069,
+          "bottom": 536.75,
+          "left": 691
+        },
+        {
+          "x": 297,
+          "y": 552.75,
+          "width": 378,
+          "height": 56,
+          "top": 552.75,
+          "right": 675,
+          "bottom": 608.75,
+          "left": 297
+        },
+        {
+          "x": 691,
+          "y": 552.75,
+          "width": 378,
+          "height": 56,
+          "top": 552.75,
+          "right": 1069,
+          "bottom": 608.75,
+          "left": 691
+        }
+      ]
+    },
+    {
+      "name": "editar_1366x768",
+      "pass": true,
+      "panel": {
+        "x": 273,
+        "y": 72.25,
+        "width": 820,
+        "height": 623.5,
+        "top": 72.25,
+        "right": 1093,
+        "bottom": 695.75,
+        "left": 273
+      },
+      "header": {
+        "x": 273,
+        "y": 72.25,
+        "width": 820,
+        "height": 115.5,
+        "top": 72.25,
+        "right": 1093,
+        "bottom": 187.75,
+        "left": 273
+      },
+      "footer": {
+        "x": 273,
+        "y": 632.75,
+        "width": 820,
+        "height": 63,
+        "top": 632.75,
+        "right": 1093,
+        "bottom": 695.75,
+        "left": 273
+      },
+      "body": {
+        "x": 273,
+        "y": 187.75,
+        "width": 820,
+        "height": 445,
+        "top": 187.75,
+        "right": 1093,
+        "bottom": 632.75,
+        "left": 273
+      },
+      "contentWidth": 820,
+      "availableWidth": 820,
+      "contentHeight": 445,
+      "availableHeight": 445,
+      "fields": [
+        {
+          "x": 297,
+          "y": 247.75,
+          "width": 378,
+          "height": 56,
+          "top": 247.75,
+          "right": 675,
+          "bottom": 303.75,
+          "left": 297
+        },
+        {
+          "x": 691,
+          "y": 247.75,
+          "width": 378,
+          "height": 56,
+          "top": 247.75,
+          "right": 1069,
+          "bottom": 303.75,
+          "left": 691
+        },
+        {
+          "x": 297,
+          "y": 363.75,
+          "width": 504,
+          "height": 57,
+          "top": 363.75,
+          "right": 801,
+          "bottom": 420.75,
+          "left": 297
+        },
+        {
+          "x": 817,
+          "y": 363.75,
+          "width": 252,
+          "height": 57,
+          "top": 363.75,
+          "right": 1069,
+          "bottom": 420.75,
+          "left": 817
+        },
+        {
+          "x": 297,
+          "y": 480.75,
+          "width": 378,
+          "height": 56,
+          "top": 480.75,
+          "right": 675,
+          "bottom": 536.75,
+          "left": 297
+        },
+        {
+          "x": 691,
+          "y": 480.75,
+          "width": 378,
+          "height": 56,
+          "top": 480.75,
+          "right": 1069,
+          "bottom": 536.75,
+          "left": 691
+        },
+        {
+          "x": 297,
+          "y": 552.75,
+          "width": 378,
+          "height": 56,
+          "top": 552.75,
+          "right": 675,
+          "bottom": 608.75,
+          "left": 297
+        },
+        {
+          "x": 691,
+          "y": 552.75,
+          "width": 378,
+          "height": 56,
+          "top": 552.75,
+          "right": 1069,
+          "bottom": 608.75,
+          "left": 691
+        }
+      ]
+    },
+    {
+      "name": "anadir_1280x720",
+      "pass": true,
+      "panel": {
+        "x": 230,
+        "y": 48.25,
+        "width": 820,
+        "height": 623.5,
+        "top": 48.25,
+        "right": 1050,
+        "bottom": 671.75,
+        "left": 230
+      },
+      "header": {
+        "x": 230,
+        "y": 48.25,
+        "width": 820,
+        "height": 115.5,
+        "top": 48.25,
+        "right": 1050,
+        "bottom": 163.75,
+        "left": 230
+      },
+      "footer": {
+        "x": 230,
+        "y": 608.75,
+        "width": 820,
+        "height": 63,
+        "top": 608.75,
+        "right": 1050,
+        "bottom": 671.75,
+        "left": 230
+      },
+      "body": {
+        "x": 230,
+        "y": 163.75,
+        "width": 820,
+        "height": 445,
+        "top": 163.75,
+        "right": 1050,
+        "bottom": 608.75,
+        "left": 230
+      },
+      "contentWidth": 820,
+      "availableWidth": 820,
+      "contentHeight": 445,
+      "availableHeight": 445,
+      "fields": [
+        {
+          "x": 254,
+          "y": 223.75,
+          "width": 378,
+          "height": 56,
+          "top": 223.75,
+          "right": 632,
+          "bottom": 279.75,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 223.75,
+          "width": 378,
+          "height": 56,
+          "top": 223.75,
+          "right": 1026,
+          "bottom": 279.75,
+          "left": 648
+        },
+        {
+          "x": 254,
+          "y": 339.75,
+          "width": 504,
+          "height": 57,
+          "top": 339.75,
+          "right": 758,
+          "bottom": 396.75,
+          "left": 254
+        },
+        {
+          "x": 774,
+          "y": 339.75,
+          "width": 252,
+          "height": 57,
+          "top": 339.75,
+          "right": 1026,
+          "bottom": 396.75,
+          "left": 774
+        },
+        {
+          "x": 254,
+          "y": 456.75,
+          "width": 378,
+          "height": 56,
+          "top": 456.75,
+          "right": 632,
+          "bottom": 512.75,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 456.75,
+          "width": 378,
+          "height": 56,
+          "top": 456.75,
+          "right": 1026,
+          "bottom": 512.75,
+          "left": 648
+        },
+        {
+          "x": 254,
+          "y": 528.75,
+          "width": 378,
+          "height": 56,
+          "top": 528.75,
+          "right": 632,
+          "bottom": 584.75,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 528.75,
+          "width": 378,
+          "height": 56,
+          "top": 528.75,
+          "right": 1026,
+          "bottom": 584.75,
+          "left": 648
+        }
+      ]
+    },
+    {
+      "name": "editar_1280x720",
+      "pass": true,
+      "panel": {
+        "x": 230,
+        "y": 48.25,
+        "width": 820,
+        "height": 623.5,
+        "top": 48.25,
+        "right": 1050,
+        "bottom": 671.75,
+        "left": 230
+      },
+      "header": {
+        "x": 230,
+        "y": 48.25,
+        "width": 820,
+        "height": 115.5,
+        "top": 48.25,
+        "right": 1050,
+        "bottom": 163.75,
+        "left": 230
+      },
+      "footer": {
+        "x": 230,
+        "y": 608.75,
+        "width": 820,
+        "height": 63,
+        "top": 608.75,
+        "right": 1050,
+        "bottom": 671.75,
+        "left": 230
+      },
+      "body": {
+        "x": 230,
+        "y": 163.75,
+        "width": 820,
+        "height": 445,
+        "top": 163.75,
+        "right": 1050,
+        "bottom": 608.75,
+        "left": 230
+      },
+      "contentWidth": 820,
+      "availableWidth": 820,
+      "contentHeight": 445,
+      "availableHeight": 445,
+      "fields": [
+        {
+          "x": 254,
+          "y": 223.75,
+          "width": 378,
+          "height": 56,
+          "top": 223.75,
+          "right": 632,
+          "bottom": 279.75,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 223.75,
+          "width": 378,
+          "height": 56,
+          "top": 223.75,
+          "right": 1026,
+          "bottom": 279.75,
+          "left": 648
+        },
+        {
+          "x": 254,
+          "y": 339.75,
+          "width": 504,
+          "height": 57,
+          "top": 339.75,
+          "right": 758,
+          "bottom": 396.75,
+          "left": 254
+        },
+        {
+          "x": 774,
+          "y": 339.75,
+          "width": 252,
+          "height": 57,
+          "top": 339.75,
+          "right": 1026,
+          "bottom": 396.75,
+          "left": 774
+        },
+        {
+          "x": 254,
+          "y": 456.75,
+          "width": 378,
+          "height": 56,
+          "top": 456.75,
+          "right": 632,
+          "bottom": 512.75,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 456.75,
+          "width": 378,
+          "height": 56,
+          "top": 456.75,
+          "right": 1026,
+          "bottom": 512.75,
+          "left": 648
+        },
+        {
+          "x": 254,
+          "y": 528.75,
+          "width": 378,
+          "height": 56,
+          "top": 528.75,
+          "right": 632,
+          "bottom": 584.75,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 528.75,
+          "width": 378,
+          "height": 56,
+          "top": 528.75,
+          "right": 1026,
+          "bottom": 584.75,
+          "left": 648
+        }
+      ]
+    },
+    {
+      "name": "anadir_1100x600",
+      "pass": true,
+      "panel": {
+        "x": 140,
+        "y": 24,
+        "width": 820,
+        "height": 552,
+        "top": 24,
+        "right": 960,
+        "bottom": 576,
+        "left": 140
+      },
+      "header": {
+        "x": 140,
+        "y": 24,
+        "width": 820,
+        "height": 115.5,
+        "top": 24,
+        "right": 960,
+        "bottom": 139.5,
+        "left": 140
+      },
+      "footer": {
+        "x": 140,
+        "y": 513,
+        "width": 820,
+        "height": 63,
+        "top": 513,
+        "right": 960,
+        "bottom": 576,
+        "left": 140
+      },
+      "body": {
+        "x": 140,
+        "y": 139.5,
+        "width": 820,
+        "height": 373.5,
+        "top": 139.5,
+        "right": 960,
+        "bottom": 513,
+        "left": 140
+      },
+      "contentWidth": 820,
+      "availableWidth": 820,
+      "contentHeight": 445,
+      "availableHeight": 374,
+      "fields": [
+        {
+          "x": 164,
+          "y": 199.5,
+          "width": 378,
+          "height": 56,
+          "top": 199.5,
+          "right": 542,
+          "bottom": 255.5,
+          "left": 164
+        },
+        {
+          "x": 558,
+          "y": 199.5,
+          "width": 378,
+          "height": 56,
+          "top": 199.5,
+          "right": 936,
+          "bottom": 255.5,
+          "left": 558
+        },
+        {
+          "x": 164,
+          "y": 315.5,
+          "width": 504,
+          "height": 57,
+          "top": 315.5,
+          "right": 668,
+          "bottom": 372.5,
+          "left": 164
+        },
+        {
+          "x": 684,
+          "y": 315.5,
+          "width": 252,
+          "height": 57,
+          "top": 315.5,
+          "right": 936,
+          "bottom": 372.5,
+          "left": 684
+        },
+        {
+          "x": 164,
+          "y": 432.5,
+          "width": 378,
+          "height": 56,
+          "top": 432.5,
+          "right": 542,
+          "bottom": 488.5,
+          "left": 164
+        },
+        {
+          "x": 558,
+          "y": 432.5,
+          "width": 378,
+          "height": 56,
+          "top": 432.5,
+          "right": 936,
+          "bottom": 488.5,
+          "left": 558
+        },
+        {
+          "x": 164,
+          "y": 504.5,
+          "width": 378,
+          "height": 56,
+          "top": 504.5,
+          "right": 542,
+          "bottom": 560.5,
+          "left": 164
+        },
+        {
+          "x": 558,
+          "y": 504.5,
+          "width": 378,
+          "height": 56,
+          "top": 504.5,
+          "right": 936,
+          "bottom": 560.5,
+          "left": 558
+        }
+      ]
+    },
+    {
+      "name": "anadir_cabecera_y_botones_fijos",
+      "pass": true
+    },
+    {
+      "name": "editar_1100x600",
+      "pass": true,
+      "panel": {
+        "x": 140,
+        "y": 24,
+        "width": 820,
+        "height": 552,
+        "top": 24,
+        "right": 960,
+        "bottom": 576,
+        "left": 140
+      },
+      "header": {
+        "x": 140,
+        "y": 24,
+        "width": 820,
+        "height": 115.5,
+        "top": 24,
+        "right": 960,
+        "bottom": 139.5,
+        "left": 140
+      },
+      "footer": {
+        "x": 140,
+        "y": 513,
+        "width": 820,
+        "height": 63,
+        "top": 513,
+        "right": 960,
+        "bottom": 576,
+        "left": 140
+      },
+      "body": {
+        "x": 140,
+        "y": 139.5,
+        "width": 820,
+        "height": 373.5,
+        "top": 139.5,
+        "right": 960,
+        "bottom": 513,
+        "left": 140
+      },
+      "contentWidth": 820,
+      "availableWidth": 820,
+      "contentHeight": 445,
+      "availableHeight": 374,
+      "fields": [
+        {
+          "x": 164,
+          "y": 199.5,
+          "width": 378,
+          "height": 56,
+          "top": 199.5,
+          "right": 542,
+          "bottom": 255.5,
+          "left": 164
+        },
+        {
+          "x": 558,
+          "y": 199.5,
+          "width": 378,
+          "height": 56,
+          "top": 199.5,
+          "right": 936,
+          "bottom": 255.5,
+          "left": 558
+        },
+        {
+          "x": 164,
+          "y": 315.5,
+          "width": 504,
+          "height": 57,
+          "top": 315.5,
+          "right": 668,
+          "bottom": 372.5,
+          "left": 164
+        },
+        {
+          "x": 684,
+          "y": 315.5,
+          "width": 252,
+          "height": 57,
+          "top": 315.5,
+          "right": 936,
+          "bottom": 372.5,
+          "left": 684
+        },
+        {
+          "x": 164,
+          "y": 432.5,
+          "width": 378,
+          "height": 56,
+          "top": 432.5,
+          "right": 542,
+          "bottom": 488.5,
+          "left": 164
+        },
+        {
+          "x": 558,
+          "y": 432.5,
+          "width": 378,
+          "height": 56,
+          "top": 432.5,
+          "right": 936,
+          "bottom": 488.5,
+          "left": 558
+        },
+        {
+          "x": 164,
+          "y": 504.5,
+          "width": 378,
+          "height": 56,
+          "top": 504.5,
+          "right": 542,
+          "bottom": 560.5,
+          "left": 164
+        },
+        {
+          "x": 558,
+          "y": 504.5,
+          "width": 378,
+          "height": 56,
+          "top": 504.5,
+          "right": 936,
+          "bottom": 560.5,
+          "left": 558
+        }
+      ]
+    },
+    {
+      "name": "editar_cabecera_y_botones_fijos",
+      "pass": true
+    },
+    {
+      "name": "cancelar_no_guarda",
+      "pass": true
+    },
+    {
+      "name": "tipos_y_iconos_originales",
+      "pass": true,
+      "options": 5,
+      "icons": 5
+    },
+    {
+      "name": "error_de_guardado_visible",
+      "pass": true,
+      "message": "Ya existe un nodo con esa dirección y puerto",
+      "panel": {
+        "x": 230,
+        "y": 24,
+        "width": 820,
+        "height": 672,
+        "top": 24,
+        "right": 1050,
+        "bottom": 696,
+        "left": 230
+      },
+      "header": {
+        "x": 230,
+        "y": 24,
+        "width": 820,
+        "height": 115.5,
+        "top": 24,
+        "right": 1050,
+        "bottom": 139.5,
+        "left": 230
+      },
+      "footer": {
+        "x": 230,
+        "y": 633,
+        "width": 820,
+        "height": 63,
+        "top": 633,
+        "right": 1050,
+        "bottom": 696,
+        "left": 230
+      },
+      "body": {
+        "x": 230,
+        "y": 139.5,
+        "width": 820,
+        "height": 493.5,
+        "top": 139.5,
+        "right": 1050,
+        "bottom": 633,
+        "left": 230
+      },
+      "contentWidth": 820,
+      "availableWidth": 820,
+      "contentHeight": 507,
+      "availableHeight": 494,
+      "fields": [
+        {
+          "x": 254,
+          "y": 261.5,
+          "width": 378,
+          "height": 56,
+          "top": 261.5,
+          "right": 632,
+          "bottom": 317.5,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 261.5,
+          "width": 378,
+          "height": 56,
+          "top": 261.5,
+          "right": 1026,
+          "bottom": 317.5,
+          "left": 648
+        },
+        {
+          "x": 254,
+          "y": 377.5,
+          "width": 504,
+          "height": 57,
+          "top": 377.5,
+          "right": 758,
+          "bottom": 434.5,
+          "left": 254
+        },
+        {
+          "x": 774,
+          "y": 377.5,
+          "width": 252,
+          "height": 57,
+          "top": 377.5,
+          "right": 1026,
+          "bottom": 434.5,
+          "left": 774
+        },
+        {
+          "x": 254,
+          "y": 494.5,
+          "width": 378,
+          "height": 56,
+          "top": 494.5,
+          "right": 632,
+          "bottom": 550.5,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 494.5,
+          "width": 378,
+          "height": 56,
+          "top": 494.5,
+          "right": 1026,
+          "bottom": 550.5,
+          "left": 648
+        },
+        {
+          "x": 254,
+          "y": 566.5,
+          "width": 378,
+          "height": 56,
+          "top": 566.5,
+          "right": 632,
+          "bottom": 622.5,
+          "left": 254
+        },
+        {
+          "x": 648,
+          "y": 566.5,
+          "width": 378,
+          "height": 56,
+          "top": 566.5,
+          "right": 1026,
+          "bottom": 622.5,
+          "left": 648
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

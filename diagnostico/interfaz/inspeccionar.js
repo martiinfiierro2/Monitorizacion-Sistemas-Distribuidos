@@ -11,7 +11,7 @@ async root=>{
     await page.screenshot({path:'diagnostico/interfaz/mapa-inicial.png'});
     const map=await page.evaluate(()=>({canvas:document.querySelector('#map').getBoundingClientRect().toJSON(),icons:[...document.querySelectorAll('.leaflet-marker-icon')].map(e=>({width:e.clientWidth,height:e.clientHeight}))}));
     await page.getByRole('link',{name:'Catálogo',exact:true}).click();await page.locator('tr.mat-mdc-row').first().waitFor();await page.locator('input[type=search]').fill('CM1');
-    const row=page.locator('tr.mat-mdc-row').filter({has:page.getByRole('cell',{name:'CM1',exact:true})});await row.locator('button[mattooltip="Ver información"]').click();await page.getByRole('heading',{name:'Procesadores registrados (2)',exact:true}).waitFor();await page.waitForTimeout(300);
+    const row=page.locator('tr.mat-mdc-row').filter({has:page.getByText('CM1',{exact:true})});await row.locator('button[mattooltip="Ver información"]').click();await page.getByRole('heading',{name:'Procesadores registrados (2)',exact:true}).waitFor();await page.waitForTimeout(300);
     await page.screenshot({path:'diagnostico/interfaz/detalle-inicial.png'});
     const detail=await page.evaluate(()=>({pane:document.querySelector('.node-detail-panel').getBoundingClientRect().toJSON(),surface:document.querySelector('.mat-mdc-dialog-surface').getBoundingClientRect().toJSON(),body:document.querySelector('.node-detail-content').getBoundingClientRect().toJSON(),scrollHeight:document.querySelector('.node-detail-content').scrollHeight,footer:document.querySelector('.node-detail-footer').getBoundingClientRect().toJSON(),text:document.querySelector('.node-detail').innerText}));
     return {graph,map,detail,errors};

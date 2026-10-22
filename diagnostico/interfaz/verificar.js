@@ -29,7 +29,7 @@ async root=>{
   const openCatalogDetail=async name=>{
     if(!page.url().endsWith('/lista')){await page.getByRole('link',{name:'Catálogo',exact:true}).click();await page.locator('tr.mat-mdc-row').first().waitFor();}
     await page.locator('input[type=search]').fill(name);
-    await page.locator('tr.mat-mdc-row').filter({has:page.getByRole('cell',{name,exact:true})}).locator('button[mattooltip="Ver información"]').click();
+    await page.locator('tr.mat-mdc-row').filter({has:page.getByText(name,{exact:true})}).locator('button[mattooltip="Ver información"]').click();
     await page.waitForFunction(()=>{const el=document.querySelector('dialogDatos');return el&&ng.getComponent(el).loading===false;});await page.waitForTimeout(250);
   };
   const closeDetail=async()=>{await page.getByRole('button',{name:'Cerrar detalle',exact:true}).click();await page.getByRole('dialog').waitFor({state:'hidden'});};
@@ -101,7 +101,7 @@ async root=>{
     await step('modal_procesador',async()=>{await openCatalogDetail('P3');const count=await page.locator('.node-detail-stats > div').count();await page.screenshot({path:'diagnostico/interfaz/modal-procesador.png'});await closeDetail();return {count,pass:count===4};});
     await step('modal_sin_respuesta',async()=>{await openCatalogDetail('P13');const alert=await page.getByRole('alert').innerText();await page.screenshot({path:'diagnostico/interfaz/modal-sin-respuesta.png'});await closeDetail();return {alert,pass:!!alert};});
     await step('catalogo_pagina_y_busqueda',async()=>{
-      await page.locator('input[type=search]').fill('');await page.waitForTimeout(400);const first=await page.locator('tr.mat-mdc-row').count();await page.getByRole('button',{name:'Next page',exact:true}).click();const next=await page.locator('tr.mat-mdc-row').count();return {first,next,pass:first===10&&next===8};
+      await page.locator('input[type=search]').fill('');await page.waitForTimeout(400);const first=await page.locator('tr.mat-mdc-row').count();await page.getByRole('button',{name:'Página siguiente',exact:true}).click();const next=await page.locator('tr.mat-mdc-row').count();return {first,next,pass:first===10&&next===8};
     });
     const after=await catalog();return {date:new Date().toISOString(),results,errors,catalogUnchanged:JSON.stringify(before)===JSON.stringify(after),blockedWrites:blockedWrites.length,realDebugResponses:true};
   }finally{await page.close();}

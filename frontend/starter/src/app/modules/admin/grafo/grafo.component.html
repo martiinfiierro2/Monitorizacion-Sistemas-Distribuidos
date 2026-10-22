@@ -1,7 +1,7 @@
 ﻿<monitor-toolbar title="Topología del sistema" [snapshot]="snapshot" [filters]="filters" [connections]="activarConexiones" (changed)="render()" (refresh)="comprobar()" (fit)="fit()" (toggle)="conexiones($event)" (connect)="connect($event)"></monitor-toolbar>
 <div class="monitor-canvas monitor-graph-canvas">
   <p class="monitor-empty" *ngIf="snapshot && !selectedNodes.length">No hay nodos visibles con los filtros seleccionados.</p>
-  <div id="grafo" #chart aria-label="Grafo de nodos y conexiones"></div>
+  <div id="grafo" #chart monitorCanvasNavigation aria-label="Grafo de nodos y conexiones"></div>
   <div class="canvas-navigation" aria-label="Navegación del grafo">
     <button type="button" (click)="zoomBy(1.25)" aria-label="Acercar grafo" title="Acercar">+</button>
     <span>{{zoomPercent}} %</span>

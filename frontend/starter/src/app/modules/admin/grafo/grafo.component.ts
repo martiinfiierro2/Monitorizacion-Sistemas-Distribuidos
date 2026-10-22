@@ -7,7 +7,8 @@ import { GrafoService } from 'app/services/grafo.service';
 import { MonitorService } from 'app/services/monitor.service';
 import { MonitorView } from '../monitor-view';
 import { MonitorToolbarComponent } from '../monitor-toolbar.component';
-@Component({ selector: 'grafo', standalone: true, imports: [CommonModule, MonitorToolbarComponent], templateUrl: './grafo.component.html', styleUrls: ['../monitoring.scss'], encapsulation: ViewEncapsulation.None })
+import { CanvasNavigationDirective } from '../canvas-navigation.directive';
+@Component({ selector: 'grafo', standalone: true, imports: [CommonModule, MonitorToolbarComponent, CanvasNavigationDirective], templateUrl: './grafo.component.html', styleUrls: ['../monitoring.scss'], encapsulation: ViewEncapsulation.None })
 export class GrafoComponent extends MonitorView {
     @ViewChild('chart')
     container: ElementRef<HTMLElement>;

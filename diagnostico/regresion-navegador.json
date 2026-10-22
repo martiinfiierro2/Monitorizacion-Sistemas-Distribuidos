@@ -2030,7 +2030,7 @@
     "view": "grafo",
     "scenario": "nodo_sin_responder",
     "pass": true,
-    "expected": "Una respuesta lenta no mantiene obsoleto el conjunto",
+    "expected": "Se conserva la ronda anterior hasta recibir todas las respuestas y se publica la nueva de una vez",
     "before": {
       "initialized": true,
       "names": [
@@ -2063,6 +2063,7 @@
       "links": [
         "100>102",
         "101>100",
+        "102>104",
         "103>102"
       ],
       "chartWidth": 1194,
@@ -2086,7 +2087,100 @@
       "chartWidth": 1194,
       "containerWidth": 1194
     },
-    "elapsed": 2227,
+    "elapsed": 2224,
+    "errors": []
+  },
+  {
+    "view": "grafo",
+    "scenario": "refresco_automatico_coherente",
+    "pass": true,
+    "expected": "Tres refrescos automáticos con un nodo lento conservan la disponibilidad y publican una ronda completa cada vez",
+    "interval": 1000,
+    "delay": 650,
+    "samples": [
+      {
+        "elapsed": 0,
+        "refreshedAt": 1792665758382,
+        "online": 6,
+        "pending": 0,
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ]
+      },
+      {
+        "elapsed": 1598,
+        "refreshedAt": 1792665760033,
+        "online": 6,
+        "pending": 0,
+        "links": [
+          "100>102",
+          "101>100",
+          "103>102"
+        ]
+      },
+      {
+        "elapsed": 2591,
+        "refreshedAt": 1792665761028,
+        "online": 6,
+        "pending": 0,
+        "links": [
+          "100>102",
+          "101>100",
+          "103>102"
+        ]
+      },
+      {
+        "elapsed": 3605,
+        "refreshedAt": 1792665762042,
+        "online": 6,
+        "pending": 0,
+        "links": [
+          "100>102",
+          "101>100",
+          "103>102"
+        ]
+      }
+    ],
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "102>104",
+        "103>102"
+      ],
+      "chartWidth": 1194,
+      "containerWidth": 1194
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "100>102",
+        "101>100",
+        "103>102"
+      ],
+      "chartWidth": 1194,
+      "containerWidth": 1194
+    },
     "errors": []
   },
   {
@@ -2538,7 +2632,7 @@
     "view": "mapa",
     "scenario": "nodo_sin_responder",
     "pass": true,
-    "expected": "Una respuesta lenta no mantiene obsoleto el conjunto",
+    "expected": "Se conserva la ronda anterior hasta recibir todas las respuestas y se publica la nueva de una vez",
     "before": {
       "initialized": true,
       "names": [
@@ -2571,6 +2665,7 @@
       "links": [
         "30,10>32,12",
         "31,11>30,10",
+        "32,12>34,14",
         "33,13>32,12"
       ],
       "chartWidth": 1194,
@@ -2594,7 +2689,100 @@
       "chartWidth": 1194,
       "containerWidth": 1194
     },
-    "elapsed": 2220,
+    "elapsed": 2224,
+    "errors": []
+  },
+  {
+    "view": "mapa",
+    "scenario": "refresco_automatico_coherente",
+    "pass": true,
+    "expected": "Tres refrescos automáticos con un nodo lento conservan la disponibilidad y publican una ronda completa cada vez",
+    "interval": 1000,
+    "delay": 650,
+    "samples": [
+      {
+        "elapsed": 0,
+        "refreshedAt": 1792665779511,
+        "online": 6,
+        "pending": 0,
+        "links": [
+          "100>102",
+          "101>100",
+          "102>104",
+          "103>102"
+        ]
+      },
+      {
+        "elapsed": 1618,
+        "refreshedAt": 1792665781165,
+        "online": 6,
+        "pending": 0,
+        "links": [
+          "100>102",
+          "101>100",
+          "103>102"
+        ]
+      },
+      {
+        "elapsed": 2606,
+        "refreshedAt": 1792665782156,
+        "online": 6,
+        "pending": 0,
+        "links": [
+          "100>102",
+          "101>100",
+          "103>102"
+        ]
+      },
+      {
+        "elapsed": 3617,
+        "refreshedAt": 1792665783168,
+        "online": 6,
+        "pending": 0,
+        "links": [
+          "100>102",
+          "101>100",
+          "103>102"
+        ]
+      }
+    ],
+    "before": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "32,12>34,14",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1194,
+      "containerWidth": 1194
+    },
+    "after": {
+      "initialized": true,
+      "names": [
+        "CM",
+        "CS",
+        "BM",
+        "BS",
+        "P",
+        "Q"
+      ],
+      "links": [
+        "30,10>32,12",
+        "31,11>30,10",
+        "33,13>32,12"
+      ],
+      "chartWidth": 1194,
+      "containerWidth": 1194
+    },
     "errors": []
   },
   {

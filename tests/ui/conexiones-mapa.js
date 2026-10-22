@@ -59,7 +59,11 @@ async rootPage => {
     await page.route('**/*.tile.openstreetmap.org/**',r=>r.abort());
     try {
       await page.goto('http://127.0.0.1:24500/'+view);
-      await page.waitForTimeout(600);
+      await page.waitForFunction(view=>{
+        const element=document.querySelector(view);if(!element)return false;
+        const c=ng.getComponent(element);
+        return !!c.snapshot?.refreshedAt&&(view==='grafo'?!!c.myChart?.getOption()?.series?.[0]:!!c.map);
+      },view);
       const actual=await page.evaluate(({view,nodes})=>{
         const c=ng.getComponent(document.querySelector(view));
         if(view==='grafo') {

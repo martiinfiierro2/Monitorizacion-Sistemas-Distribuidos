@@ -1,0 +1,78 @@
+<div class="dialog node-editor">
+  <header class="header-dialog node-editor-header">
+    <div class="node-editor-heading">
+      <span class="node-editor-eyebrow">Catálogo del sistema</span>
+      <h2 mat-dialog-title class="node-editor-title">{{nodo ? 'Editar nodo' : 'Añadir nodo'}}</h2>
+      <p class="node-editor-context">{{nodo ? nodo.nombre + ' · ' + nodo.tipo_nodo : 'Configura la ficha que aparecerá en la monitorización.'}}</p>
+    </div>
+    <button type="button" class="node-editor-close" (click)="cerrarDialog()" aria-label="Cerrar formulario">
+      <mat-icon svgIcon="mat_outline:close"></mat-icon>
+    </button>
+  </header>
+
+  <mat-dialog-content class="node-editor-content">
+    <p *ngIf="errorPeticion2" role="alert" class="node-editor-error">{{errorPeticion2}}</p>
+
+    <section class="node-editor-section" aria-labelledby="node-editor-identity">
+      <h3 id="node-editor-identity">Identificación</h3>
+      <div class="node-editor-grid">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" name="nombre" [(ngModel)]="nombre" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Tipo de nodo</mat-label>
+          <mat-select name="tipoNodo" [(ngModel)]="tipoNodo" panelClass="node-editor-options">
+            <mat-option *ngFor="let option of options" [value]="option.value">
+              <span class="node-editor-option"><img [src]="'assets/map/png/' + option.icon" alt="">{{option.viewValue}}</span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </section>
+
+    <section class="node-editor-section" aria-labelledby="node-editor-connection">
+      <h3 id="node-editor-connection">Conexión</h3>
+      <div class="node-editor-grid node-editor-connection-grid">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label>URL</mat-label>
+          <input matInput type="text" name="url" [(ngModel)]="url" placeholder="http://127.0.0.1" class="node-editor-address" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Puerto</mat-label>
+          <input matInput type="number" name="puerto" [(ngModel)]="puerto">
+        </mat-form-field>
+      </div>
+    </section>
+
+    <section class="node-editor-section" aria-labelledby="node-editor-display">
+      <h3 id="node-editor-display">Representación</h3>
+      <div class="node-editor-grid">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Latitud</mat-label>
+          <input matInput type="number" name="latitud" step="any" placeholder="Latitud" [(ngModel)]="latitud">
+        </mat-form-field>
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Longitud</mat-label>
+          <input matInput type="number" name="longitud" step="any" placeholder="Longitud" [(ngModel)]="longitud">
+        </mat-form-field>
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Visibilidad</mat-label>
+          <mat-select name="visible" [(ngModel)]="visible" panelClass="node-editor-options">
+            <mat-option [value]="true">Visible en grafo y mapa</mat-option>
+            <mat-option [value]="false">Oculto en grafo y mapa</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Orden</mat-label>
+          <input matInput type="number" name="orden" [(ngModel)]="orden">
+        </mat-form-field>
+      </div>
+    </section>
+  </mat-dialog-content>
+
+  <footer class="node-editor-footer">
+    <button type="button" class="node-editor-button" (click)="cerrarDialog()">Cancelar</button>
+    <button type="button" class="anadir node-editor-button node-editor-save" [disabled]="busy" (click)="guardarNodo()">{{busy ? 'Guardando…' : nodo ? 'Guardar cambios' : 'Añadir nodo'}}</button>
+  </footer>
+</div>

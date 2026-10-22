@@ -1,0 +1,364 @@
+{
+  "date": "2026-10-22T10:41:52.026Z",
+  "realApi": true,
+  "results": [
+    {
+      "name": "catalogo_1366x768",
+      "frame": {
+        "x": 72,
+        "y": 12,
+        "width": 1282,
+        "height": 744,
+        "top": 12,
+        "right": 1354,
+        "bottom": 756,
+        "left": 72
+      },
+      "toolbar": {
+        "x": 73,
+        "y": 13,
+        "width": 1280,
+        "height": 89,
+        "top": 13,
+        "right": 1353,
+        "bottom": 102,
+        "left": 73
+      },
+      "footer": {
+        "x": 73,
+        "y": 682,
+        "width": 1280,
+        "height": 73,
+        "top": 682,
+        "right": 1353,
+        "bottom": 755,
+        "left": 73
+      },
+      "scroll": {
+        "width": 1280,
+        "contentWidth": 1280,
+        "height": 580,
+        "contentHeight": 657
+      },
+      "main": {
+        "height": 768,
+        "contentHeight": 768
+      },
+      "tableRows": 10,
+      "pass": true
+    },
+    {
+      "name": "catalogo_1280x720",
+      "frame": {
+        "x": 72,
+        "y": 12,
+        "width": 1196,
+        "height": 696,
+        "top": 12,
+        "right": 1268,
+        "bottom": 708,
+        "left": 72
+      },
+      "toolbar": {
+        "x": 73,
+        "y": 13,
+        "width": 1194,
+        "height": 89,
+        "top": 13,
+        "right": 1267,
+        "bottom": 102,
+        "left": 73
+      },
+      "footer": {
+        "x": 73,
+        "y": 634,
+        "width": 1194,
+        "height": 73,
+        "top": 634,
+        "right": 1267,
+        "bottom": 707,
+        "left": 73
+      },
+      "scroll": {
+        "width": 1194,
+        "contentWidth": 1194,
+        "height": 532,
+        "contentHeight": 657
+      },
+      "main": {
+        "height": 720,
+        "contentHeight": 720
+      },
+      "tableRows": 10,
+      "pass": true
+    },
+    {
+      "name": "catalogo_1920x900",
+      "frame": {
+        "x": 72,
+        "y": 12,
+        "width": 1836,
+        "height": 876,
+        "top": 12,
+        "right": 1908,
+        "bottom": 888,
+        "left": 72
+      },
+      "toolbar": {
+        "x": 73,
+        "y": 13,
+        "width": 1834,
+        "height": 89,
+        "top": 13,
+        "right": 1907,
+        "bottom": 102,
+        "left": 73
+      },
+      "footer": {
+        "x": 73,
+        "y": 814,
+        "width": 1834,
+        "height": 73,
+        "top": 814,
+        "right": 1907,
+        "bottom": 887,
+        "left": 73
+      },
+      "scroll": {
+        "width": 1834,
+        "contentWidth": 1834,
+        "height": 712,
+        "contentHeight": 712
+      },
+      "main": {
+        "height": 900,
+        "contentHeight": 900
+      },
+      "tableRows": 10,
+      "pass": true
+    },
+    {
+      "name": "buscar_y_restaurar",
+      "pass": true
+    },
+    {
+      "name": "paginar",
+      "pass": true,
+      "next": 8
+    },
+    {
+      "name": "abrir_y_cancelar_alta",
+      "pass": true
+    },
+    {
+      "name": "grafo_rueda",
+      "before": {
+        "zoom": 1,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "after": {
+        "zoom": 1.1,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "event": {
+        "ctrl": false,
+        "prevented": true
+      },
+      "pass": true
+    },
+    {
+      "name": "grafo_pinza_touchpad",
+      "before": {
+        "zoom": 1.1,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "after": {
+        "zoom": 1.2100000000000002,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "event": {
+        "ctrl": true,
+        "prevented": true
+      },
+      "pass": true
+    },
+    {
+      "name": "grafo_limite_zoom_no_amplia_pagina",
+      "before": {
+        "zoom": 4,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "after": {
+        "zoom": 4,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "pass": true
+    },
+    {
+      "name": "mapa_rueda",
+      "before": {
+        "zoom": 2.249184994397175,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "after": {
+        "zoom": 2.9255652147504785,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "event": {
+        "ctrl": false,
+        "prevented": true
+      },
+      "pass": true
+    },
+    {
+      "name": "mapa_pinza_touchpad",
+      "before": {
+        "zoom": 2.9255652147504785,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "after": {
+        "zoom": 3.601945435103782,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "event": {
+        "ctrl": true,
+        "prevented": true
+      },
+      "pass": true
+    },
+    {
+      "name": "mapa_limite_zoom_no_amplia_pagina",
+      "before": {
+        "zoom": 19,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "after": {
+        "zoom": 19,
+        "dpr": 1,
+        "viewport": {
+          "width": 1920,
+          "height": 900,
+          "scale": 1
+        },
+        "header": {
+          "width": 1834,
+          "height": 83
+        },
+        "scroll": 0
+      },
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "catalogUnchanged": true
+}

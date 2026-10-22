@@ -78,9 +78,15 @@ Grafo y mapa utilizan el mismo cálculo de topología. Solo muestran enlaces ope
 
 Ambas vistas permiten filtrar por grupo inferido, tipo y disponibilidad, actualizar, ocultar conexiones y ajustar vista. Los grupos se deducen de las referencias de configuración disponibles: con todos los procesos apagados puede aparecer «Sin grupo». No se inventa una pertenencia persistente a partir del nombre del nodo.
 
-Los datos de cada nodo se actualizan de forma independiente, con timeout. Un fallo de catálogo conserva el último dibujo con aviso de datos anteriores. Al salir se cancelan las consultas y se liberan mapa y gráfico. El detalle distingue procesadores registrados de seleccionados, se refresca mientras está abierto y registra la fecha solo después de una consulta correcta.
+El mapa representa un solo mundo, sin repetirse al arrastrar. Al abrirlo encuadra el mapamundi dentro del ancho y la altura reales del panel, con margen para los iconos; se adapta también a ventanas bajas y paneles reducidos. El desplazamiento queda limitado al mundo. «Ajustar vista» encuadra los nodos visibles cuando se pulsa.
+
+Dentro del grafo y del mapa, la rueda y la pinza del panel táctil cambian la escala de la representación. La cabecera y el resto de la página conservan su tamaño, incluso cuando el dibujo alcanza su límite de zoom.
+
+El refresco automático respeta `espera.valor` de `frontend/starter/src/assets/theme/config.json` (5000 ms por defecto). Cada ronda consulta hasta ocho nodos simultáneamente, con timeout individual, y publica todos los resultados juntos. Mientras tanto se conserva la ronda anterior, sin mostrar consultas pendientes como desconexiones. Una caída real se refleja al completar la ronda; si dura más que el intervalo, se evita solaparla con otra. Un fallo de catálogo conserva el último dibujo con aviso de datos anteriores. Al salir se cancelan las consultas y se liberan mapa y gráfico. El detalle distingue procesadores registrados de seleccionados, se refresca mientras está abierto y registra la fecha solo después de una consulta correcta.
 
 El catálogo permite buscar, crear, editar, ocultar, exportar y eliminar fichas. El borrado pide confirmación y no detiene ejecutables.
+Comparte el marco y los controles compactos de las vistas de monitorización, con búsqueda en la cabecera, visibilidad junto al nombre y una tabla con desplazamiento propio y paginación fija.
+La paginación está en español. Las operaciones correctas muestran una confirmación breve que se cierra sola; los errores mantienen su aviso específico. La confirmación de borrado identifica la ficha y recuerda que el ejecutable seguirá funcionando.
 
 ## TTN y acceso fuera del equipo
 
@@ -104,7 +110,7 @@ npm.cmd test
 npm.cmd run build
 ```
 
-Las pruebas Node comprueban validación/API con repositorio en memoria, pesos, reintentos, cola persistente, idempotencia, caída bajo sustituto, recuperación, registro tardío y reglas de topología. Los procesos de integración usan puertos libres, directorios temporales y MQTT simulado; no acceden a la base real.
+Las pruebas Node comprueban validación/API con repositorio en memoria, pesos, reintentos, cola persistente, idempotencia, caída bajo sustituto, recuperación, registro tardío y reglas de topología. También verifican con un reloj virtual que el refresco conserve rondas completas ante respuestas lentas, timeout, cambios de catálogo y cancelación. Los procesos de integración usan puertos libres, directorios temporales y MQTT simulado; no acceden a la base real.
 
 Para repetir las pruebas del navegador, instalar previamente `@playwright/cli` y disponer de Edge. Con 24500 libre:
 

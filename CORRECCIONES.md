@@ -8,7 +8,7 @@ Se han corregido los fallos reproducidos sobre main y se ha añadido una base de
 - Reparto ponderado, cola local persistente con reintentos y confirmación correlacionada, deduplicación persistente por procesador, y contadores de pendientes, entregados, fallos y rechazos.
 - Ventana de carga que envejece sin tráfico y unidades en mensajes/s. Los contadores AYA quedan limitados a cero.
 - Topología común para grafo y mapa: respeta roles confirmados, disponibilidad y ocultación; admite principales ausentes del catálogo, normaliza direcciones y aísla respuestas inválidas.
-- Actualizaciones parciales por nodo, timeout, recuperación tras errores del catálogo y cancelación al navegar. Altas, bajas, vacío, nombres, visibilidad y cambios de conexiones se reflejan sin recargar.
+- Refresco automático por rondas completas, conservando la anterior mientras llegan las respuestas, con timeout individual, recuperación tras errores del catálogo y cancelación al navegar. Altas, bajas, vacío, nombres, visibilidad y cambios de conexiones se reflejan sin recargar. Las consultas pendientes ya no causan desconexiones provisionales ni conexiones incoherentes.
 - Filtros por grupo inferido, tipo y estado, leyenda, flechas del mapa, ajuste de vista, nombres completos accesibles, avisos visibles y redimensionado del gráfico.
 - Detalle con refresco, error explícito, fecha registrada solo tras consulta correcta y tablas separadas de registrados y seleccionados. También expone entrega, MQTT y estado del registro cuando el proceso proporciona esos datos.
 - Catálogo con validación de campos, búsquedas vacías correctas, cancelación/debounce, exportación y borrado confirmado. Los scripts del segundo grupo tienen nombres únicos.
@@ -16,6 +16,16 @@ Se han corregido los fallos reproducidos sobre main y se ha añadido una base de
 - Esquema y semilla opcionales, protección contra migrar duplicados, instalación documentada, arranque desde la raíz, limpieza del seguimiento de dependencias y entornos privados, y CI.
 
 ## Verificación
+
+### Refresco automático, 20 de octubre de 2026
+
+- `npm test`: 17 pruebas correctas, incluidas seis regresiones del servicio de monitorización con reloj virtual. Se comprueban respuestas desordenadas y lentas, timeout y recuperación, cambios de catálogo, cancelación y un catálogo de 18 nodos con ocho consultas simultáneas como máximo.
+- La prueba de integración de procesos falló inicialmente en «entrega normal» al ejecutarse junto a la compilación. Pasó después de forma aislada y en la repetición completa; no se modificó el runtime de los ejecutables.
+- `npm.cmd run test:browser`: 67 comprobaciones correctas con Playwright CLI y Edge. Utilizan respuestas controladas, incluyendo tres rondas automáticas con una respuesta de 650 ms en grafo y mapa. Se sustituyeron las esperas fijas de arranque por la comprobación de que la vista esté lista. Resultados: [regresion-navegador.json](diagnostico/regresion-navegador.json).
+- La API habitual en 8080 y Angular en 4200 no estaban arrancados durante esta revisión; no se certifica una observación nueva con el catálogo de XAMPP y los ejecutables de la instalación.
+- Compilación de producción correcta mediante `npm.cmd run build -- --output-path dist/refresco-verificacion` desde `frontend/starter`. Se utilizó una salida distinta para conservar la compilación de desarrollo que servían las pruebas del navegador. Persisten los avisos existentes de Leaflet/CommonJS y tamaño inicial.
+
+### Verificación anterior de la rama
 
 - `npm test`: 11 pruebas correctas. Pruebas Node de API, validación, reparto, persistencia, reintentos, idempotencia, topología y procesos reales aislados. La caída del procesador se simula de forma abrupta, sin permitir desregistro limpio.
 - La integración verifica además un mensaje enviado mientras la lista todavía contiene al procesador caído: el mensaje pendiente termina en el superviviente.

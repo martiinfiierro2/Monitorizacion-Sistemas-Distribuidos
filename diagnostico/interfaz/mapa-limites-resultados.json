@@ -1,0 +1,529 @@
+{
+  "date": "2026-10-22T10:31:52.411Z",
+  "controlledResponses": true,
+  "results": [
+    {
+      "name": "inicio_centrado_sin_pulsar_ajustar",
+      "pass": true,
+      "center": {
+        "lat": 30.4554019590871,
+        "lng": -0.014642823996264822
+      },
+      "zoom": 1.9601192986728861,
+      "minZoom": 1.9601192986728861,
+      "width": 1280,
+      "height": 659,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": 88.5
+      },
+      "overviewFrame": {
+        "left": 142,
+        "top": 32,
+        "right": 1138,
+        "bottom": 627
+      },
+      "worldWidth": 996.0810302178417,
+      "bounds": {
+        "west": -231.3211259417521,
+        "east": 231.29184029375955,
+        "south": -65.32479111152723,
+        "north": 81.81167051153489
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "encuadre_sin_ajustar_1366x768",
+      "pass": true,
+      "center": {
+        "lat": 30.4554019590871,
+        "lng": -0.014642823996264822
+      },
+      "zoom": 1.9601192986728861,
+      "minZoom": 1.9601192986728861,
+      "width": 1280,
+      "height": 659,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": 88.5
+      },
+      "overviewFrame": {
+        "left": 142,
+        "top": 32,
+        "right": 1138,
+        "bottom": 627
+      },
+      "worldWidth": 996.0810302178417,
+      "bounds": {
+        "west": -231.3211259417521,
+        "east": 231.29184029375955,
+        "south": -65.32479111152723,
+        "north": 81.81167051153489
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "encuadre_sin_ajustar_1280x720",
+      "pass": true,
+      "center": {
+        "lat": 30.51163388442547,
+        "lng": 0
+      },
+      "zoom": 1.8387704632701367,
+      "minZoom": 1.8387704632701367,
+      "width": 1194,
+      "height": 611,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": 81.5
+      },
+      "overviewFrame": {
+        "left": 139,
+        "top": 32,
+        "right": 1055,
+        "bottom": 579
+      },
+      "worldWidth": 915.7249134943854,
+      "bounds": {
+        "west": -234.64523162206928,
+        "east": 234.753376699878,
+        "south": -65.75077817115577,
+        "north": 81.95301418764184
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "encuadre_sin_ajustar_1920x1080",
+      "pass": true,
+      "center": {
+        "lat": 30.51163388442547,
+        "lng": 0
+      },
+      "zoom": 2.5683321810061024,
+      "minZoom": 2.5683321810061024,
+      "width": 1834,
+      "height": 971,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": 135.5
+      },
+      "overviewFrame": {
+        "left": 158,
+        "top": 32,
+        "right": 1676,
+        "bottom": 939
+      },
+      "worldWidth": 1518.3957889203061,
+      "bounds": {
+        "west": -217.46058861270023,
+        "east": 217.36675009421256,
+        "south": -63.533691751717285,
+        "north": 81.25146944528643
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "encuadre_sin_ajustar_1920x900",
+      "pass": true,
+      "center": {
+        "lat": 30.51163388442547,
+        "lng": 0
+      },
+      "zoom": 2.249184994397175,
+      "minZoom": 2.249184994397175,
+      "width": 1834,
+      "height": 791,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": 108.5
+      },
+      "overviewFrame": {
+        "left": 308,
+        "top": 32,
+        "right": 1525,
+        "bottom": 759
+      },
+      "worldWidth": 1217.0603512073462,
+      "bounds": {
+        "west": -271.10476722867935,
+        "east": 271.3827103602749,
+        "south": -64.45293112279178,
+        "north": 81.50041482039197
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "encuadre_sin_ajustar_1816x840",
+      "pass": true,
+      "center": {
+        "lat": 30.51163388442547,
+        "lng": 0
+      },
+      "zoom": 2.124916391662165,
+      "minZoom": 2.124916391662165,
+      "width": 1730,
+      "height": 731,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": 99.5
+      },
+      "overviewFrame": {
+        "left": 307,
+        "top": 32,
+        "right": 1424,
+        "bottom": 699
+      },
+      "worldWidth": 1116.6152053030257,
+      "bounds": {
+        "west": -278.97769569599154,
+        "east": 278.77935171138756,
+        "south": -64.72240228948225,
+        "north": 81.6578328852611
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "encuadre_sin_ajustar_1100x650",
+      "pass": true,
+      "center": {
+        "lat": 30.51163388442547,
+        "lng": 0
+      },
+      "zoom": 1.6412188964830916,
+      "minZoom": 1.6412188964830916,
+      "width": 1014,
+      "height": 541,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": 70.5
+      },
+      "overviewFrame": {
+        "left": 108,
+        "top": 32,
+        "right": 907,
+        "bottom": 509
+      },
+      "worldWidth": 798.5389099393452,
+      "bounds": {
+        "west": -228.68892362797104,
+        "east": 228.44597043464572,
+        "south": -66.53047000277101,
+        "north": 82.19629702343096
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "panel_menor_que_ventana_1920x1080",
+      "pass": true,
+      "center": {
+        "lat": 30.51163388442547,
+        "lng": 0
+      },
+      "zoom": 1.0698029275998833,
+      "minZoom": 1.0698029275998833,
+      "width": 1098,
+      "height": 385,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": 48.5
+      },
+      "overviewFrame": {
+        "left": 280,
+        "top": 32,
+        "right": 817,
+        "bottom": 353
+      },
+      "worldWidth": 537.3815305881128,
+      "bounds": {
+        "west": -367.5762270610306,
+        "east": 367.99054905686796,
+        "south": -69.03544134933516,
+        "north": 83.13821544134863
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "ajustar_nodos",
+      "pass": true,
+      "center": {
+        "lat": 18.678785023816452,
+        "lng": 1.9999999999999933
+      },
+      "zoom": 2.4918530963296748,
+      "minZoom": 1.9601192986728861,
+      "width": 1280,
+      "height": 659,
+      "worldCenterOffset": {
+        "x": -8,
+        "y": 76.5
+      },
+      "overviewFrame": {
+        "left": -88,
+        "top": -152,
+        "right": 1352,
+        "bottom": 708
+      },
+      "worldWidth": 1440,
+      "bounds": {
+        "west": -158.00000000000003,
+        "east": 162,
+        "south": -53.31220661824531,
+        "north": 70.69543202312707
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 0
+    },
+    {
+      "name": "arrastre_horizontal_-5000",
+      "pass": true,
+      "center": {
+        "lat": 18.779436443307695,
+        "lng": 20.000000000000014
+      },
+      "zoom": 2.4918530963296748,
+      "minZoom": 1.9601192986728861,
+      "width": 1280,
+      "height": 659,
+      "worldCenterOffset": {
+        "x": -80,
+        "y": 76.5
+      },
+      "overviewFrame": {
+        "left": -160,
+        "top": -152,
+        "right": 1280,
+        "bottom": 708
+      },
+      "worldWidth": 1440,
+      "bounds": {
+        "west": -140.00000000000003,
+        "east": 180,
+        "south": -53.31220661824531,
+        "north": 70.69543202312707
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 1
+    },
+    {
+      "name": "arrastre_horizontal_5000",
+      "pass": true,
+      "center": {
+        "lat": 18.779436443307695,
+        "lng": -20.000000000000014
+      },
+      "zoom": 2.4918530963296748,
+      "minZoom": 1.9601192986728861,
+      "width": 1280,
+      "height": 659,
+      "worldCenterOffset": {
+        "x": 80,
+        "y": 76.5
+      },
+      "overviewFrame": {
+        "left": 0,
+        "top": -152,
+        "right": 1440,
+        "bottom": 708
+      },
+      "worldWidth": 1440,
+      "bounds": {
+        "west": -180,
+        "east": 140,
+        "south": -53.31220661824531,
+        "north": 70.69543202312707
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 1
+    },
+    {
+      "name": "acercar",
+      "pass": true,
+      "center": {
+        "lat": 18.779436443307695,
+        "lng": -20.000000000000014
+      },
+      "zoom": 2.9918530963296748,
+      "minZoom": 1.9601192986728861,
+      "width": 1280,
+      "height": 659,
+      "worldCenterOffset": {
+        "x": 113,
+        "y": 107.5
+      },
+      "overviewFrame": {
+        "left": -265,
+        "top": -352,
+        "right": 1771,
+        "bottom": 864
+      },
+      "worldWidth": 2036.467529817257,
+      "bounds": {
+        "west": -133.15417574639122,
+        "east": 93.119994233304,
+        "south": -36.45975940813699,
+        "north": 60.90563828355958
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 7
+    },
+    {
+      "name": "arrastre_acercado",
+      "pass": true,
+      "center": {
+        "lat": -76.3586916664053,
+        "lng": 66.78026663410509
+      },
+      "zoom": 2.9918530963296748,
+      "minZoom": 1.9601192986728861,
+      "width": 1280,
+      "height": 659,
+      "worldCenterOffset": {
+        "x": -378,
+        "y": -688.5
+      },
+      "overviewFrame": {
+        "left": -756,
+        "top": -1148,
+        "right": 1280,
+        "bottom": 68
+      },
+      "worldWidth": 2036.467529817257,
+      "bounds": {
+        "west": -46.356818355742526,
+        "east": 179.91735162395273,
+        "south": -85.0439938483864,
+        "north": -53.414552723506254
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 18
+    },
+    {
+      "name": "limite_alejar",
+      "pass": true,
+      "center": {
+        "lat": -51.97366180042803,
+        "lng": -0.08176364212118871
+      },
+      "zoom": 1.9601192986728861,
+      "minZoom": 1.9601192986728861,
+      "width": 1280,
+      "height": 659,
+      "worldCenterOffset": {
+        "x": 0,
+        "y": -168.5
+      },
+      "overviewFrame": {
+        "left": 142,
+        "top": -225,
+        "right": 1138,
+        "bottom": 370
+      },
+      "worldWidth": 996.0810302178417,
+      "bounds": {
+        "west": -231.3211259417521,
+        "east": 231.29184029375955,
+        "south": -85.04860175911799,
+        "north": 50.189119752941984
+      },
+      "tiles": [
+        {
+          "noWrap": true,
+          "bounds": true
+        }
+      ],
+      "markers": 18,
+      "clipped": 4
+    },
+    {
+      "name": "refresco_conserva_encuadre",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

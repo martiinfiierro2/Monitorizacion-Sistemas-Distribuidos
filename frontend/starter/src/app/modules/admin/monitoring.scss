@@ -1,4 +1,4 @@
-grafo, mapa {
+grafo, mapa, lista {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -48,7 +48,8 @@ monitor-toolbar { display: block; flex: none; position: relative; z-index: 20; }
 .monitor-access input { width: 100%; height: 30px; padding: 5px 8px; border: 1px solid #ccd8e0; border-radius: 5px; }
 .monitor-error { color: #9c3434; margin: 8px 0 0; font-size: 12px; }
 .monitor-canvas { flex: 1 1 0; min-height: 260px; min-width: 0; width: 100%; position: relative; overflow: hidden; isolation: isolate; }
-.monitor-canvas > #grafo, .monitor-canvas > #map { height: 100%; width: 100%; }
+.monitor-canvas > #grafo, .monitor-canvas > #map { height: 100%; width: 100%; overscroll-behavior: contain; touch-action: none; }
+.monitor-canvas > #map { background: #aad3df; }
 .monitor-graph-canvas { background-color: #fbfcfd; background-image: radial-gradient(#dbe4e9 1px, transparent 1px); background-size: 22px 22px; }
 .monitor-empty { position: absolute; top: 24px; left: 20px; right: 20px; z-index: 3; text-align: center; color: #697b89; font-size: 13px; pointer-events: none; }
 .canvas-navigation { position: absolute; top: 14px; right: 14px; display: flex; flex-direction: column; align-items: stretch; background: #fff; border: 1px solid #d6e0e6; border-radius: 7px; box-shadow: 0 2px 8px #1735470b; overflow: hidden; }
@@ -63,6 +64,61 @@ monitor-toolbar { display: block; flex: none; position: relative; z-index: 20; }
 .monitor-map-arrow { background: none; border: 0; }
 .monitor-canvas .leaflet-bar { border: 1px solid #d1dce4; box-shadow: 0 2px 8px #17354712; border-radius: 7px; overflow: hidden; }
 .monitor-canvas .leaflet-bar a { width: 34px; height: 34px; line-height: 34px; color: #355368; }
+
+/* The catalogue shares the monitoring views' frame, palette and density. */
+lista .catalog-toolbar { flex: none; padding: 10px 16px; border-bottom: 1px solid #e3e9ee; }
+lista .catalog-topbar, lista .catalog-heading, lista .catalog-actions, lista .catalog-filters { display: flex; align-items: center; }
+lista .catalog-topbar { justify-content: space-between; gap: 20px; margin-bottom: 8px; }
+lista .catalog-heading { gap: 14px; }
+lista .catalog-heading h1 { margin: 0; padding: 0; max-width: none; color: #243444; font-size: 16px; font-weight: 650; line-height: 24px; letter-spacing: -.025em; }
+lista .catalog-count { color: #657d87; font-size: 11px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+lista .catalog-actions { gap: 7px; }
+lista .catalog-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; height: 30px; padding: 0 12px; border: 1px solid #d3dce4; border-radius: 5px; background: #fff; color: #334b60; font-size: 12px; font-weight: 500; cursor: pointer; transition: background .15s, border-color .15s; }
+lista .catalog-button:hover { background: #eef4f5; border-color: #9eb9bd; }
+lista .catalog-primary { color: #fff; background: #245d64; border-color: #245d64; }
+lista .catalog-primary:hover { background: #194b51; border-color: #194b51; }
+lista .catalog-button mat-icon { width: 16px; height: 16px; color: inherit; }
+lista .catalog-filters { gap: 16px; }
+lista .catalog-search { display: flex; align-items: center; gap: 8px; width: 340px; height: 30px; padding: 0 9px; border: 1px solid #d3dce4; border-radius: 5px; background: #f8fafb; }
+lista .catalog-search:focus-within { border-color: #6b979e; box-shadow: 0 0 0 2px #245d6410; }
+lista .catalog-search mat-icon { width: 15px; height: 15px; color: #81929f; flex: none; }
+lista .catalog-search input { min-width: 0; width: 100%; border: 0; outline: 0; color: #2b3e50; background: transparent; font-size: 12px; }
+lista .catalog-search input::placeholder { color: #82939f; }
+lista .catalog-hint { color: #7a8c99; font-size: 11px; }
+lista .catalog-notice { flex: none; margin: 0; padding: 12px 16px; color: #657d87; background: #f8fafb; border-bottom: 1px solid #e3e9ee; font-size: 12px; }
+lista .catalog-error { color: #9c3434; background: #fcf5f5; }
+lista .catalog-empty { padding: 28px 16px; text-align: center; }
+lista .catalog-table-scroll { flex: 1 1 0; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+lista .catalog-table { width: 100%; min-width: 850px; background: #fff; border-collapse: separate; border-spacing: 0; }
+lista .catalog-table .mat-mdc-header-row { height: 38px; background: #f5f8fa; }
+lista .catalog-table .mat-mdc-header-cell { padding: 0 18px; color: #78909f; font-size: 10px; font-weight: 500; border-bottom: 1px solid #e2e9ef; white-space: nowrap; }
+lista .catalog-table .mat-mdc-row { height: 56px; }
+lista .catalog-table .mat-mdc-cell { padding: 9px 18px; color: #4c6272; font-size: 12px; border-bottom: 1px solid #e7edf1; }
+lista .catalog-table .mat-mdc-row:hover { background: #f6f9fa; }
+lista .catalog-node-name { color: #29465b; font-size: 13px; font-weight: 600; line-height: 19px; }
+lista .catalog-visibility { display: inline-flex; align-items: center; gap: 5px; color: #688980; font-size: 10px; line-height: 16px; }
+lista .catalog-visibility i { width: 5px; height: 5px; border-radius: 50%; background: #438c78; }
+lista .catalog-hidden { color: #8a99a4; }
+lista .catalog-hidden i { background: #9aabb6; }
+lista .catalog-address { font-family: ui-monospace, monospace; font-size: 11px !important; }
+lista .catalog-numeric, lista .catalog-coordinate { font-variant-numeric: tabular-nums; }
+lista .catalog-coordinate { display: flex; gap: 7px; font-size: 11px; line-height: 17px; }
+lista .catalog-coordinate > span { min-width: 20px; color: #8a9ca9; font-size: 10px; }
+lista .catalog-row-actions { display: flex; align-items: center; gap: 5px; }
+lista .catalog-icon-button { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid #dce5eb; border-radius: 5px; background: #fff; color: #708592; cursor: pointer; transition: background .15s, border-color .15s, color .15s; }
+lista .catalog-icon-button mat-icon { width: 15px; height: 15px; color: inherit; }
+lista .catalog-icon-button:hover { background: #edf4f5; border-color: #a4bdc2; color: #245d64; }
+lista .catalog-detail { background: #f0f6f6; border-color: #d4e3e4; color: #346f76; }
+lista .catalog-delete:hover { background: #fbefef; color: #a75151; border-color: #e6c7c7; }
+lista .catalog-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-left: 18px; border-top: 1px solid #e3e9ee; background: #fafcfd; flex: none; }
+lista .catalog-footer > span { font-size: 10px; color: #8a9ba7; }
+lista .catalog-footer .mat-mdc-paginator { background: transparent; color: #607783; font-size: 11px; }
+lista .catalog-footer .mat-mdc-paginator-container { min-height: 52px; }
+lista .catalog-footer .mat-mdc-text-field-wrapper { height: 32px; }
+lista .catalog-footer .mat-mdc-form-field-infix { min-height: 32px; padding-top: 5px; padding-bottom: 5px; }
+.mat-mdc-snack-bar-container.catalog-feedback { margin-left: 76px; --mdc-snackbar-container-color: #245d64; --mdc-snackbar-supporting-text-color: #fff; --mat-snack-bar-button-color: #fff; }
+.catalog-feedback .mdc-snackbar__surface { max-width: 420px; border: 1px solid #1e5157; border-radius: 7px; box-shadow: 0 4px 16px #1735471a; }
+.catalog-feedback .mdc-snackbar__label { font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
 
 /* Node details use one bounded surface and one scrolling content area. */
 .cdk-overlay-pane.node-detail-panel { width: min(1120px, calc(100vw - 64px)); max-width: calc(100vw - 64px) !important; }

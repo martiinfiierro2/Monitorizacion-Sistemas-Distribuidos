@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, auditTime, catchError, defer, exhaustMap, from, map, merge, mergeMap, of, scan, switchMap, timer } from 'rxjs';
+import { Observable, catchError, defer, exhaustMap, from, map, merge, mergeMap, of, scan, switchMap, timer, toArray } from 'rxjs';
 import { GrafoService } from './grafo.service';
 import { Config, ConfigService } from './config.service';
 import { buildTopology, CatalogNode, NodeState, normalizeEndpoint, Topology, validDebug } from './topology';
@@ -36,11 +36,16 @@ export class MonitorService {
                 endpoint = normalizeEndpoint(nodo.url, nodo.puerto);
             }
             catch { } return of({ nodo, datos: null, status: false, endpoint, lastSeen: this.lastSeen.get(nodo.id), error: readableError(error) } as NodeState); })));
-            const pending: NodeState[] = response.nodos.map((nodo: CatalogNode) => { let endpoint = ''; try {
-                endpoint = normalizeEndpoint(nodo.url, nodo.puerto);
-            }
-            catch { } return { nodo, endpoint, datos: null, status: false, pending: true }; });
-            const states = requests.length ? from(requests as Observable<NodeState>[]).pipe(mergeMap(request => request, 8), scan((all: NodeState[], state: NodeState) => all.map(previous => previous.nodo.id === state.nodo.id ? state : previous), pending), auditTime(25)) : of([] as NodeState[]);
+            // Publish one complete round so pending requests never look like outages
+            // or mix connections from different rounds. Keep the catalog's order.
+            const states = from(requests as Observable<NodeState>[]).pipe(
+                mergeMap(request => request, 8),
+                toArray(),
+                map(all => {
+                    const byId = new Map(all.map(state => [state.nodo.id, state]));
+                    return (response.nodos as CatalogNode[]).map(nodo => byId.get(nodo.id)!);
+                })
+            );
             return states.pipe(map(all => ({ ...buildTopology(all), config, refreshedAt: Date.now() })));
         }), catchError(error => of({ nodes: [], links: [], warnings: [], config, error: readableError(error), stale: true })));
     }

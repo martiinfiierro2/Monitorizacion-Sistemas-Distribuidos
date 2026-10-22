@@ -1,8 +1,12 @@
-# Investigación del refresco: causa localizada, sin corregir
+# Investigación y corrección del refresco
 
-La lógica de consulta, estados y construcción de conexiones se conserva sin cambios. Se han modificado únicamente la distribución visual del grafo y la presentación de las etiquetas del mapa.
+**Actualización del 20 de octubre de 2026:** corregido en `MonitorService`. Se mantienen el temporizador configurado, los timeouts individuales y hasta ocho consultas simultáneas. `toArray()` reúne la ronda entera y se restablece el orden del catálogo antes de publicarla. Mientras llega cada respuesta o timeout, el grafo y el mapa siguen mostrando la última ronda completa. No se publican nodos provisionales con `status: false`. Las caídas reales se reflejan al terminar la ronda; los errores de catálogo conservan la última ronda con el aviso existente.
 
-## Cómo se actualiza actualmente
+Las pruebas de `tests/monitor.test.cjs` verifican respuestas lentas, timeout y recuperación, cambio de destino y catálogo, catálogo vacío, error de API y cancelación. `tests/ui/actualizaciones.js` comprueba la conservación del dibujo durante una respuesta lenta y tres ciclos automáticos en grafo y mapa con respuestas controladas.
+
+El resto de este documento conserva la investigación previa a la corrección y sus observaciones con los ejecutables reales.
+
+## Cómo se actualizaba antes de la corrección
 
 1. `ConfigService` carga `assets/theme/config.json`. El intervalo configurado es 5000 ms.
 2. `MonitorService.watch` combina un temporizador inmediato y cada cinco segundos con el botón Actualizar. `exhaustMap` evita iniciar otra ronda mientras la anterior sigue en curso; una pulsación durante una ronda no inicia otra en paralelo.
@@ -51,9 +55,9 @@ Los datos reducidos del recorrido están en [refresco-observaciones.json](refres
 
 El problema principal es **confundir pendiente de nueva consulta con consulta fallida** y mostrar ese estado provisional como disponibilidad confirmada. El intervalo de cinco segundos y la protección contra rondas simultáneas no explican por sí mismos esa bajada falsa.
 
-Una corrección futura podría conservar el último estado confirmado hasta recibir el nuevo resultado, manteniendo pendiente como indicador separado. Otra opción sería publicar únicamente la ronda completa, a costa de esperar también a los nodos más lentos o a sus timeouts. Ninguna de esas alternativas se ha implementado en este trabajo.
+Se consideraron dos alternativas: conservar el último estado individual hasta recibir su respuesta, o publicar únicamente la ronda completa. El 20 de octubre se aplicó la segunda para evitar también mezclar conexiones y estados de rondas diferentes. Se espera a los nodos más lentos o a sus timeouts antes de actualizar la representación.
 
-Archivos investigados y conservados sin cambios:
+Archivos de la investigación original:
 
 - `frontend/starter/src/app/services/monitor.service.ts`, especialmente inicialización de pendientes, `mergeMap`, `scan`, `auditTime` y `watch`.
 - `frontend/starter/src/app/services/config.service.ts`.
